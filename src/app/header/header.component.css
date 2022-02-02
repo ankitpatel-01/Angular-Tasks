@@ -1,0 +1,14 @@
+.header-container{
+    width: 80%;
+    margin: 5px auto;
+}
+
+.logo img{
+    height: 57px;
+}
+
+#task{
+    margin:0px 5px 4px;
+    font-size: 36px;
+    color: white;
+}

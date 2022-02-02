@@ -1,1 +1,12 @@
-<h1>{{title}}</h1>
+<div class="wrapper d-flex col">
+    <header class="myheader">
+        <app-header></app-header>
+    </header>
+    <main class="wrapper d-flex">
+        <app-side-bar></app-side-bar>
+        <div class="outlet">
+            outlet
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

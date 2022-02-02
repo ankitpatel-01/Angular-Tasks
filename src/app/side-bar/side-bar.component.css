@@ -1,0 +1,21 @@
+.mySidebar {
+  width: 300px;
+  height: 100%;
+  padding: 18px 10px 0px;
+  overflow: auto;
+}
+.mySidebar .nav ul{
+    padding: 10px;
+    list-style: none;
+}
+.mySidebar .nav li {
+  padding: 8px;
+  margin: 8px;
+  font-size: 22px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.mySidebar .nav li:hover {
+  background-color: #f7f6f9;
+  color: black;
+}
