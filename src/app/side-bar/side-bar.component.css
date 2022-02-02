@@ -3,6 +3,7 @@
   height: 100%;
   padding: 18px 10px 0px;
   overflow: auto;
+  background-color: #BBDEFB;
 }
 .mySidebar .nav ul{
     padding: 10px;
@@ -15,7 +16,17 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.mySidebar .nav a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+.mySidebar .nav a.active{
+    color: red;
+    border-bottom:1px solid red;
+}
 .mySidebar .nav li:hover {
-  background-color: #f7f6f9;
+  background-color: #f7f4ff;
   color: black;
 }
