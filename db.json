@@ -1,0 +1,36 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "name": "Frontend"
+    },
+    {
+      "id": 2,
+      "name": "QA"
+    },
+    {
+      "id": 3,
+      "name": "Database"
+    },
+    {
+      "id": 4,
+      "name": ".Net"
+    },
+    {
+      "id": 5,
+      "name": "UX"
+    }
+  ],
+  "users": [
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "phoneNo": "8347892046",
+      "gender": "male",
+      "doj": "2022-02-04",
+      "department": "QA",
+      "id": 4
+    }
+  ]
+}

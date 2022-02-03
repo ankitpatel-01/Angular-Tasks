@@ -19,22 +19,13 @@ label {
   box-sizing: border-box;
 }
 
-.inputSkill{
+.inputSkill {
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   font-size: 16px;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.btnAdd{
-  padding: 12px 20px;
-  margin: 8px 8px;
-  font-size: 16px;
-  display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -61,8 +52,29 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+input[type="submit"]:disabled {
+  background-color: gray;
+}
+
 input[type="submit"]:hover {
   background-color: #45a049;
+}
+
+input[type="reset"] {
+  width: 100%;
+  background-color: #af4c4c;
+  color: white;
+  padding: 14px 20px;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="reset"]:hover {
+  background-color: #a04545;
 }
 
 .text-danger {

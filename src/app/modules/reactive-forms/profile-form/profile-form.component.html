@@ -1,54 +1,75 @@
 <div class="form-container">
-    <form [formGroup]="myReactiveForm" (ngSubmit)="onFormSubmit()">
-        <div>
-            <label for="username">Name :</label>
-            <input type="text" id="username" placeholder="Ankit Patel" formControlName="username">
-            <small class="text-dander"
-                *ngIf="!myReactiveForm.get('username')?.valid && myReactiveForm.get('username')?.touched">* This Field
-                is
-                Required</small>
-            <small class="text-dander" *ngIf="myReactiveForm.get('username')?.errors?.['minlength']">* minimum length
-                should be 5 character</small>
-        </div>
-        <div>
-            <label for="email">Email :</label>
-            <input type="email" id="email" placeholder="example@email.com" formControlName="email">
-            <small class="text-dander" *ngIf="!myReactiveForm.get('email')?.valid &&
-                myReactiveForm.get('email')?.touched">* Please Enter a valid Email</small>
-        </div>
-        <div>
-            <label for="contactNo">Phone No :</label>
-            <input type="text" id="contactNo" placeholder="9104237856" formControlName="contactNo" maxlength="10">
-            <small class="text-dander" *ngIf="!myReactiveForm.get('contactNo')?.valid &&
-                myReactiveForm.get('contactNo')?.touched">* This Field is Required</small>
-            <small class="text-dander" *ngIf="myReactiveForm.get('contactNo')?.errors?.['minlength']">* minimum length
-                should be 10 character</small>
-            <small class="text-dander" *ngIf="myReactiveForm.get('contactNo')?.errors?.['maxlength']">* maximum length
-                should be 10 character</small>
-        </div>
-        <div>
-            <label for="gender">Gender :</label>
-            <div>
-                <input type="radio" id="male" value="male" name="gender" formControlName="gender">
-                <label for="male">Male</label>
-                <input type="radio" id="female" value="female" name="gender" formControlName="gender">
-                <label for="female">Female</label>
-            </div>
-        </div>
-        <!-- <div>
-            Technical Skills :
-            <input type="text" id="">
-        </div> -->
-        <div>
-            <label for="dept">Department :</label>
-            <select id="dept" formControlName="department">
-                <option *ngFor="let dept of departments" [value]="dept.name">{{dept.name}}</option>
-            </select>
-        </div>
-        <div>
-            <input type="checkbox" id="terms" formControlName="termsAccept">
-            <label for="terms">I accept the Terms and conditions</label>
-        </div>
-        <input type="submit" value="Sumit">
-    </form>
+  <form [formGroup]="myReactiveForm" (ngSubmit)="onFormSubmit()">
+    <div>
+      <label for="username">Name :</label>
+      <input class="form-control" type="text" id="username" placeholder="Ankit Patel" formControlName="username" />
+      <small class="text-danger" *ngIf="
+          !myReactiveForm.get('username')?.valid &&
+          myReactiveForm.get('username')?.touched
+        ">* This Field is Required</small>
+      <small class="text-danger" *ngIf="myReactiveForm.get('username')?.errors?.['minlength']">* minimum length should
+        be 5 character</small>
+    </div>
+    <div>
+      <label for="email">Email :</label>
+      <input class="form-control" type="email" id="email" placeholder="example@email.com" formControlName="email" />
+      <small class="text-danger" *ngIf="
+          !myReactiveForm.get('email')?.valid &&
+          myReactiveForm.get('email')?.touched
+        ">* Please Enter a valid Email</small>
+    </div>
+    <div>
+      <label for="contactNo">Phone No :</label>
+      <input class="form-control" type="text" id="contactNo" placeholder="9104237856" formControlName="contactNo"
+        maxlength="10" />
+      <small class="text-danger" *ngIf="
+          !myReactiveForm.get('contactNo')?.valid &&
+          myReactiveForm.get('contactNo')?.touched
+        ">* This Field is Required</small>
+      <small class="text-danger" *ngIf="myReactiveForm.get('contactNo')?.errors?.['minlength']">* minimum length should
+        be 10 character</small>
+    </div>
+    <div>
+      <label for="gender">Gender :</label>
+      <div>
+        <input type="radio" id="male" value="male" name="gender" formControlName="gender" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" value="female" name="gender" formControlName="gender" />
+        <label for="female">Female</label>
+      </div>
+      <small class="text-danger" *ngIf="
+          !myReactiveForm.get('gender')?.valid &&
+          myReactiveForm.get('gender')?.touched
+        ">* This Field is Required</small>
+    </div>
+    <!-- <div>
+      Technical Skills :
+      <div formArrayName="skills"
+      *ngFor="let skill of skills>
+        <input class="inputSkill" type="text" formControlName="technicalSkills" />
+        <button class="btnAdd">+</button>
+      </div>
+    </div> -->
+    <div>
+      <label for="dept">Department :</label>
+      <select class="form-control" id="dept" formControlName="department">
+        <option *ngFor="let dept of departments" [value]="dept.name">
+          {{ dept.name }}
+        </option>
+      </select>
+      <small class="text-danger" *ngIf="
+          !myReactiveForm.get('department')?.valid &&
+          myReactiveForm.get('department')?.touched
+        ">* This Field is Required</small>
+    </div>
+    <div>
+      <input type="checkbox" id="terms" formControlName="termsAccept" />
+      <label for="terms">I accept the Terms and conditions</label>
+      <small class="text-danger" *ngIf="
+          !myReactiveForm.get('termsAccept')?.valid &&
+          myReactiveForm.get('termsAccept')?.touched
+        ">* This Field is Required</small>
+    </div>
+    <input type="submit" value="Sumit" />
+  </form>
 </div>

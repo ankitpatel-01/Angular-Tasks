@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Department } from './department.model';
 
 @Component({
@@ -28,8 +28,9 @@ export class ProfileFormComponent implements OnInit {
   ];
 
   myReactiveForm: FormGroup;
+  // skills:FormArray;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.myReactiveForm = new FormGroup(
       {
         "username": new FormControl('Ankitkumar Patel', [Validators.required, Validators.minLength(5)]),
@@ -37,6 +38,9 @@ export class ProfileFormComponent implements OnInit {
         "contactNo": new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
         "gender": new FormControl(null, Validators.required),
         "department": new FormControl("FrontEnd", Validators.required),
+        // "skills": this.fb.array([
+        //   this.skillField()
+        // ]),
         "termsAccept": new FormControl(null, Validators.required)
       }
     );
@@ -46,6 +50,11 @@ export class ProfileFormComponent implements OnInit {
 
   }
 
+  // skillField(): FormGroup {
+  //   return this.fb.group({
+  //     technicalSkills: ['']
+  //   })
+  // }
   onFormSubmit(): void {
     console.log(this.myReactiveForm)
   }

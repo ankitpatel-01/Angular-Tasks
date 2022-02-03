@@ -1,0 +1,62 @@
+<div class="form-container">
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+        <div>
+            <label for="firstname">FirstName :</label>
+            <input class="form-control" type="text" id="firstname" placeholder="Ankit" formControlName="firstname" />
+            <small class="text-danger" *ngIf="!userForm.get('firstname')?.valid && userForm.get('firstname')?.touched">*
+                This Field is Required</small>
+        </div>
+        <div>
+            <label for="lastname">LastName :</label>
+            <input class="form-control" type="text" id="lastname" placeholder="Patel" formControlName="lastname" />
+            <small class="text-danger" *ngIf="!userForm.get('lastname')?.valid && userForm.get('lastname')?.touched">*
+                This Field is Required</small>
+        </div>
+        <div>
+            <label for="email">Email :</label>
+            <input class="form-control" type="email" id="email" placeholder="example@email.com"
+                formControlName="email" />
+            <small class="text-danger" *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.touched">* Please
+                Enter a valid Email</small>
+        </div>
+        <div>
+            <label for="contactNo">Phone No :</label>
+            <input class="form-control" type="text" id="phoneNo" placeholder="9104237856" formControlName="phoneNo"
+                maxlength="10" />
+            <small class="text-danger" *ngIf="userForm.get('phoneNo')?.touched && !userForm.get('phoneNo')?.dirty">
+                * This Field is Required</small>
+            <small class="text-danger" *ngIf="userForm.get('phoneNo')?.errors?.['minlength']">* minimum length should
+                be 10 character</small>
+        </div>
+        <div>
+            <label for="gender">Gender :</label>
+            <div>
+                <input type="radio" id="male" value="male" name="gender" formControlName="gender" />
+                <label for="male">Male</label>
+                <input type="radio" id="female" value="female" name="gender" formControlName="gender" />
+                <label for="female">Female</label>
+            </div>
+            <small class="text-danger" *ngIf="!userForm.get('gender')?.valid && userForm.get('gender')?.touched">*
+                This Field is Required</small>
+        </div>
+        <div>
+            <label for="dept">Department :</label>
+            <select class="form-control" id="dept" formControlName="department">
+                <option *ngFor="let dept of departments;" [value]="dept.name">
+                    {{ dept.name }}
+                </option>
+            </select>
+            <small class="text-danger" *ngIf="!userForm.get('department')?.valid && userForm.get('department')?.touched">*
+                This Field is Required</small>
+        </div>
+        <div>
+            <label for="">Date Of joining :</label>
+            <input  class="form-control" type="date" name="doj" id="doj" formControlName="doj">
+            <small class="text-danger" *ngIf="!userForm.get('doj')?.valid && userForm.get('doj')?.touched">*
+                This Field is Required</small>
+        </div>
+
+        <input type="submit" value="Sumit" [disabled]="userForm.invalid"/>
+        <input type="reset" value="Reset" (click)="onRest()" />
+    </form>
+</div>
