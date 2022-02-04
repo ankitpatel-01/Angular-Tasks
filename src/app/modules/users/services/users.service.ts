@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Subject } from 'rxjs/internal/Subject';
 import { environment } from 'src/environments/environment';
 import { Department } from '../models/dept.model';
 import { User } from '../models/user.model';

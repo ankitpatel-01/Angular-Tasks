@@ -56,10 +56,6 @@ input[type="submit"]:disabled {
   background-color: gray;
 }
 
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
 input[type="reset"] {
   width: 100%;
   background-color: #af4c4c;

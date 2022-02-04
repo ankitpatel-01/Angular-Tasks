@@ -33,14 +33,14 @@
       "id": 1
     },
     {
-      "firstname": "Abhishike",
-      "lastname": "Patel",
-      "email": "abhi.patel@gamil.com",
+      "firstname": "manish",
+      "lastname": "rajpurohit",
+      "email": "manish.raj@email.com",
       "phoneNo": "5465456588",
       "gender": "male",
       "doj": "2022-02-05",
-      "department": "Database",
-      "id": 2
+      "department": "Frontend",
+      "id": 3
     }
   ]
 }

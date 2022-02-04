@@ -11,22 +11,26 @@ import { UsersService } from '../services/users.service';
 export class UsersListsComponent implements OnInit {
 
   myUsers:User[]=[];
+
+  
   constructor(private router: Router, private usersServices:UsersService) { }
 
+  //On Component Init Load User data
   ngOnInit(): void {
       this.getUserList();
   }
 
-
+  //get user list from db
   getUserList(){
     this.usersServices.getUsers().subscribe(data=>this.myUsers=data)
-    
   }
 
+  //Delete user from db and Update user list
   deleteUser(id:number){
     this.usersServices.deleteUser(id).subscribe(()=>{this.getUserList()})
   }
 
+  //ROUTE to form
   navigateToForm(){
     this.router.navigate(['/users/add'])
   }

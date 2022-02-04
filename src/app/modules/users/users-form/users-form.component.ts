@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Department } from '../models/dept.model';
 import { UsersService } from '../services/users.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../models/user.model';
-import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-users-form',
@@ -12,10 +10,9 @@ import { Subscription } from 'rxjs/internal/Subscription';
   styleUrls: ['./users-form.component.css'],
 })
 export class UsersFormComponent implements OnInit {
+
   userForm: FormGroup;
-
   departments: Department[] = [];
-
   id: number;
   isAddMode: boolean;
 
@@ -23,9 +20,10 @@ export class UsersFormComponent implements OnInit {
     this.userForm = this.buildUsersForm();
     this.id = this.route.snapshot.params['id'];
     this.isAddMode = !this.id;
-    console.log(this.isAddMode)
   }
 
+
+  //On init get department list and ckeck if its addMode
   ngOnInit(): void {
     this.getDepartmentList();
     if (!this.isAddMode) {
@@ -33,6 +31,7 @@ export class UsersFormComponent implements OnInit {
     }
   }
 
+  //Reactive Form
   buildUsersForm(): FormGroup {
     return this.fb.group({
       firstname: [null, [Validators.required]],
@@ -45,6 +44,8 @@ export class UsersFormComponent implements OnInit {
     });
   }
 
+
+  //get department list from db
   getDepartmentList() {
     this.usersService.getDepartments().subscribe(
       (data: Department[]) => {
@@ -53,6 +54,8 @@ export class UsersFormComponent implements OnInit {
     );
   }
 
+
+  //on Form submit
   onSubmit(){
     if(this.isAddMode){
       this.createUser();
@@ -62,6 +65,8 @@ export class UsersFormComponent implements OnInit {
     }
   }
 
+
+  //Post data to db
   createUser() {
     this.usersService.createUser(this.userForm.value).subscribe(() => {
         alert("New User Creadted");
@@ -70,6 +75,7 @@ export class UsersFormComponent implements OnInit {
     );
   }
 
+  //Put data to db
   updateUser(){
     this.usersService.updateUser(this.id, this.userForm.value).subscribe(()=>{
       alert("User Updated");
@@ -77,11 +83,13 @@ export class UsersFormComponent implements OnInit {
     })
   }
 
+  //route to users list
   navigateToList(){
     this.router.navigate(['/users'])
   }
 
-  onRest(): void {
+  //Rest to form controls
+  onRest() {
     this.userForm.reset();
   }
 }
