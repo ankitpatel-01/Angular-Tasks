@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div>
             <label for="firstname">FirstName :</label>
             <input class="form-control" type="text" id="firstname" placeholder="Ankit" formControlName="firstname" />

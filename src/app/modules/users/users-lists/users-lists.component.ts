@@ -14,24 +14,17 @@ export class UsersListsComponent implements OnInit {
   constructor(private router: Router, private usersServices:UsersService) { }
 
   ngOnInit(): void {
-    this.usersServices.getUsersList().subscribe(data=>{
-      console.log(data)
-      this.myUsers=data;
-    })   
+      this.getUserList();
   }
 
-  // ngDoCheck(): void {
-  //   this.usersServices.getUsersList().subscribe(data=>{
-  //     console.log(data)
-  //     this.myUsers=data;
-  //   })
-  // }
+
+  getUserList(){
+    this.usersServices.getUsers().subscribe(data=>this.myUsers=data)
+    
+  }
 
   deleteUser(id:number){
-    this.usersServices.deleteUser(id).subscribe((d)=>{
-      console.log("delete id"+id)
-      console.log(d);
-    });
+    this.usersServices.deleteUser(id).subscribe(()=>{this.getUserList()})
   }
 
   navigateToForm(){

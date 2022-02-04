@@ -28,9 +28,19 @@
       "email": "ankitpatelak2017@gmail.com",
       "phoneNo": "8347892046",
       "gender": "male",
-      "doj": "2022-02-04",
-      "department": "QA",
-      "id": 4
+      "doj": "2022-02-03",
+      "department": "Frontend",
+      "id": 1
+    },
+    {
+      "firstname": "Abhishike",
+      "lastname": "Patel",
+      "email": "abhi.patel@gamil.com",
+      "phoneNo": "5465456588",
+      "gender": "male",
+      "doj": "2022-02-05",
+      "department": "Database",
+      "id": 2
     }
   ]
 }
