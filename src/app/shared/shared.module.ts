@@ -1,14 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedRoutingModule } from './shared-routing.module';
+import { MytitlecasePipe } from './pipes/mytitlecase.pipe';
+import { BoolenConverterPipe } from './pipes/boolen-converter.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MytitlecasePipe,
+    BoolenConverterPipe,
+    HighlightDirective
+  ],
   imports: [
-    CommonModule,
-    SharedRoutingModule
+    CommonModule
+  ],
+  exports: [
+    MytitlecasePipe,
+    BoolenConverterPipe,
+    HighlightDirective
   ]
 })
 export class SharedModule { }

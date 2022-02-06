@@ -19,7 +19,52 @@
     {
       "id": 5,
       "name": "UX"
+    },
+    {
+      "id": 6,
+      "name": "Mobile"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "email": "aman@mail.com",
+      "phoneNo": "8945232345",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": "Frontend",
+      "id": 2
+    },
+    {
+      "firstname": "Abhishike",
+      "lastname": "Patel",
+      "email": "abhi.patel@gamil.com",
+      "phoneNo": "7855545455",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": "Frontend",
+      "id": 3
+    },
+    {
+      "firstname": "Chirag",
+      "lastname": "Patel",
+      "email": "cp221740@gmail.com",
+      "phoneNo": "2343454564",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": "Frontend",
+      "id": 4
+    },
+    {
+      "firstname": "manish",
+      "lastname": "rajpurohit",
+      "email": "manish.raj@email.com",
+      "phoneNo": "7855545455",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": "Mobile",
+      "id": 5
+    }
+  ]
 }

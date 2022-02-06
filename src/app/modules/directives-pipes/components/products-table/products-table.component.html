@@ -1,0 +1,46 @@
+<h2>My Products Table</h2>
+<p>{{date | date:'dd/MM/YYYY hh:mm:ss'}}</p>
+<div *ngIf="myProducts">
+  <table class="table table-hover">
+    <thead>
+      <th>Sr. No</th>
+      <th>Product Id</th>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Rating</th>
+      <th>Avability</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let productItem of myProducts; let i = index; trackBy:trackByProductId"
+        (click)="onSelect(productItem)" TrackBy="trackByProductId">
+        <td>{{ i }}</td>
+        <td>{{ productItem.id }}</td>
+        <td>{{ productItem.title | mytitlecase }}</td>
+        <td>{{ productItem.amount | currency: "INR" }}</td>
+        <td>{{ productItem.rating }}</td>
+        <td>{{ productItem.availability | boolenConverter }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!myProducts">
+  <h3>No Data Available</h3>
+</div>
+
+<div *ngIf="selectedProduct">
+  <fieldset>
+    <legend>
+      <h2>
+        <span appHighlight>{{ selectedProduct.title | uppercase }} Details</span>
+      </h2>
+    </legend>
+
+    <p>Product id:{{ selectedProduct.id }}</p>
+    <p>Product name:{{ selectedProduct.title | mytitlecase }}</p>
+    <p>Product amount:{{selectedProduct.amount}}</p>
+    <p>Product rating:{{ selectedProduct.rating }}</p>
+    <p>
+      Product availability:{{ selectedProduct.availability | boolenConverter }}
+    </p>
+  </fieldset>
+</div>

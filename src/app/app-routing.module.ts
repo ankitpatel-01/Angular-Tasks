@@ -3,10 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'reactiveForm',
+    path: "data-binding",
     loadChildren: () =>
-      import('./modules/reactive-forms/reactive-forms.module').then(
-        (m) => m.MyReactiveFormsModule
+      import('./modules/data-binding/data-binding.module').then((m) => m.DataBindingModule)
+  },
+  {
+    path: "directive-pipes",
+    loadChildren: () =>
+      import('./modules/directives-pipes/directives-pipes.module').then((m) => m.DirectivesPipesModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then(
+        (m) => m.ProfileModule
       ),
   },
   {
@@ -22,4 +32,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

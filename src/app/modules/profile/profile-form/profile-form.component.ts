@@ -28,12 +28,11 @@ export class ProfileFormComponent implements OnInit {
   ];
 
   myReactiveForm: FormGroup;
-  // skills:FormArray;
 
   constructor(private fb: FormBuilder) {
     this.myReactiveForm = new FormGroup(
       {
-        "username": new FormControl('Ankitkumar Patel', [Validators.required, Validators.minLength(5)]),
+        "username": new FormControl('', [Validators.required, Validators.minLength(3)]),
         "email": new FormControl('', [Validators.required, Validators.email]),
         "contactNo": new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
         "gender": new FormControl(null, Validators.required),
@@ -46,15 +45,12 @@ export class ProfileFormComponent implements OnInit {
     );
   }
 
+
+
   ngOnInit(): void {
 
   }
 
-  // skillField(): FormGroup {
-  //   return this.fb.group({
-  //     technicalSkills: ['']
-  //   })
-  // }
   onFormSubmit(): void {
     console.log(this.myReactiveForm)
   }
