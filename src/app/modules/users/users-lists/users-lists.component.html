@@ -3,8 +3,8 @@
     <button class="btn light-blue">Search</button>
     <button class="btn" (click)="navigateToForm()">Add</button>
 </div>
-<div>
-    <table id="usersTable">
+<div class="mt-5">
+    <table class="table table-hover">
         <thead>
             <th>Name</th>
             <th>Email</th>
@@ -23,8 +23,8 @@
                 <td>{{user.department}}</td>
                 <td>{{user.doj}}</td>
                 <td>
-                    <a class="btn blue" routerLink="edit/{{user.id}}">Edit</a>
-                    <a class="btn red" (click)="deleteUser(user.id)">Delete</a>
+                    <a routerLink="edit/{{user.id}}"><span class="fas fa-user-edit mr-1"></span></a>
+                    <a (click)="deleteUser(user.id)"><span class="fas fa-trash"></span></a>
                 </td>
             </tr>
         </tbody>

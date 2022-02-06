@@ -1,0 +1,23 @@
+.header-container{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header-titel{
+    height: 100%;
+}
+
+figure{
+    margin: 0;
+}
+
+.logo img{
+    height: 40px;
+}
+
+#task{
+    margin:5px 5px;
+    font-size: 32px;
+    color: white;
+}

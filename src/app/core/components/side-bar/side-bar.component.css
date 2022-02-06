@@ -1,0 +1,37 @@
+.mySidebar {
+  width: 280px;
+  height: 100%;
+  overflow: auto;
+  background-color: #bbdefb;
+}
+.mySidebar .nav {
+  margin-top: 20px;
+  padding: 0 10px;
+}
+.mySidebar .nav ul {
+  list-style: none;
+  padding: 0;
+}
+.mySidebar .nav li {
+  padding: 6px;
+}
+.mySidebar .nav a {
+  display: block;
+  width: 100%;
+  padding: 6px 18px;
+  font-size: 22px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  cursor: pointer;
+}
+
+.mySidebar .nav a:hover {
+  background-color: #f7f4ff;
+  border-radius: 5px;
+}
+
+.mySidebar .nav a.active {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
