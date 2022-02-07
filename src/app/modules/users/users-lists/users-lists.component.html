@@ -1,5 +1,5 @@
 <div class="header d-flex justify-between">
-    <input class="searchbar" type="text" [(ngModel)]="searchText" placeholder="search by name" (input)="searchFor()">
+    <input class="searchbar" type="text" [(ngModel)]="searchText" placeholder="search by name">
     <button class="btn btn-primary ml-1" (click)="navigateToForm()">Add</button>
 </div>
 <div *ngIf="myUsers" class="mt-5">
@@ -14,7 +14,7 @@
             <th>Actions</th>
         </thead>
         <tbody>
-            <tr *ngFor="let user of myUsers">
+            <tr *ngFor="let user of myUsers | userFilter:searchText">
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.phoneNo}}</td>

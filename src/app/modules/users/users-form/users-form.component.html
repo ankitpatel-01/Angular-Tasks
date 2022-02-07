@@ -47,8 +47,8 @@
             <label for="dept" class="form-label">Department :</label>
             <select class="form-control" id="dept" formControlName="department">
                 <option selected>Choose...</option>
-                <option *ngFor="let dept of departments;" [value]="dept.name">
-                    {{ dept.name }}
+                <option *ngFor="let dept of departments;" [value]="dept.id">
+                    {{ dept.id | deptFilter }}
                 </option>
             </select>
             <small class="text-danger"
