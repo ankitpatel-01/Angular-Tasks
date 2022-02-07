@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
   ],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    RouterModule
   ],
   exports: [
     HeaderComponent,
@@ -22,15 +22,3 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 })
 export class CoreModule { }
 
-// Routing file
-
-// import { NgModule } from '@angular/core';
-// import { RouterModule, Routes } from '@angular/router';
-
-// const routes: Routes = [];
-
-// @NgModule({
-//   imports: [RouterModule.forChild(routes)],
-//   exports: [RouterModule]
-// })
-// export class CoreRoutingModule { }

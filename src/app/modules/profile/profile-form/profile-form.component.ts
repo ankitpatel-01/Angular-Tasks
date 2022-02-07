@@ -28,21 +28,24 @@ export class ProfileFormComponent implements OnInit {
   ];
 
   myReactiveForm: FormGroup;
+  // skills: FormArray;
 
   constructor(private fb: FormBuilder) {
-    this.myReactiveForm = new FormGroup(
-      {
-        "username": new FormControl('', [Validators.required, Validators.minLength(3)]),
-        "email": new FormControl('', [Validators.required, Validators.email]),
-        "contactNo": new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
-        "gender": new FormControl(null, Validators.required),
-        "department": new FormControl("FrontEnd", Validators.required),
-        // "skills": this.fb.array([
-        //   this.skillField()
-        // ]),
-        "termsAccept": new FormControl(null, Validators.required)
-      }
-    );
+    this.myReactiveForm = this.buildForm();
+  }
+
+  buildForm() :FormGroup{
+    return this.fb.group({
+      "username": new FormControl('', [Validators.required, Validators.minLength(3)]),
+      "email": new FormControl('', [Validators.required, Validators.email]),
+      "contactNo": new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+      "gender": new FormControl(null, Validators.required),
+      "department": new FormControl("FrontEnd", Validators.required),
+      // "skills": this.fb.array([
+      //   this.dynamicField()
+      // ]),
+      "termsAccept": new FormControl(null, Validators.required)
+    })
   }
 
 
@@ -50,6 +53,19 @@ export class ProfileFormComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+
+  dynamicField(): FormGroup {
+    return this.fb.group({
+      technicalSkills: ['']
+    })
+  }
+
+  // addSkills() {
+  //   this.skills = this.myReactiveForm.get('skills') as FormArray;
+  //   this.skills.push(this.dynamicField())
+  // }
+
 
   onFormSubmit(): void {
     console.log(this.myReactiveForm)

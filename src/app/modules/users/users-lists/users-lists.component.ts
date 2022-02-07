@@ -6,11 +6,13 @@ import { UsersService } from '../services/users.service';
 @Component({
   selector: 'app-users-lists',
   templateUrl: './users-lists.component.html',
-  styleUrls: ['./users-lists.component.css']
+  styleUrls: ['./users-lists.component.scss']
 })
 export class UsersListsComponent implements OnInit {
 
   myUsers:User[]=[];
+
+  searchText:string= "";
 
   
   constructor(private router: Router, private usersServices:UsersService) { }
@@ -28,6 +30,18 @@ export class UsersListsComponent implements OnInit {
   //Delete user from db and Update user list
   deleteUser(id:number){
     this.usersServices.deleteUser(id).subscribe(()=>{this.getUserList()})
+  }
+
+  //filtering result
+  searchFor(){
+      if(this.searchText!=""){
+        this.myUsers = this.myUsers.filter((user:User)=>{
+          return user.firstname.toLowerCase().match(this.searchText.toLowerCase())
+         })
+      }
+      else{
+        this.ngOnInit()
+      }
   }
 
   //ROUTE to form
