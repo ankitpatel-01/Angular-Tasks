@@ -33,7 +33,7 @@
       "phoneNo": "8945232345",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": "Frontend",
+      "department": 1,
       "id": 2
     },
     {
@@ -43,7 +43,7 @@
       "phoneNo": "7855545455",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": "Frontend",
+      "department": 1,
       "id": 3
     },
     {
@@ -53,7 +53,7 @@
       "phoneNo": "2343454564",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": "Frontend",
+      "department": 1,
       "id": 4
     },
     {
@@ -63,7 +63,7 @@
       "phoneNo": "7855545455",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": "Mobile",
+      "department": 6,
       "id": 5
     }
   ]

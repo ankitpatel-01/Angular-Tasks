@@ -40,7 +40,7 @@ export class UsersFormComponent implements OnInit {
       phoneNo: [null, [Validators.required, Validators.minLength(10)]],
       gender: [null, Validators.required],
       doj: [null, Validators.required],
-      department: ['Frontend', Validators.required],
+      department: [1, Validators.required],
     });
   }
 
@@ -56,11 +56,11 @@ export class UsersFormComponent implements OnInit {
 
 
   //on Form submit
-  onSubmit(){
-    if(this.isAddMode){
+  onSubmit() {
+    if (this.isAddMode) {
       this.createUser();
     }
-    else{
+    else {
       this.updateUser();
     }
   }
@@ -69,22 +69,22 @@ export class UsersFormComponent implements OnInit {
   //Post data to db
   createUser() {
     this.usersService.createUser(this.userForm.value).subscribe(() => {
-        alert("New User Creadted");
-        this.navigateToList();
-      }
+      alert("New User Creadted");
+      this.navigateToList();
+    }
     );
   }
 
   //Put data to db
-  updateUser(){
-    this.usersService.updateUser(this.id, this.userForm.value).subscribe(()=>{
+  updateUser() {
+    this.usersService.updateUser(this.id, this.userForm.value).subscribe(() => {
       alert("User Updated");
       this.navigateToList();
     })
   }
 
   //route to users list
-  navigateToList(){
+  navigateToList() {
     this.router.navigate(['/users'])
   }
 
