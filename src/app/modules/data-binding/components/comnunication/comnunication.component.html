@@ -1,1 +1,6 @@
-<p>comnunication works!</p>
+<div class="parent">
+    <h1>Parent Component</h1>
+    <p>{{child1Data}}</p>
+    <app-child1 [username]="username" [child2data]="child2Data" (notify)="notifyParent($event)"></app-child1>
+    <app-child2 (notify2)="reciveData($event)"></app-child2>
+</div>
