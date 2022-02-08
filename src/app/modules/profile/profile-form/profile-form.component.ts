@@ -9,6 +9,8 @@ import { Department } from './department.model';
 })
 export class ProfileFormComponent implements OnInit {
 
+  value: boolean = false;
+
   departments: Department[] = [
     {
       "name": "UX"
@@ -79,6 +81,7 @@ export class ProfileFormComponent implements OnInit {
 
   onFormSubmit(): void {
     console.log(this.myProfileForm)
+    this.value = true
   }
 
 }
