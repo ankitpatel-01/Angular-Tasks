@@ -77,12 +77,7 @@
     <input class="btn btn-primary mt-3" type="submit" value="Sumit" [disabled]="myProfileForm.invalid" />
   </form>
 
-  <div *ngIf="value">
-    {{profileForm['username'].value}}
-    {{profileForm['email'].value}}
-    {{profileForm['contactNo'].value}}
-    {{profileForm['gender'].value}}
-    <!-- {{skills.controls['0'].val} -->
-    {{profileForm['department'].value}}
+  <div>
+    {{this.myProfileForm.value | json}}
   </div>
 </div>

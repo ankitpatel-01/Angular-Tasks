@@ -1,0 +1,18 @@
+a {
+  color: red;
+}
+
+table,
+td {
+  border-collapse: collapse;
+  padding: 20px 10px;
+  vertical-align: top;
+}
+
+#technical td {
+  padding: 2px;
+}
+
+.skill{
+  flex-basis: 33.33%;
+}

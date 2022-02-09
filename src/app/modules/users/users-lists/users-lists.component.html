@@ -14,7 +14,7 @@
             <th>Actions</th>
         </thead>
         <tbody>
-            <tr *ngFor="let user of myUsers | userFilter:searchText">
+            <tr *ngFor="let user of myUsers | userFilter:searchText">    
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.phoneNo}}</td>

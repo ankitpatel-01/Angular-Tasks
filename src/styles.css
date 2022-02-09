@@ -38,6 +38,10 @@ body {
   flex-direction: column;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
 .img {
   max-width: 100%;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Skill } from '../model/skill';
 import { Department } from './department.model';
 
 @Component({
@@ -8,8 +9,6 @@ import { Department } from './department.model';
   styleUrls: ['./profile-form.component.css']
 })
 export class ProfileFormComponent implements OnInit {
-
-  value: boolean = false;
 
   departments: Department[] = [
     {
@@ -28,6 +27,8 @@ export class ProfileFormComponent implements OnInit {
       "name": "QA"
     }
   ];
+
+  myskills: Skill = {} as Skill;
 
   myProfileForm: FormGroup;
 
@@ -80,8 +81,10 @@ export class ProfileFormComponent implements OnInit {
 
 
   onFormSubmit(): void {
-    console.log(this.myProfileForm)
-    this.value = true
+    console.log(this.myProfileForm.value)
+    this.myskills = this.skills.value;
+    console.log(this.myskills);
+    
   }
 
 }

@@ -1,0 +1,96 @@
+<h1>Resume Builder</h1>
+<div class="form-container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="form-group mt-1">
+      <label for="username">Name :</label>
+      <input class="form-control" type="text" id="username" placeholder="Enter your Name" formControlName="username" />
+      <small class="text-danger" *ngIf="!user['username']?.valid && user['username']?.touched">* This Field is
+        Required</small>
+      <small class="text-danger" *ngIf="user['username']?.errors?.['minlength']">* minimum length shouldbe 3
+        character</small>
+    </div>
+    <!-- Email -->
+    <div class="form-group mt-2">
+      <label for="email">Email :</label>
+      <input class="form-control" type="email" id="email" placeholder="Enter your email" formControlName="email" />
+      <small class="text-danger" *ngIf="!user['email']?.valid && user['email']?.touched">* Please Enter a valid
+        Email</small>
+    </div>
+    <!-- Phone No -->
+    <div class="form-group mt-2">
+      <label for="contactNo">Phone No :</label>
+      <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
+        formControlName="contactNo" maxlength="10" />
+      <small class="text-danger" *ngIf="!user['contactNo']?.valid && user['contactNo']?.touched">* This Field is
+        Required</small>
+      <small class="text-danger" *ngIf="user['contactNo']?.errors?.['minlength']">* minimum length should be 10
+        character</small>
+    </div>
+    <!-- Post -->
+    <div class="form-group mt-1">
+      <label for="postname">Post :</label>
+      <input class="form-control" type="text" id="username" placeholder="Enter your Name" formControlName="postname" />
+      <small class="text-danger" *ngIf="!user['postname']?.valid && user['postname']?.touched">* This Field is
+        Required</small>
+    </div>
+    <!-- Technical Skills -->
+    <div>
+      Technical Skills :
+      <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
+        <div class="skillfield d-flex mt-2" [formGroupName]="i">
+          <input class="form-control" type="text" formControlName="technicalSkills" />
+          <small class="text-danger" *ngIf="skills.controls[i]?.touched">*</small>
+          <button type="button" class="btn btn-danger ml-1" (click)="deleteSkills(i)"><span
+              class="fas fa-trash"></span></button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-2" (click)="addSkills()">+</button>
+    </div>
+    <!-- Experiences -->
+    <div>
+      Experirnces :
+      <div formArrayName="experiences" *ngFor="let experience of experiences.controls, let i = index">
+        <div class="expfield d-flex col mt-2" [formGroupName]=i>
+          <label for="companyName">Company Name:</label>
+          <input class="form-control" type="text" formControlName="companyName" />
+          <label for="years">Years:</label>
+          <input class="form-control" type="text" formControlName="years" />
+          <label for="post">Post:</label>
+          <div class="d-flex">
+            <input class="form-control" type="text" formControlName="post" />
+            <button type="button" class="btn btn-danger ml-1" (click)="deleteExperience(i)"><span
+                class="fas fa-trash"></span></button>
+          </div>
+
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-2" (click)="addExperience()">+</button>
+    </div>
+    <!-- Eductions -->
+    <div>
+      Eduction :
+      <div formArrayName="educations" *ngFor="let experience of educations.controls, let i = index">
+        <div class="edufield d-flex col mt-2" [formGroupName]=i>
+          <label for="schoolName">Name:</label>
+          <input class="form-control" type="text" formControlName="schoolName" />
+          <label for="major">Major :</label>
+          <input class="form-control" type="text" formControlName="major" />
+          <label for="cgpa">CGPA :</label>
+          <div class="d-flex">
+            <input class="form-control" type="text" formControlName="cgpa" />
+            <button type="button" class="btn btn-danger ml-1" (click)="deleteEducation(i)"><span
+                class="fas fa-trash"></span></button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-2" (click)="addEducation()">+</button>
+    </div>
+    <!-- submit -->
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="userForm.invalid">Submit</button>
+  </form>
+</div>
+
+<div>
+  {{this.userForm.value | json}}
+</div>

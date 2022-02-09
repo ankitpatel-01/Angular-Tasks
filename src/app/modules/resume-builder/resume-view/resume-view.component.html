@@ -1,0 +1,124 @@
+<main>
+  <div class="container" style="
+        max-width: 950px;
+        margin: auto;
+        padding: 20px 30px;
+        border-top: 4px solid rgb(95, 95, 95);
+        border-bottom: 4px solid rgb(95, 95, 95);
+        background-color: rgb(245, 245, 245);
+      ">
+    <table style="width: 100%">
+      <tr style="border-bottom: 1px solid #999">
+        <td>
+          <h1>{{user.username}}</h1>
+          <strong>
+            <em>
+              <p>{{user.postname}}</p>
+            </em>
+          </strong>
+        </td>
+        <td style="width: 200px">
+          <p><button>Download PDF</button></p>
+          <p><a href="#">{{user.email}}</a></p>
+          <p>{{user.contactNo}}</p>
+        </td>
+      </tr>
+    </table>
+    <table style="width: 100%">
+      <!-- Start Profile -->
+      <tr style="border-bottom: 1px solid #999">
+        <td style="width: 200px"><em>Profile</em></td>
+        <td>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
+          eligendi repellat quas, suscipit placeat illum esse officiis omnis
+          quibusdam quod non soluta unde vel ad dolores earum blanditiis
+          corporis rerum!
+        </td>
+      </tr>
+      <!-- End Profile -->
+      <!-- Start Skills -->
+      <tr style="border-bottom: 1px solid #999">
+        <td style="width: 200px"><em>Skillls</em></td>
+        <td style="padding: 0">
+          <table>
+            <tr>
+              <td style="padding: 0 5px; width: 200px">
+                <h3>Web Design</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Asperiores amet modi earum repellendus dolore tempore
+                  alias magni recusandae perferendis. Cum?
+                </p>
+              </td>
+              <td style="padding: 0 5px; width: 200px">
+                <h3>Interface Design</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Asperiores amet modi earum repellendus dolore tempore
+                  alias magni recusandae perferendis. Cum?
+                </p>
+              </td>
+              <td style="padding: 0 5px; width: 200px">
+                <h3>Project Direction</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Asperiores amet modi earum repellendus dolore tempore
+                  alias magni recusandae perferendis. Cum?
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- End Skills -->
+      <!-- Start Technical -->
+      <tr style="border-bottom: 1px solid #999">
+        <td style="width: 200px"><em>Technical</em></td>
+        <td>
+          <div class="d-flex flex-wrap" style="width: 100%" id="technical">
+            <div class="skill" style="border-bottom: 1px solid #999" *ngFor="let skill of user.skills">
+              <p>{{skill.technicalSkills}}</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <!-- End Technical -->
+      <!-- Start Experience -->
+      <tr style="border-bottom: 1px solid #999">
+        <td><em>Experience</em></td>
+        <td style="padding: 0">
+          <table>
+            <tr style="border-bottom: 1px solid #999" *ngFor="let exp of user.experiences">
+              <td style="padding: 0">
+                <h3>{{exp.companyName}}</h3>
+                <p>{{exp.post}}</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus ipsum a mollitia, fugit incidunt culpa?
+                </p>
+              </td>
+              <td style="width: 100px">{{exp.years}}</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- End Experience -->
+      <!-- Start Education -->
+      <tr style="border-bottom: 1px solid #999">
+        <td><em>Education</em></td>
+        <td style="padding: 0">
+          <table>
+            <tr style="border-bottom: 1px solid #999" *ngFor="let edu of user.educations">
+              <td style="padding: 0">
+                <h3>{{edu.schoolName}}</h3>
+                <p>{{edu.major}} - <strong>{{edu.cgpa}}</strong></p>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <p style="text-align: center">
+      {{user.username}} - <a href="#">{{user.email}}</a> - {{user.contactNo}}
+    </p>
+  </div>
+</main>

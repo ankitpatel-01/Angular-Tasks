@@ -1,0 +1,15 @@
+.form-container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.skillfield{
+    width: 30%;
+}
+
+.expfield, .edufield{
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+
