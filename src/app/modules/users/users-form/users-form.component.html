@@ -1,3 +1,4 @@
+<app-header title={{title}}></app-header>
 <div class="form-container">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -62,7 +63,7 @@
                 This Field is Required</small>
         </div>
 
-        <input class="btn btn-success mt-2 ml-5p" type="submit" value="Sumit" [disabled]="userForm.invalid" />
-        <input class="btn btn-danger mt-2 ml-5p" type="reset" value="Reset" (click)="onRest()" />
     </form>
+    <input class="btn btn-success mt-2 ml-5p" type="submit" value="Sumit" [disabled]="userForm.invalid" />
+    <input class="btn btn-danger mt-2 ml-5p" type="reset" value="Reset" (click)="onRest()" />
 </div>

@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Department } from '../models/dept.model';
 import { User } from '../models/user.model';
@@ -11,6 +11,7 @@ import { UsersService } from '../services/users.service';
 })
 export class UsersListsComponent implements OnInit {
 
+  @Output() title = "Users";
   myUsers: User[] = [];
   departments: Department[] = [];
   searchText: string = "";

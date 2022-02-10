@@ -10,6 +10,7 @@ import { UsersService } from './services/users.service';
 import { DeptFilterPipe } from './pipes/dept-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
 import { NgxMaskModule } from 'ngx-mask';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NgxMaskModule } from 'ngx-mask';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     UsersRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,

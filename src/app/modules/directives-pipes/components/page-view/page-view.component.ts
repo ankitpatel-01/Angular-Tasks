@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-view',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageViewComponent implements OnInit {
 
+
+  @Output() title = "Currency & Product Tables"
   constructor() { }
 
   ngOnInit(): void {

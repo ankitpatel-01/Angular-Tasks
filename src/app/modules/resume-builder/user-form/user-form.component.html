@@ -21,7 +21,7 @@
     <div class="form-group mt-2">
       <label for="contactNo">Phone No :</label>
       <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
-        formControlName="contactNo" maxlength="10" mask="(000) 000-0000"/>
+        formControlName="contactNo" maxlength="10"/>
       <small class="text-danger" *ngIf="!user['contactNo']?.valid && user['contactNo']?.touched">* This Field is
         Required</small>
       <small class="text-danger" *ngIf="user['contactNo']?.errors?.['minlength']">* minimum length should be 10
@@ -83,7 +83,7 @@
       Eduction :
       <div formArrayName="educations" *ngFor="let experience of educations.controls, let i = index">
         <div class="edufield d-flex col mt-2" [formGroupName]=i>
-          <label for="schoolName">Name:</label>
+          <label for="schoolName">Institution Name:</label>
           <input class="form-control" type="text" formControlName="schoolName" />
           <small class="text-danger" *ngIf="educations.controls[i]?.get
           ('schoolName')?.touched && !educations.controls[i]?.get

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Department } from '../models/dept.model';
 import { UsersService } from '../services/users.service';
@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UsersFormComponent implements OnInit {
 
+  @Output() title:string = "";
   userForm: FormGroup;
   departments: Department[] = [];
   id: number;
@@ -28,6 +29,13 @@ export class UsersFormComponent implements OnInit {
     this.getDepartmentList();
     if (!this.isAddMode) {
       this.usersService.getById(this.id).subscribe(x => this.userForm.patchValue(x));
+    }
+    if(this.isAddMode)
+    {
+      this.title = "Add New User"
+    }
+    else{
+      this.title = "Edit User"
     }
   }
 

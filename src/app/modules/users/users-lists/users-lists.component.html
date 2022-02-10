@@ -1,10 +1,12 @@
+<app-header title={{title}}></app-header>
 <div class="header d-flex justify-between">
     <input class="searchbar" type="text" [(ngModel)]="searchText" placeholder="search by name">
-    <button class="btn btn-primary ml-1" (click)="navigateToForm()">Add</button>
+    <button class="btn btn-primary ml-1" (click)="navigateToForm()">+ Add User</button>
 </div>
 <div *ngIf="myUsers" class="mt-5">
     <table class="table table-hover mt-3">
         <thead>
+            <th>#</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone No.</th>
@@ -14,7 +16,9 @@
             <th>Actions</th>
         </thead>
         <tbody>
-            <tr *ngFor="let user of myUsers | userFilter:searchText">    
+            <tr *ngFor="let user of myUsers | userFilter:searchText; let i = index"> 
+                <td *ngIf="user && searchText">No Data</td>
+                <td>{{i+1}}</td>   
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.phoneNo | mask: '(000) 000-0000'}}</td>
@@ -22,8 +26,8 @@
                 <td>{{user.department | deptFilter:departments}}</td>
                 <td>{{user.doj}}</td>
                 <td>
-                    <a routerLink="edit/{{user.id}}"><span class="fas fa-user-edit text-success mr-3"></span></a>
-                    <a (click)="deleteUser(user.id)"><span class="fas fa-trash text-danger"></span></a>
+                    <a routerLink="edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
+                    <a (click)="deleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
                 </td>
             </tr>
         </tbody>

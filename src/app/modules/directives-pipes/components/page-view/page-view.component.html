@@ -1,8 +1,11 @@
 <div>
-    <header class="d-flex mb-1">
-        <button class="btn btn-outline-primary mr-1" routerLink="curreny-table">View Currency Table</button>
-        <button class="btn btn-outline-primary" routerLink="product-table">View Product Table</button>
-    </header>
+    <div class="d-flex aline-center justify-between mb-3">
+        <span class="app-title">{{title}}</span>
+        <div>
+            <button class="btn btn-outline-primary mr-1" routerLink="curreny-table">View Currency Table</button>
+            <button class="btn btn-outline-primary" routerLink="product-table">View Product Table</button>
+        </div>
+    </div>
     <div>
         <router-outlet></router-outlet>
     </div>

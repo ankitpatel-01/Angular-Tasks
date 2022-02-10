@@ -72,33 +72,24 @@
       "username": "Ankit",
       "email": "ankitpatelak2017@gmail.com",
       "contactNo": "8347892046",
-      "postname": "Frontend Developer",
+      "postname": "Ankit",
       "skills": [
         {
           "technicalSkills": "html"
-        },
-        {
-          "technicalSkills": "vdfsd"
-        },
-        {
-          "technicalSkills": "g"
-        },
-        {
-          "technicalSkills": "gf"
         }
       ],
       "experiences": [
         {
-          "companyName": "gshg",
-          "years": "2022",
-          "post": "sss"
+          "companyName": "fgfg",
+          "years": "fdfd",
+          "post": "dfdf"
         }
       ],
       "educations": [
         {
-          "schoolName": "ssssd",
-          "major": "fdfdf",
-          "cgpa": "fdffdfd"
+          "schoolName": "dfdf",
+          "major": "dfdf",
+          "cgpa": "dfdf"
         }
       ],
       "id": 1

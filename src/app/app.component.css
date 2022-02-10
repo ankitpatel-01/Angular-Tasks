@@ -1,5 +1,5 @@
 .myheader {
-  background-color: #0d47a1;
+  background-color: #f7f8fa;
   height: 60px;
   width: 100%;
 }
@@ -10,7 +10,8 @@
 }
 
 .outlet {
+  background-color: #f7f8fa;
   flex-grow: 1;
-  padding: 20px;
+  padding: 22px 20px 0;
   overflow: auto;
 }
