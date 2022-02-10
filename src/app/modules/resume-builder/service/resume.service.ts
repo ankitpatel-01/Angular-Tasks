@@ -34,7 +34,7 @@ export class ResumeService {
     return this.http.get<User>(`${this.apiLink}/resume/1`);
   }
 
-  deleteUser(){
-    return this.http.delete(`${this.apiLink}/resume`);
+  deleteUser(id:number):Observable<number>{
+    return this.http.delete<number>(`${this.apiLink}/resume/${id}`);
   }
 }

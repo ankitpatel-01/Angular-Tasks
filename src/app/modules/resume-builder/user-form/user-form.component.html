@@ -40,7 +40,7 @@
       <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
         <div class="skillfield d-flex mt-2" [formGroupName]="i">
           <input class="form-control" type="text" formControlName="technicalSkills" />
-          <small class="text-danger" *ngIf="skills.controls[i]?.touched">*</small>
+          <!-- <small class="text-danger" *ngIf="skills.controls[i]?.touched && skills.controls[i]?.valid">*</small> -->
           <button type="button" class="btn btn-danger ml-1" (click)="deleteSkills(i)"><span
               class="fas fa-trash"></span></button>
         </div>

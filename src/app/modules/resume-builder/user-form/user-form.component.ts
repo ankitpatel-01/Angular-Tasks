@@ -111,8 +111,10 @@ export class UserFormComponent implements OnInit {
 
   //On Submit
   onSubmit(){
-    this.service.saveUser(this.userForm.value).subscribe();
-    this.route.navigate(['resumebuilder/view'])
+    this.service.deleteUser(1).subscribe(()=>{
+      this.service.saveUser(this.userForm.value).subscribe();
+      this.route.navigate(['resumebuilder/view'])
+    })
   }
 
 }
