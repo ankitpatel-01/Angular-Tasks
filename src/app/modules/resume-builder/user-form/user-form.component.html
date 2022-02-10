@@ -54,17 +54,22 @@
         <div class="expfield d-flex col mt-2" [formGroupName]=i>
           <label for="companyName">Company Name:</label>
           <input class="form-control" type="text" formControlName="companyName" />
-          <!-- <small class="text-danger" *ngIf="experiences.controls[i]?.controls.
-          companyName.touched && !experiences.controls[i]?.valid">*</small> -->
+          <small class="text-danger" *ngIf="experiences.controls[i]?.get
+          ('companyName')?.touched && !experiences.controls[i]?.get
+          ('companyName')?.valid">*</small>
           <label for="years">Years:</label>
           <input class="form-control" type="text" formControlName="years" />
           <small class="text-danger"
-            *ngIf="experiences.controls[i]?.touched && !experiences.controls[i]?.valid">*</small>
+            *ngIf="experiences.controls[i]?.get
+            ('years')?.touched && !experiences.controls[i]?.get
+            ('years')?.valid">*</small>
           <label for="post">Post:</label>
           <div class="d-flex">
             <input class="form-control" type="text" formControlName="post" />
             <small class="text-danger"
-              *ngIf="experiences.controls[i]?.touched && !experiences.controls[i]?.valid">*</small>
+              *ngIf="experiences.controls[i]?.get
+              ('post')?.touched && !experiences.controls[i]?.get
+              ('post')?.valid">*</small>
             <button type="button" class="btn btn-danger ml-1" (click)="deleteExperience(i)"><span
                 class="fas fa-trash"></span></button>
           </div>
@@ -80,11 +85,20 @@
         <div class="edufield d-flex col mt-2" [formGroupName]=i>
           <label for="schoolName">Name:</label>
           <input class="form-control" type="text" formControlName="schoolName" />
+          <small class="text-danger" *ngIf="educations.controls[i]?.get
+          ('schoolName')?.touched && !educations.controls[i]?.get
+          ('schoolName')?.valid">*</small>
           <label for="major">Major :</label>
           <input class="form-control" type="text" formControlName="major" />
+          <small class="text-danger" *ngIf="educations.controls[i]?.get
+          ('major')?.touched && !educations.controls[i]?.get
+          ('major')?.valid">*</small>
           <label for="cgpa">CGPA :</label>
           <div class="d-flex">
             <input class="form-control" type="text" formControlName="cgpa" />
+            <small class="text-danger" *ngIf="educations.controls[i]?.get
+            ('cgpa')?.touched && !educations.controls[i]?.get
+            ('cgpa')?.valid">*</small>
             <button type="button" class="btn btn-danger ml-1" (click)="deleteEducation(i)"><span
                 class="fas fa-trash"></span></button>
           </div>
