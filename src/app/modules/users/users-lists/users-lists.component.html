@@ -3,7 +3,7 @@
     <button class="btn btn-primary ml-1" (click)="navigateToForm()">Add</button>
 </div>
 <div *ngIf="myUsers" class="mt-5">
-    <table class="table table-hover">
+    <table class="table table-hover mt-3">
         <thead>
             <th>Name</th>
             <th>Email</th>
@@ -22,8 +22,8 @@
                 <td>{{user.department | deptFilter:departments}}</td>
                 <td>{{user.doj}}</td>
                 <td>
-                    <a routerLink="edit/{{user.id}}"><span class="fas fa-user-edit mr-1"></span></a>
-                    <a (click)="deleteUser(user.id)"><span class="fas fa-trash"></span></a>
+                    <a routerLink="edit/{{user.id}}"><span class="fas fa-user-edit text-success mr-3"></span></a>
+                    <a (click)="deleteUser(user.id)"><span class="fas fa-trash text-danger"></span></a>
                 </td>
             </tr>
         </tbody>

@@ -40,7 +40,7 @@
       <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
         <div class="skillfield d-flex mt-2" [formGroupName]="i">
           <input class="form-control" type="text" formControlName="technicalSkills" />
-          <!-- <small class="text-danger" *ngIf="skills.controls[i]?.touched && skills.controls[i]?.valid">*</small> -->
+          <small class="text-danger" *ngIf="skills.controls[i]?.touched && !skills.controls[i]?.valid">*</small>
           <button type="button" class="btn btn-danger ml-1" (click)="deleteSkills(i)"><span
               class="fas fa-trash"></span></button>
         </div>
@@ -54,11 +54,17 @@
         <div class="expfield d-flex col mt-2" [formGroupName]=i>
           <label for="companyName">Company Name:</label>
           <input class="form-control" type="text" formControlName="companyName" />
+          <!-- <small class="text-danger" *ngIf="experiences.controls[i]?.controls.
+          companyName.touched && !experiences.controls[i]?.valid">*</small> -->
           <label for="years">Years:</label>
           <input class="form-control" type="text" formControlName="years" />
+          <small class="text-danger"
+            *ngIf="experiences.controls[i]?.touched && !experiences.controls[i]?.valid">*</small>
           <label for="post">Post:</label>
           <div class="d-flex">
             <input class="form-control" type="text" formControlName="post" />
+            <small class="text-danger"
+              *ngIf="experiences.controls[i]?.touched && !experiences.controls[i]?.valid">*</small>
             <button type="button" class="btn btn-danger ml-1" (click)="deleteExperience(i)"><span
                 class="fas fa-trash"></span></button>
           </div>

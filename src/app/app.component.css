@@ -1,12 +1,10 @@
 .myheader {
   background-color: #0d47a1;
   height: 60px;
-  position: fixed;
   width: 100%;
 }
 
 .content-wrapper {
-  padding-top: 60px;
   width: 100%;
   height: 100%;
 }

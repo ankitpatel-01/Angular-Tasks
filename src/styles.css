@@ -14,6 +14,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 .wrapper {
   height: 100%;
 }
@@ -25,6 +30,10 @@ body {
 
 .text-danger{
   color: red;
+}
+
+.text-success{
+  color: #198754;
 }
 
  /* flex  */

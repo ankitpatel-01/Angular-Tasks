@@ -4,16 +4,11 @@
     margin: 0 auto;
 }
 
-.header-titel{
-    height: 100%;
-}
-
-figure{
-    margin: 0;
-}
-
-.logo img{
-    height: 40px;
+.header-container .fas{
+    font-size: 2rem;
+    color: white;
+    margin: 0 1rem;
+    cursor: pointer;
 }
 
 #task{
