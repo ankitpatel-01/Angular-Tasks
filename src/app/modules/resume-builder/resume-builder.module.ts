@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ResumeViewComponent } from './resume-view/resume-view.component';
 import { ResumeService } from './service/resume.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ResumeBuilderRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers:[
     ResumeService

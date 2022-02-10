@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
 import { DeptFilterPipe } from './pipes/dept-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
+import { NgxMaskModule } from 'ngx-mask';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { UserFilterPipe } from './pipes/user-filter.pipe';
     UsersRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers:[
     UsersService

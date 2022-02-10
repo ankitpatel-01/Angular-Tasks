@@ -17,7 +17,7 @@
             <tr *ngFor="let user of myUsers | userFilter:searchText">    
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
-                <td>{{user.phoneNo}}</td>
+                <td>{{user.phoneNo | mask: '(000) 000-0000'}}</td>
                 <td>{{user.gender}}</td>
                 <td>{{user.department | deptFilter:departments}}</td>
                 <td>{{user.doj}}</td>

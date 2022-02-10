@@ -21,7 +21,7 @@
     <div class="form-group mt-2">
       <label for="contactNo">Phone No :</label>
       <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
-        formControlName="contactNo" maxlength="10" />
+        formControlName="contactNo" maxlength="10" mask="(000) 000-0000"/>
       <small class="text-danger" *ngIf="!user['contactNo']?.valid && user['contactNo']?.touched">* This Field is
         Required</small>
       <small class="text-danger" *ngIf="user['contactNo']?.errors?.['minlength']">* minimum length should be 10
