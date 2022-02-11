@@ -46,7 +46,7 @@ export class UsersFormComponent implements OnInit {
 
 
   //get department list from db
-  private getDepartmentList():void {
+  private getDepartmentList(): void {
     this.usersService.getDepartments().subscribe(
       (data: Department[]) => {
         this.departments = data;
@@ -56,7 +56,7 @@ export class UsersFormComponent implements OnInit {
 
 
   //on Form submit
-  public onSubmit():void {
+  public onSubmit(): void {
     if (this.isAddMode) {
       this.createUser();
     }
@@ -67,7 +67,7 @@ export class UsersFormComponent implements OnInit {
 
 
   //Post data to db
-  public createUser():void {
+  public createUser(): void {
     this.usersService.createUser(this.userForm.value).subscribe(() => {
       alert("New User Creadted");
       this.navigateToList();
@@ -76,7 +76,7 @@ export class UsersFormComponent implements OnInit {
   }
 
   //Put data to db
-  public updateUser():void {
+  public updateUser(): void {
     this.usersService.updateUser(this.id, this.userForm.value).subscribe(() => {
       alert("User Updated");
       this.navigateToList();
@@ -84,7 +84,7 @@ export class UsersFormComponent implements OnInit {
   }
 
   //route to users list
-  public navigateToList():void {
+  public navigateToList(): void {
     this.router.navigate(['/users'])
   }
 
