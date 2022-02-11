@@ -47,16 +47,18 @@ export class UsersFormComponent implements OnInit {
 
   //get department list from db
   private getDepartmentList(): void {
-    this.usersService.getDepartments().subscribe(
-      (data: Department[]) => {
+    this.usersService.getDepartments().subscribe({
+      next:(data: Department[]) => {
         this.departments = data;
-      }
-    );
+      },
+      error:(e) => console.log(e)
+    });
   }
 
 
   //on Form submit
   public onSubmit(): void {
+    console.log('fgdfgd')
     if (this.isAddMode) {
       this.createUser();
     }
@@ -68,18 +70,23 @@ export class UsersFormComponent implements OnInit {
 
   //Post data to db
   public createUser(): void {
-    this.usersService.createUser(this.userForm.value).subscribe(() => {
-      alert("New User Creadted");
-      this.navigateToList();
-    }
-    );
+    this.usersService.createUser(this.userForm.value).subscribe({
+      next:() => {
+        alert("New User Creadted");
+        this.navigateToList();
+      },
+      error:(e) => console.log(e)
+    });
   }
 
   //Put data to db
   public updateUser(): void {
-    this.usersService.updateUser(this.id, this.userForm.value).subscribe(() => {
-      alert("User Updated");
-      this.navigateToList();
+    this.usersService.updateUser(this.id, this.userForm.value).subscribe({
+      next: () => {
+        alert("User Updated");
+        this.navigateToList();
+      },
+      error: (e) => console.log(e)
     })
   }
 

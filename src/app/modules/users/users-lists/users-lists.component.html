@@ -27,7 +27,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of myUsers | userFilter:searchText; let i = index">
-                <td *ngIf="user && searchText">No Data</td>
+                <!-- <td *ngIf="!user && searchText">No Data</td> -->
                 <td>{{i+1}}</td>
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
@@ -36,7 +36,7 @@
                 <td>{{user.department | deptFilter:departments}}</td>
                 <td>{{user.doj}}</td>
                 <td>
-                    <a routerLink="edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
+                    <a routerLink="/users/edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
                     <a (click)="deleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
                 </td>
             </tr>

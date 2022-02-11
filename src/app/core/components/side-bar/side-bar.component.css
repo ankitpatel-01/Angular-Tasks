@@ -32,6 +32,7 @@
   position: relative;
   height: 100%;
   max-width: 280px;
+  border-right: 1px solid #bfbfc1;
 }
 
 .sidebar-wrapper .sidebar{

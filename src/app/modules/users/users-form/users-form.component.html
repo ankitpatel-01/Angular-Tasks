@@ -68,8 +68,8 @@
             <small class="text-danger" *ngIf="!userForm.get('doj')?.valid && userForm.get('doj')?.touched">*
                 This Field is Required</small>
         </div>
+        <button class="btn btn-success mt-2 mr-2" type="submit" [disabled]="userForm.invalid" >Submit</button>
+        <input class="btn btn-danger mt-2" type="reset" value="Reset" (click)="onRest()" />
     </form>
     <!-- Submit and Reset btn  -->
-    <input class="btn btn-success mt-2 mr-2" type="submit" value="Sumit" [disabled]="userForm.invalid" />
-    <input class="btn btn-danger mt-2" type="reset" value="Reset" (click)="onRest()" />
 </div>

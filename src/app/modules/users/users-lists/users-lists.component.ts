@@ -26,38 +26,32 @@ export class UsersListsComponent implements OnInit {
 
   //get department list from db
   private getDepartmentList(): void {
-    this.usersServices.getDepartments().subscribe(
-      (data: Department[]) => {
+    this.usersServices.getDepartments().subscribe({
+      next: (data: Department[]) => {
         this.departments = data;
-      }
-    );
+      },
+      error: (e) => console.error(e),
+    });
   }
 
   //get user list from db
   private getUserList(): void {
-    this.usersServices.getUsers().subscribe(data => this.myUsers = data)
+    this.usersServices.getUsers().subscribe({
+      next:data => this.myUsers = data,
+      error:e=>console.error(e),
+    })
   }
 
   //Delete user from db and Update user list
   public deleteUser(id: number): void {
-    this.usersServices.deleteUser(id).subscribe(() => { this.getUserList() })
+    this.usersServices.deleteUser(id).subscribe({
+      next:() => this.getUserList(),
+      error:(e) => console.error(e),
+    })
   }
 
   //ROUTE to form
-  navigateToForm() {
+  public navigateToForm():void {
     this.router.navigate(['/users/add'])
   }
-
-  //filtering result
-  // searchFor() {
-  //   if (this.searchText != "") {
-  //     this.myUsers = this.myUsers.filter((user: User) => {
-  //       return user.firstname.toLowerCase().match(this.searchText.toLowerCase())
-  //     })
-  //   }
-  //   else {
-  //     this.ngOnInit()
-  //   }
-  // }
-
 }

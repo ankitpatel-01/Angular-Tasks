@@ -47,16 +47,6 @@
       "id": 3
     },
     {
-      "firstname": "Chirag",
-      "lastname": "Patel",
-      "email": "cp221740@gmail.com",
-      "phoneNo": "2343454564",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": 1,
-      "id": 4
-    },
-    {
       "firstname": "manish",
       "lastname": "rajpurohit",
       "email": "manish.raj@email.com",
@@ -65,6 +55,16 @@
       "doj": "2022-01-03",
       "department": 6,
       "id": 5
+    },
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "phoneNo": "8945232345",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": "3",
+      "id": 6
     }
   ],
   "resume": [
