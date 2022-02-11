@@ -12,6 +12,6 @@
 .outlet {
   background-color: #f7f8fa;
   flex-grow: 1;
-  padding: 22px 20px 0;
+  padding: 22px 40px 0;
   overflow: auto;
 }

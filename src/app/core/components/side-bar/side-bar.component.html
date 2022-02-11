@@ -1,10 +1,10 @@
-<aside class="mySidebar">
-  <header class="logo d-flex aline-center justify-center">
+<aside class="sidebar-wrapper d-flex col">
+  <header class="header d-flex aline-center justify-center">
     <figure>
       <img class="img" src="../assets/img/Angularlogo.png" alt="" srcset="" />
     </figure>
   </header>
-  <nav class="nav">
+  <nav class="sidebar">
     <ul>
       <li><a routerLink="data-binding" routerLinkActive="active"><span class="icon-database mr-2"></span>Data Binding</a></li>
       <li><a routerLink="directive-pipes" routerLinkActive="active"><span class="icon-table mr-2"></span>Currency & Product Table</a></li>
@@ -12,10 +12,8 @@
       <li><a routerLink="users" routerLinkActive="active"><span class="icon-user-plus mr-2"></span> Users</a></li>
       <li><a routerLink="resumebuilder" routerLinkActive="active"><span class="icon-profile mr-2"></span>Resume Builder</a></li>
     </ul>
-    <div class="logOut d-flex aline-center justify-center">
-     <div class="d-flex aline-center justify-center">
-      <span class="fas fa-sign-out"></span><span class="ml-2">Log out</span>
-     </div>
-    </div>
   </nav>
+  <footer class="footer d-flex aline-center justify-center">
+    <span class="fas fa-sign-out"></span><span class="ml-2">Log out</span>
+  </footer>
 </aside>

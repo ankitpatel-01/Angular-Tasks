@@ -1,31 +1,30 @@
-
-.header-container{
+.header-container {
   width: 100%;
 }
 
-.searchbox{
+.searchbox {
   width: 400px;
   height: 50px;
   background-color: white;
   display: flex;
   align-items: center;
   border-radius: 30px;
-  padding:1rem;
+  padding: 1rem;
+
+  span {
+    font-size: 1.5rem;
+    color: gray;
+  }
+  input {
+    flex: 1;
+    height: 40px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+  }
 }
 
-.searchbox > span{
-  font-size: 1.5rem;
-  color: gray;
+input:focus ~ span{
+  color: #2f55e5;
 }
-
-.searchbox > input{
-  flex: 1;
-  height: 40px;
-  font-size: 22px;
-  outline: none;
-  border: none;
-  padding: .5rem;
-}
-
-
-

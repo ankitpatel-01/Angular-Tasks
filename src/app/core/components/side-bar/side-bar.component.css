@@ -1,53 +1,57 @@
-.mySidebar {
-  position: relative;
-  width: 280px;
-  height: 100%;
-  background-color:#ffffff;
-  border-right:1px solid #bfbfc1;
-}
-.mySidebar .nav {
-  margin-top: 20px;
-}
-.mySidebar .nav ul {
+
+.sidebar-wrapper .sidebar ul {
   list-style: none;
   padding: 0 10px;
 }
-.mySidebar .nav li {
+.sidebar-wrapper .sidebar li {
   padding: 6px;
 }
-.mySidebar .nav a {
+.sidebar-wrapper .sidebar a {
   display: block;
   width: 100%;
-  padding: 6px 18px;
-  font-size: 22px;
+  padding: 12px 18px;
+  font-size: 18px;
   text-decoration: none;
   text-transform: capitalize;
   color: black;
   cursor: pointer;
-}
+} 
 
-.mySidebar .nav a:hover {
+.sidebar-wrapper .sidebar a:hover {
   background-color: #f7f4ff;
   border-radius: 5px;
 }
 
-.mySidebar .nav a.active {
+.sidebar-wrapper .sidebar a.active {
   background-color: #eaedfc;
   color: #2f55e5;
   border-radius: 5px;
 }
-.logo{
+
+.sidebar-wrapper{
+  position: relative;
+  height: 100%;
+  max-width: 280px;
+}
+
+.sidebar-wrapper .sidebar{
+  flex-grow: 1;
+  margin-top: 20px;
+  overflow: auto;
+}
+.header{
+  flex-shrink: 0;
   width: 100%;
   background-color: #ffffff;
   height: 60px;
   border-bottom: 1px solid #bfbfc1;
 }
 
-.logo img{
+.header img{
   height: 40px;
 }
 
-.logOut{
+.footer{
   position: absolute;
   width: 100%;
   height: 60px;
@@ -57,7 +61,7 @@
   border-top: 1px solid #bfbfc1;
 }
 
-.logOut .fas{
+.footer .fas{
   font-weight: 100;
   font-size: 2rem;
   cursor: pointer;
