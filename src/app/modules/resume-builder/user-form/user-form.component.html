@@ -35,8 +35,8 @@
         Required</small>
     </div>
     <!-- Technical Skills -->
-    <div>
-      Technical Skills :
+    <fieldset class="fieldset-container">
+      <legend> Technical Skills :</legend>
       <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
         <div class="skillfield d-flex mt-2" [formGroupName]="i">
           <input class="form-control" type="text" formControlName="technicalSkills" />
@@ -46,10 +46,10 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary mt-2" (click)="addSkills()">+</button>
-    </div>
+    </fieldset>
     <!-- Experiences -->
-    <div>
-      Experirnces :
+    <fieldset class="fieldset-container">
+      <legend>Experirnces :</legend>
       <div formArrayName="experiences" *ngFor="let experience of experiences.controls, let i = index">
         <div class="expfield d-flex col mt-2" [formGroupName]=i>
           <label for="companyName">Company Name:</label>
@@ -77,10 +77,10 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary mt-2" (click)="addExperience()">+</button>
-    </div>
+    </fieldset>
     <!-- Eductions -->
-    <div>
-      Eduction :
+    <fieldset class="fieldset-container">
+      <legend>Eduction :</legend>
       <div formArrayName="educations" *ngFor="let experience of educations.controls, let i = index">
         <div class="edufield d-flex col mt-2" [formGroupName]=i>
           <label for="schoolName">Institution Name:</label>
@@ -105,7 +105,7 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary mt-2" (click)="addEducation()">+</button>
-    </div>
+    </fieldset>
     <!-- submit -->
     <button type="submit" class="btn btn-primary mt-3" [disabled]="userForm.invalid">Submit</button>
   </form>

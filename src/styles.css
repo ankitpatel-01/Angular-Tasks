@@ -19,6 +19,14 @@ a{
   color: black;
 }
 
+.fieldset-container{
+  padding: .8rem 1.2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border-radius: 1rem;
+  border-color: #dee2e6;
+}
+
 .app-title{
   font-size: 32px;
   font-weight: 500;
@@ -125,7 +133,8 @@ a{
 
 .child {
   margin: 10px 30px;
-  border: 2px solid black;
+  border-color: #dee2e6;
+  border: 2px solid;
   border-radius: 10px;
   padding: 10px 30px;
 }
@@ -239,7 +248,7 @@ th, td {
 
 th{
   border-bottom: 1px solid;
-  color: #bdbec1;
+  color: #a1a1a1;
 }
 
 td{

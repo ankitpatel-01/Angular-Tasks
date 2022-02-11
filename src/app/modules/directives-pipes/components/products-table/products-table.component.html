@@ -1,7 +1,7 @@
 <h3>My Products Table</h3>
 <p>{{date | date:'dd/MM/YYYY hh:mm:ss'}}</p>
 <div *ngIf="myProducts">
-  <table class="table table-hover">
+  <table class="table table-hover mt-3">
     <thead>
       <th>Sr. No</th>
       <th>Product Id</th>
@@ -13,7 +13,7 @@
     <tbody>
       <tr *ngFor="let productItem of myProducts; let i = index; trackBy:trackByProductId"
         (click)="onSelect(productItem)" TrackBy="trackByProductId">
-        <td>{{ i }}</td>
+        <td>{{ i+1 }}</td>
         <td>{{ productItem.id }}</td>
         <td>{{ productItem.title | mytitlecase }}</td>
         <td>{{ productItem.amount | currency: "INR" }}</td>

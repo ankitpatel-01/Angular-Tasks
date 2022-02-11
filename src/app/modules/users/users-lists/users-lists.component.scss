@@ -1,11 +1,31 @@
 
-.header {
-  input {
-    padding: 6px;
-    font-size: 18px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid;
-    width: 400px;
-  }
+.header-container{
+  width: 100%;
 }
+
+.searchbox{
+  width: 400px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  padding:1rem;
+}
+
+.searchbox > span{
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.searchbox > input{
+  flex: 1;
+  height: 40px;
+  font-size: 22px;
+  outline: none;
+  border: none;
+  padding: .5rem;
+}
+
+
+

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageViewComponent implements OnInit {
 
+  public title:string = "Databinding & Component Comunication"
   constructor() { }
 
   ngOnInit(): void {
