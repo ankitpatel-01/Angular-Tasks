@@ -1,7 +1,7 @@
 <h1>Reactive Form</h1>
 <div class="form-container">
   <form [formGroup]="myProfileForm" (ngSubmit)="onFormSubmit()">
-    <div class="form-group mt-1">
+    <div class="mt-1">
       <label for="username">Name :</label>
       <input class="form-control" type="text" id="username" placeholder="Enter your Name" formControlName="username" />
       <small class="text-danger" *ngIf="
@@ -11,7 +11,7 @@
       <small class="text-danger" *ngIf="profileForm['username']?.errors?.['minlength']">* minimum length should
         be 3 character</small>
     </div>
-    <div class="form-group mt-2">
+    <div class="mt-2">
       <label for="email">Email :</label>
       <input class="form-control" type="email" id="email" placeholder="Enter your email" formControlName="email" />
       <small class="text-danger" *ngIf="
@@ -19,7 +19,7 @@
           profileForm['email']?.touched
         ">* Please Enter a valid Email</small>
     </div>
-    <div class="form-group mt-2">
+    <div class="mt-2">
       <label for="contactNo">Phone No :</label>
       <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
         formControlName="contactNo" maxlength="10" />
@@ -30,7 +30,7 @@
       <small class="text-danger" *ngIf="profileForm['contactNo']?.errors?.['minlength']">* minimum length should
         be 10 character</small>
     </div>
-    <div class="form-group mt-2">
+    <div class="mt-2">
       <label for="gender">Gender :</label>
       <div>
         <input class="form-check-input" type="radio" id="male" value="male" name="gender" formControlName="gender" />
@@ -44,7 +44,7 @@
           profileForm['gender']?.touched
         ">* This Field is Required</small>
     </div>
-    <div>
+    <div class="mt-2">
       Technical Skills :
       <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
         <div class="d-flex mt-2" [formGroupName]=i>
@@ -54,7 +54,7 @@
       </div>
       <button class="btn btn-primary mt-2" (click)="addSkills()">+</button>
     </div>
-    <div class=" form-group mt-2">
+    <div class="  mt-2">
       <label for="dept">Department :</label>
       <select class="form-control" id="dept" formControlName="department">
         <option *ngFor="let dept of departments" [value]="dept.name">
@@ -66,7 +66,7 @@
           profileForm['department']?.touched
         ">* This Field is Required</small>
     </div>
-    <div class="form-group mt-2">
+    <div class="mt-2">
       <input type="checkbox" id="terms" formControlName="termsAccept" />
       <label class="ml-1" for="terms">I accept the Terms and conditions</label>
       <small class="text-danger" *ngIf="

@@ -10,18 +10,18 @@ import { ResumeService } from '../service/resume.service';
 })
 export class UserFormComponent implements OnInit {
 
-  userForm: FormGroup;
+  public userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private service:ResumeService, private route:Router) {
+  constructor(private fb: FormBuilder, private service: ResumeService, private route: Router) {
     this.userForm = this.buildForm()
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
   }
 
 
   // build the user form group 
-  buildForm(): FormGroup {
+  private buildForm(): FormGroup {
     return this.fb.group({
       username: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -33,7 +33,7 @@ export class UserFormComponent implements OnInit {
       experiences: this.fb.array([
         this.experienceField()
       ]),
-      educations:this.fb.array([
+      educations: this.fb.array([
         this.educationField()
       ])
     })
@@ -41,76 +41,76 @@ export class UserFormComponent implements OnInit {
 
   get user() { return this.userForm.controls; }
 
-  get skills():FormArray {
+  get skills(): FormArray {
     return this.userForm.controls["skills"] as FormArray;
   }
 
-  get experiences():FormArray {
+  get experiences(): FormArray {
     return this.userForm.controls["experiences"] as FormArray;
   }
 
-  get educations():FormArray {
+  get educations(): FormArray {
     return this.userForm.controls["educations"] as FormArray;
   }
 
   //skills form group
-  skillField(): FormGroup {
+  public skillField(): FormGroup {
     return this.fb.group({
       technicalSkills: ['', Validators.required]
     })
   }
 
-   //experience form group
-  experienceField(): FormGroup {
+  //experience form group
+  public experienceField(): FormGroup {
     return this.fb.group({
       companyName: ['', Validators.required],
       years: [null, Validators.required],
-      post:['',Validators.required]
+      post: ['', Validators.required]
     })
   }
 
-   //education form group
-  educationField(): FormGroup {
+  //education form group
+  public educationField(): FormGroup {
     return this.fb.group({
       schoolName: ['', Validators.required],
       major: ['', Validators.required],
-      cgpa:[null,Validators.required]
+      cgpa: [null, Validators.required]
     })
   }
 
   //add skill and delete skill methods
-  addSkills() {
+  public addSkills(): void {
     this.skills.push(this.skillField())
   }
-  deleteSkills(index: number) {
+  public deleteSkills(index: number): void {
     if (this.skills.length != 1) {
       this.skills.removeAt(index)
     }
   }
 
   //add experiences and delete experiences methods
-  addExperience(){
+  public addExperience(): void {
     this.experiences.push(this.experienceField())
   }
-  deleteExperience(index: number) {
+  public deleteExperience(index: number): void {
     if (this.experiences.length != 1) {
       this.experiences.removeAt(index)
     }
   }
 
   //add educations and delete educations methods
-  addEducation(){
+  public addEducation(): void {
     this.educations.push(this.educationField())
   }
-  deleteEducation(index: number) {
+  public deleteEducation(index: number): void {
     if (this.educations.length != 1) {
       this.educations.removeAt(index)
     }
   }
 
   //On Submit
-  onSubmit(){
-    this.service.deleteUser(1).subscribe(()=>{
+  public onSubmit(): void {
+    this.service.deleteUser(1).subscribe(() => {
       this.service.saveUser(this.userForm.value).subscribe();
       this.route.navigate(['resumebuilder/view'])
     })

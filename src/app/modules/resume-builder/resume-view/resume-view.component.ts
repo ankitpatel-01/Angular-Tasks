@@ -10,14 +10,14 @@ import { ResumeService } from '../service/resume.service';
 })
 export class ResumeViewComponent implements OnInit {
 
+  public user: User = {} as User
 
-  user:User = {} as User
-  constructor(private service:ResumeService) { 
-   
+  constructor(private service: ResumeService) {
+
   }
 
   ngOnInit(): void {
-    this.service.getUserData().subscribe((data)=>{
+    this.service.getUserData().subscribe((data) => {
       this.user = data
     })
   }

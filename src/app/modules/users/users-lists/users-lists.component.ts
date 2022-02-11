@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Department } from '../models/dept.model';
 import { User } from '../models/user.model';
@@ -11,10 +11,9 @@ import { UsersService } from '../services/users.service';
 })
 export class UsersListsComponent implements OnInit {
 
-  @Output() title = "Users";
-  myUsers: User[] = [];
-  departments: Department[] = [];
-  searchText: string = "";
+  public myUsers: User[] = [];
+  public departments: Department[] = [];
+  public searchText: string = "";
 
 
   constructor(private router: Router, private usersServices: UsersService) { }
@@ -26,7 +25,7 @@ export class UsersListsComponent implements OnInit {
   }
 
   //get department list from db
-  getDepartmentList() {
+  private getDepartmentList(): void {
     this.usersServices.getDepartments().subscribe(
       (data: Department[]) => {
         this.departments = data;
@@ -35,29 +34,30 @@ export class UsersListsComponent implements OnInit {
   }
 
   //get user list from db
-  getUserList() {
+  private getUserList(): void {
     this.usersServices.getUsers().subscribe(data => this.myUsers = data)
   }
 
   //Delete user from db and Update user list
-  deleteUser(id: number) {
+  public deleteUser(id: number): void {
     this.usersServices.deleteUser(id).subscribe(() => { this.getUserList() })
-  }
-
-  //filtering result
-  searchFor() {
-    if (this.searchText != "") {
-      this.myUsers = this.myUsers.filter((user: User) => {
-        return user.firstname.toLowerCase().match(this.searchText.toLowerCase())
-      })
-    }
-    else {
-      this.ngOnInit()
-    }
   }
 
   //ROUTE to form
   navigateToForm() {
     this.router.navigate(['/users/add'])
   }
+
+  //filtering result
+  // searchFor() {
+  //   if (this.searchText != "") {
+  //     this.myUsers = this.myUsers.filter((user: User) => {
+  //       return user.firstname.toLowerCase().match(this.searchText.toLowerCase())
+  //     })
+  //   }
+  //   else {
+  //     this.ngOnInit()
+  //   }
+  // }
+
 }

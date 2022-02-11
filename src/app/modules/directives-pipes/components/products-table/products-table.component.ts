@@ -9,9 +9,9 @@ import { Product } from '../../model/product.model';
 })
 export class ProductsTableComponent implements OnInit {
 
-  selectedProduct?: Product;
+  public selectedProduct?: Product;
 
-  myProducts: Product[] = [
+  public myProducts: Product[] = [
     {
       id: 1001,
       title: "acer aspire 7",
@@ -63,7 +63,7 @@ export class ProductsTableComponent implements OnInit {
     },
   ]
 
-  date: Date = new Date();
+  public date: Date = new Date();
 
   constructor() {
     setInterval(() => {
@@ -74,11 +74,11 @@ export class ProductsTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  trackByProductId(index: number, productItem: Product): number {
+  public trackByProductId(index: number, productItem: Product): number {
     return productItem.id;
   }
 
-  onSelect(productItem: Product) {
+  public onSelect(productItem: Product) {
     this.selectedProduct = productItem;
   }
 }

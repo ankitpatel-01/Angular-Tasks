@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Department } from '../models/dept.model';
 import { UsersService } from '../services/users.service';
@@ -11,11 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UsersFormComponent implements OnInit {
 
-  @Output() title:string = "";
-  userForm: FormGroup;
-  departments: Department[] = [];
-  id: number;
-  isAddMode: boolean;
+  public userForm: FormGroup;
+  public departments: Department[] = [];
+  private id: number;
+  private isAddMode: boolean;
 
   constructor(private fb: FormBuilder, private usersService: UsersService, private router: Router, private route: ActivatedRoute,) {
     this.userForm = this.buildUsersForm();
@@ -30,17 +29,10 @@ export class UsersFormComponent implements OnInit {
     if (!this.isAddMode) {
       this.usersService.getById(this.id).subscribe(x => this.userForm.patchValue(x));
     }
-    if(this.isAddMode)
-    {
-      this.title = "Add New User"
-    }
-    else{
-      this.title = "Edit User"
-    }
   }
 
   //Reactive Form
-  buildUsersForm(): FormGroup {
+  private buildUsersForm(): FormGroup {
     return this.fb.group({
       firstname: [null, [Validators.required]],
       lastname: [null, [Validators.required]],
@@ -54,7 +46,7 @@ export class UsersFormComponent implements OnInit {
 
 
   //get department list from db
-  getDepartmentList() {
+  private getDepartmentList():void {
     this.usersService.getDepartments().subscribe(
       (data: Department[]) => {
         this.departments = data;
@@ -64,7 +56,7 @@ export class UsersFormComponent implements OnInit {
 
 
   //on Form submit
-  onSubmit() {
+  public onSubmit():void {
     if (this.isAddMode) {
       this.createUser();
     }
@@ -75,7 +67,7 @@ export class UsersFormComponent implements OnInit {
 
 
   //Post data to db
-  createUser() {
+  public createUser():void {
     this.usersService.createUser(this.userForm.value).subscribe(() => {
       alert("New User Creadted");
       this.navigateToList();
@@ -84,7 +76,7 @@ export class UsersFormComponent implements OnInit {
   }
 
   //Put data to db
-  updateUser() {
+  public updateUser():void {
     this.usersService.updateUser(this.id, this.userForm.value).subscribe(() => {
       alert("User Updated");
       this.navigateToList();
@@ -92,7 +84,7 @@ export class UsersFormComponent implements OnInit {
   }
 
   //route to users list
-  navigateToList() {
+  public navigateToList():void {
     this.router.navigate(['/users'])
   }
 

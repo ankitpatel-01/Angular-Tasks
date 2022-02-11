@@ -10,7 +10,9 @@ import { Department } from './department.model';
 })
 export class ProfileFormComponent implements OnInit {
 
-  departments: Department[] = [
+
+  //list of department array
+  public departments: Department[] = [
     {
       "name": "UX"
     },
@@ -28,15 +30,16 @@ export class ProfileFormComponent implements OnInit {
     }
   ];
 
-  myskills: Skill = {} as Skill;
+  public myskills: Skill = {} as Skill;
 
-  myProfileForm: FormGroup;
+  public myProfileForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.myProfileForm = this.buildForm();
   }
 
-  buildForm(): FormGroup {
+  //form builder menthod
+  public buildForm(): FormGroup {
     return this.fb.group({
       "username": new FormControl('', [Validators.required, Validators.minLength(3)]),
       "email": new FormControl('', [Validators.required, Validators.email]),
@@ -56,8 +59,8 @@ export class ProfileFormComponent implements OnInit {
 
   }
 
-
-  dynamicField(): FormGroup {
+  //skill field
+  private dynamicField(): FormGroup {
     return this.fb.group({
       technicalSkills: ['', Validators.required]
     })
@@ -69,22 +72,23 @@ export class ProfileFormComponent implements OnInit {
     return this.myProfileForm.controls["skills"] as FormArray;
   }
 
-  addSkills() {
+  //add skill and delete methods
+  public addSkills(): void {
     this.skills.push(this.dynamicField())
   }
 
-  deleteSkills(index: number) {
+  public deleteSkills(index: number): void {
     if (this.skills.length != 1) {
       this.skills.removeAt(index)
     }
   }
 
-
-  onFormSubmit(): void {
+  //on form submit
+  public onFormSubmit(): void {
     console.log(this.myProfileForm.value)
     this.myskills = this.skills.value;
     console.log(this.myskills);
-    
+
   }
 
 }
