@@ -11,12 +11,16 @@ import { UsersService } from '../services/users.service';
 })
 export class UsersListsComponent implements OnInit {
 
-  public myUsers: User[] = [];
-  public departments: Department[] = [];
-  public searchText: string = "";
+  public myUsers: User[];
+  public departments: Department[];
+  public searchText: string;
 
 
-  constructor(private router: Router, private usersServices: UsersService) { }
+  constructor(private router: Router, private usersServices: UsersService) {
+    this.myUsers = [];
+    this.departments = [];
+    this.searchText = "";
+  }
 
   //On Component Init Load User data
   ngOnInit(): void {
@@ -37,21 +41,21 @@ export class UsersListsComponent implements OnInit {
   //get user list from db
   private getUserList(): void {
     this.usersServices.getUsers().subscribe({
-      next:data => this.myUsers = data,
-      error:e=>console.error(e),
+      next: data => this.myUsers = data,
+      error: e => console.error(e),
     })
   }
 
   //Delete user from db and Update user list
   public deleteUser(id: number): void {
     this.usersServices.deleteUser(id).subscribe({
-      next:() => this.getUserList(),
-      error:(e) => console.error(e),
+      next: () => this.getUserList(),
+      error: (e) => console.error(e),
     })
   }
 
   //ROUTE to form
-  public navigateToForm():void {
+  public navigateToForm(): void {
     this.router.navigate(['/users/add'])
   }
 }
