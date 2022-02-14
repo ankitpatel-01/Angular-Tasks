@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ModelService } from 'src/app/model/model.service';
 import { Employee } from '../../models/employee.model';
 import { Department, Gender } from '../../models/model';
 import { EmployeesService } from '../../services/employees.service';
@@ -18,13 +19,23 @@ export class EmployeeListComponent implements OnInit {
 
   //for search inputs
   public name = new FormControl('');
-  public department = new FormControl(''); 
-  public city = new FormControl(''); 
+  public department = new FormControl('');
+  public city = new FormControl('');
 
-  constructor( private employeeService: EmployeesService, private supportService: SupportService ) { 
+  //address from
+  AddressForm :FormGroup
+
+  constructor(private employeeService: EmployeesService, private supportService: SupportService, private modalService: ModelService, private fb:FormBuilder) {
     this.Employees = [];
     this.departments = [];
     this.gender = [];
+
+     //Address form
+     this.AddressForm =  this.fb.group({
+      addresses: this.fb.array([
+        this.addressItem(),
+      ])
+    });
   }
 
   ngOnInit(): void {
@@ -57,24 +68,53 @@ export class EmployeeListComponent implements OnInit {
   //get Employees list from db
   private getEmployeesList(): void {
     this.employeeService.getEmployees().subscribe({
-      next:(data)=>{
+      next: (data) => {
         this.Employees = data;
       },
-      error:(e)=>console.log(e)
+      error: (e) => console.log(e)
     })
   }
 
   //delete Employee
-  public deleteEmployee(id:number): void{
+  public deleteEmployee(id: number): void {
     this.employeeService.deleteEmployee(id).subscribe({
-      next:()=>{
+      next: () => {
         // return this.Employees = this.Employees.filter((data)=>{
         //   data.id !== id
         // })
         this.getEmployeesList();
       },
-      error:(e)=>console.log(e)
+      error: (e) => console.log(e)
     })
+  }
+
+  //Open & close User Details Model
+  openModal(id: number) {
+    this.modalService.open(id);
+  }
+  closeModal(id: number) {
+    this.modalService.close(id);
+  }
+
+
+  get addresses() {
+    return this.AddressForm.controls["addresses"] as FormArray;
+  }
+
+  addressItem(): FormGroup {
+    return this.fb.group({
+      address: '',
+    });
+  }
+  
+  // Add address filed to From
+  addItem(): void {
+    this.addresses.push(this.addressItem())
+  }
+  public deleteItem(index: number): void {
+    if (this.addresses.length != 1) {
+      this.addresses.removeAt(index)
+    }
   }
 
 }

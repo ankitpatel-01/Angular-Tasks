@@ -3,18 +3,27 @@
     border-bottom: 1px solid gainsboro;
 }
 .searchFields{
-    width: 40%;
+    .search-control{
+        display: block;
+        padding: 0.375rem 0.75rem;
+        margin: 5px 3px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
 }
-.search-control{
-    display: block;
-    padding: 0.375rem 0.75rem;
-    margin: 5px 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+
+.address-container{
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid black;
+
+    .address-form{
+        width: 50%;
+    }
 }

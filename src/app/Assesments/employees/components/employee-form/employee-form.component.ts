@@ -15,12 +15,14 @@ export class EmployeeFormComponent implements OnInit {
   private isAddMode: boolean;
   private id: number;
 
+  public submitted:boolean;
   public title: string;
   public gender: Gender[];
   public departments: Department[];
   public employeeForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private employeeService: EmployeesService, private supportService: SupportService) {
+    this.submitted = false
     this.title = "";
     this.id = 1;
     this.isAddMode = true;
@@ -90,9 +92,12 @@ export class EmployeeFormComponent implements OnInit {
 
   //on Submit btn click
   public onSubmit(): void {
+    this.submitted = true;
     if (this.isAddMode) {
-      this.addEmployee();
-      this.router.navigate(['/employees'])
+      if(this.employeeForm.valid){
+        this.addEmployee();
+        this.router.navigate(['/employees'])
+      }
     } else {
       this.editEmployee();
     }

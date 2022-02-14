@@ -17,7 +17,7 @@ import { NgxMaskModule } from 'ngx-mask';
     UsersListsComponent,
     UsersFormComponent,
     DeptFilterPipe,
-    UserFilterPipe
+    UserFilterPipe,
   ],
   imports: [
     CommonModule,

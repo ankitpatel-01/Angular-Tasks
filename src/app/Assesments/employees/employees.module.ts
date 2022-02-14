@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SupportService } from './services/support.service';
 import { EmployeesService } from './services/employees.service';
 import { DeptFilterPipe } from './pipe/dept-filter.pipe';
 import { SearchPipe } from './pipe/search.pipe';
+import { ModelModule } from 'src/app/model/model.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import { SearchPipe } from './pipe/search.pipe';
     CommonModule,
     EmployeesRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModelModule,
+    SharedModule,
+    FormsModule
   ],
   providers:[
     SupportService,

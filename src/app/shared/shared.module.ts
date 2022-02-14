@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { MytitlecasePipe } from './pipes/mytitlecase.pipe';
 import { BoolenConverterPipe } from './pipes/boolen-converter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { GenderPipe } from './pipes/gender.pipe';
 
 
 @NgModule({
   declarations: [
     MytitlecasePipe,
     BoolenConverterPipe,
-    HighlightDirective
+    HighlightDirective,
+    GenderPipe
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { HighlightDirective } from './directives/highlight.directive';
   exports: [
     MytitlecasePipe,
     BoolenConverterPipe,
-    HighlightDirective
+    HighlightDirective,
+    GenderPipe
   ]
 })
 export class SharedModule { }
