@@ -35,7 +35,8 @@ const routes: Routes = [
       import('./modules/resume-builder/resume-builder.module').then(
         (m) => m.ResumeBuilderModule
       ),
-  }
+  },
+  { path: 'employees', loadChildren: () => import('./Assesments/employees/employees.module').then(m => m.EmployeesModule) }
 ];
 
 @NgModule({
