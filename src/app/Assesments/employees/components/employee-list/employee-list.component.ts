@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Employee } from '../../models/employee.model';
 import { Department, Gender } from '../../models/model';
 import { EmployeesService } from '../../services/employees.service';
@@ -14,6 +15,11 @@ export class EmployeeListComponent implements OnInit {
   public Employees: Employee[];
   public departments: Department[];
   public gender: Gender[];
+
+  //for search inputs
+  public name = new FormControl('');
+  public department = new FormControl(''); 
+  public city = new FormControl(''); 
 
   constructor( private employeeService: EmployeesService, private supportService: SupportService ) { 
     this.Employees = [];
@@ -53,6 +59,19 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getEmployees().subscribe({
       next:(data)=>{
         this.Employees = data;
+      },
+      error:(e)=>console.log(e)
+    })
+  }
+
+  //delete Employee
+  public deleteEmployee(id:number): void{
+    this.employeeService.deleteEmployee(id).subscribe({
+      next:()=>{
+        // return this.Employees = this.Employees.filter((data)=>{
+        //   data.id !== id
+        // })
+        this.getEmployeesList();
       },
       error:(e)=>console.log(e)
     })

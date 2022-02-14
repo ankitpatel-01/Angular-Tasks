@@ -92,6 +92,7 @@ export class EmployeeFormComponent implements OnInit {
   public onSubmit(): void {
     if (this.isAddMode) {
       this.addEmployee();
+      this.router.navigate(['/employees'])
     } else {
       this.editEmployee();
     }

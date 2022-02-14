@@ -1,5 +1,5 @@
 export class Employee {
-    id?: number;
+    id!: number;
     name: string;
     email: string;
     mobile: number;
@@ -16,7 +16,7 @@ export class Employee {
         gender: number,
         department: number,
         hireDate: string,
-        isPermanent: boolean,id?: number ) {
+        isPermanent: boolean,id: number ) {
         this.id = id;
         this.name = name;
         this.email = email;

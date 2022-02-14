@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SupportService } from './services/support.service';
 import { EmployeesService } from './services/employees.service';
 import { DeptFilterPipe } from './pipe/dept-filter.pipe';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DeptFilterPipe } from './pipe/dept-filter.pipe';
     EmployeeListComponent,
     EmployeeFormComponent,
     DeptFilterPipe,
+    SearchPipe,
   ],
   imports: [
     CommonModule,

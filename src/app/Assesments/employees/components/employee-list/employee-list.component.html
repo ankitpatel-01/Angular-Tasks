@@ -1,13 +1,13 @@
 <header class="header-container d-flex justify-center">
-    <span class="app-title">emp List</span>
+    <span class="app-title">User List</span>
 </header>
 <main>
-    <div class="d-flex mt-3">
-        <button class="btn btn-primary">+ Create</button>
+    <div class="d-flex aline-center justify-betwwen mt-3">
+        <button routerLink="add" class="btn btn-primary">+ Create</button>
         <div class="searchFields d-flex aline-center justify-around  flex-grow">
-            <input class="search-control" type="text" placeholder="search by name">
-            <input class="search-control" type="text" placeholder="search by department">
-            <input class="search-control" type="text" placeholder="search by city">
+            <input class="search-control" type="text" placeholder="search by name" [formControl]="name">
+            <input class="search-control" type="text" placeholder="search by department" [formControl]="department">
+            <input class="search-control" type="text" placeholder="search by city" [formControl]="city">
         </div>
     </div>
     <div class="list">
@@ -20,18 +20,22 @@
                 <th>Department</th>
                 <th>Actions</th>
             </thead>
-            <tbody>
-                <tr *ngFor="let emp of Employees; let i = index">
+            <tbody *ngIf="( Employees | search : name.value) as result">
+                <tr *ngFor="let emp of result; let i = index">
                     <td>{{emp.name}}</td>
                     <td>{{emp.email}}</td>
                     <td>{{emp.mobile}}</td>
                     <td>{{emp.city}}</td>
                     <td>{{emp.department | deptFilter:departments}}</td>
-                    <!-- <td>
-                        <a routerLink="/emps/edit/{{emp.id}}"><span class="icon-pencil text-success mr-3"></span></a>
-                        <a (click)="deleteemp(emp.id)"><span class="icon-bin2 text-danger"></span></a>
-                    </td> -->
+                    <td>
+                        <button class="btn btn-secondary mr-2" routerLink="edit/{{emp.id}}">Edit</button>
+                        <button class="btn btn-danger mr-2" (click)="deleteEmployee(emp.id)">Detele</button>
+                        <button class="btn btn-info">Detials</button>
+                    </td>
                 </tr>
+                <tr *ngIf="result.length === 0">
+                    <td colspan="6">No Result found</td> 
+                </tr>  
             </tbody>
         </table>
     </div>
