@@ -25,13 +25,12 @@
                     <td>{{emp.name}}</td>
                     <td>{{emp.email}}</td>
                     <td>{{emp.mobile}}</td>
-                    <td>{{emp.gender}}</td>
+                    <td>{{emp.city}}</td>
                     <td>{{emp.department | deptFilter:departments}}</td>
-                    <td>{{emp.doj}}</td>
-                    <td>
+                    <!-- <td>
                         <a routerLink="/emps/edit/{{emp.id}}"><span class="icon-pencil text-success mr-3"></span></a>
                         <a (click)="deleteemp(emp.id)"><span class="icon-bin2 text-danger"></span></a>
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
         </table>

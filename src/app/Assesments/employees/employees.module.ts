@@ -8,12 +8,14 @@ import { EmployeeFormComponent } from './components/employee-form/employee-form.
 import { ReactiveFormsModule } from '@angular/forms';
 import { SupportService } from './services/support.service';
 import { EmployeesService } from './services/employees.service';
+import { DeptFilterPipe } from './pipe/dept-filter.pipe';
 
 
 @NgModule({
   declarations: [
     EmployeeListComponent,
     EmployeeFormComponent,
+    DeptFilterPipe,
   ],
   imports: [
     CommonModule,
