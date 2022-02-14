@@ -12,12 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UsersFormComponent implements OnInit {
 
   public userForm: FormGroup;
-  public departments: Department[] = [];
+  public departments: Department[];
   private id: number;
   private isAddMode: boolean;
 
   constructor(private fb: FormBuilder, private usersService: UsersService, private router: Router, private route: ActivatedRoute,) {
     this.userForm = this.buildUsersForm();
+    this.departments = [];
     this.id = this.route.snapshot.params['id'];
     this.isAddMode = !this.id;
   }

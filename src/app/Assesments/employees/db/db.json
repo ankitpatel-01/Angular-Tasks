@@ -1,45 +1,55 @@
 {
-    "gender":[
-        {
-            "id":1,
-            "name":"male"
-        },
-        {
-            "id":2,
-            "name":"female"
-        },
-        {
-            "id":3,
-            "name":"other"
-        }
-    ],
-    "departments": [
-        {
-          "id": 1,
-          "name": "Frontend"
-        },
-        {
-          "id": 2,
-          "name": "QA"
-        },
-        {
-          "id": 3,
-          "name": "Database"
-        },
-        {
-          "id": 4,
-          "name": ".Net"
-        },
-        {
-          "id": 5,
-          "name": "UX"
-        },
-        {
-          "id": 6,
-          "name": "Mobile"
-        }
-      ],
-    "employees":[
-
-    ]
+  "gender": [
+    {
+      "id": 1,
+      "name": "male"
+    },
+    {
+      "id": 2,
+      "name": "female"
+    },
+    {
+      "id": 3,
+      "name": "other"
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Frontend"
+    },
+    {
+      "id": 2,
+      "name": "QA"
+    },
+    {
+      "id": 3,
+      "name": "Database"
+    },
+    {
+      "id": 4,
+      "name": ".Net"
+    },
+    {
+      "id": 5,
+      "name": "UX"
+    },
+    {
+      "id": 6,
+      "name": "Mobile"
+    }
+  ],
+  "employees": [
+    {
+      "name": "Ankit Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "mobile": "8347892046",
+      "city": "Vapi",
+      "gender": 1,
+      "department": "3",
+      "hireDate": "2022-01-03",
+      "isPermanent": false,
+      "id": 1
+    }
+  ]
 }
