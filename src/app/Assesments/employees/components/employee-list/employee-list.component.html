@@ -1,1 +1,39 @@
-<p>employee-list works!</p>
+<header class="header-container d-flex justify-center">
+    <span class="app-title">emp List</span>
+</header>
+<main>
+    <div class="d-flex mt-3">
+        <button class="btn btn-primary">+ Create</button>
+        <div class="searchFields d-flex aline-center justify-around  flex-grow">
+            <input class="search-control" type="text" placeholder="search by name">
+            <input class="search-control" type="text" placeholder="search by department">
+            <input class="search-control" type="text" placeholder="search by city">
+        </div>
+    </div>
+    <div class="list">
+        <table class="table table-hover mt-3">
+            <thead>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of Employees; let i = index">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.mobile}}</td>
+                    <td>{{emp.gender}}</td>
+                    <td>{{emp.department | deptFilter:departments}}</td>
+                    <td>{{emp.doj}}</td>
+                    <td>
+                        <a routerLink="/emps/edit/{{emp.id}}"><span class="icon-pencil text-success mr-3"></span></a>
+                        <a (click)="deleteemp(emp.id)"><span class="icon-bin2 text-danger"></span></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>

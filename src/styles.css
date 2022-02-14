@@ -69,8 +69,17 @@ a{
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
+
 .col {
   flex-direction: column;
+}
+
+.flex-grow{
+  flex-grow: 1;
 }
 
 .flex-wrap {
