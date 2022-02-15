@@ -25,9 +25,8 @@
             <th>Date of joining</th>
             <th>Actions</th>
         </thead>
-        <tbody>
-            <tr *ngFor="let user of myUsers | userFilter:searchText; let i = index">
-                <!-- <td *ngIf="!user && searchText">No Data</td> -->
+        <tbody *ngIf="myUsers | userFilter:searchText as result">
+            <tr *ngFor="let user of result ; let i = index">
                 <td>{{i+1}}</td>
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
@@ -38,6 +37,11 @@
                 <td>
                     <a routerLink="/users/edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
                     <a (click)="deleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
+                </td>
+            </tr>
+            <tr *ngIf="result.length == 0">
+                <td>
+                    No Record found
                 </td>
             </tr>
         </tbody>
