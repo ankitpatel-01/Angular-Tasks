@@ -7,16 +7,15 @@ import { UsersFormComponent } from './users-form/users-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
-import { DeptFilterPipe } from './pipes/dept-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
 import { NgxMaskModule } from 'ngx-mask';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
     UsersListsComponent,
     UsersFormComponent,
-    DeptFilterPipe,
     UserFilterPipe,
   ],
   imports: [
@@ -25,7 +24,8 @@ import { NgxMaskModule } from 'ngx-mask';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    SharedModule
   ],
   providers: [
     UsersService

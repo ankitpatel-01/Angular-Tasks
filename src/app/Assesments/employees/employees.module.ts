@@ -8,7 +8,6 @@ import { EmployeeFormComponent } from './components/employee-form/employee-form.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SupportService } from './services/support.service';
 import { EmployeesService } from './services/employees.service';
-import { DeptFilterPipe } from './pipe/dept-filter.pipe';
 import { SearchPipe } from './pipe/search.pipe';
 import { ModelModule } from 'src/app/model/model.module';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -18,7 +17,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     EmployeeListComponent,
     EmployeeFormComponent,
-    DeptFilterPipe,
     SearchPipe,
   ],
   imports: [

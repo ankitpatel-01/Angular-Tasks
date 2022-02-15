@@ -5,6 +5,7 @@ import { MytitlecasePipe } from './pipes/mytitlecase.pipe';
 import { BoolenConverterPipe } from './pipes/boolen-converter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { GenderPipe } from './pipes/gender.pipe';
+import { DeptFilterPipe } from './pipes/dept-filter.pipe';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { GenderPipe } from './pipes/gender.pipe';
     MytitlecasePipe,
     BoolenConverterPipe,
     HighlightDirective,
-    GenderPipe
+    GenderPipe,
+    DeptFilterPipe
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { GenderPipe } from './pipes/gender.pipe';
     MytitlecasePipe,
     BoolenConverterPipe,
     HighlightDirective,
-    GenderPipe
+    GenderPipe,
+    DeptFilterPipe
   ]
 })
 export class SharedModule { }
