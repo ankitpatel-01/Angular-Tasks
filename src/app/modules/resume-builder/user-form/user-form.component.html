@@ -35,7 +35,7 @@
         Required</small>
     </div>
     <!-- Technical Skills -->
-    <fieldset class="fieldset-container">
+    <fieldset class="container">
       <legend> Technical Skills :</legend>
       <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
         <div class="skillfield d-flex mt-2" [formGroupName]="i">
@@ -48,7 +48,7 @@
       <button type="button" class="btn btn-primary mt-2" (click)="addSkills()">+</button>
     </fieldset>
     <!-- Experiences -->
-    <fieldset class="fieldset-container">
+    <fieldset class="container">
       <legend>Experirnces :</legend>
       <div formArrayName="experiences" *ngFor="let experience of experiences.controls, let i = index">
         <div class="expfield d-flex col mt-2" [formGroupName]=i>
@@ -79,7 +79,7 @@
       <button type="button" class="btn btn-primary mt-2" (click)="addExperience()">+</button>
     </fieldset>
     <!-- Eductions -->
-    <fieldset class="fieldset-container">
+    <fieldset class="container">
       <legend>Eduction :</legend>
       <div formArrayName="educations" *ngFor="let experience of educations.controls, let i = index">
         <div class="edufield d-flex col mt-2" [formGroupName]=i>

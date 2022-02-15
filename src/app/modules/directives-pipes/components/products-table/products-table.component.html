@@ -1,7 +1,7 @@
 <h3>My Products Table</h3>
 <p>{{date | date:'dd/MM/YYYY hh:mm:ss'}}</p>
 <div *ngIf="myProducts">
-  <table class="table table-hover mt-3">
+  <table class="table clickable mt-3">
     <thead>
       <th>Sr. No</th>
       <th>Product Id</th>
@@ -28,19 +28,21 @@
 </div>
 
 <div *ngIf="selectedProduct">
-  <fieldset class="fieldset-container">
-    <legend>
-      <h2>
-        <span appHighlight>{{ selectedProduct.title | uppercase }} Details</span>
-      </h2>
-    </legend>
+  <div class="product-detail-container">
 
-    <p>Product id:{{ selectedProduct.id }}</p>
-    <p>Product name:{{ selectedProduct.title | mytitlecase }}</p>
-    <p>Product amount:{{selectedProduct.amount}}</p>
-    <p>Product rating:{{ selectedProduct.rating }}</p>
-    <p>
-      Product availability:{{ selectedProduct.availability | boolenConverter }}
-    </p>
-  </fieldset>
+    <h3>
+      <span appHighlight>{{ selectedProduct.title | uppercase }} Details</span>
+    </h3>
+
+
+    <div class="container">
+      <p>Product id:{{ selectedProduct.id }}</p>
+      <p>Product name:{{ selectedProduct.title | mytitlecase }}</p>
+      <p>Product amount:{{selectedProduct.amount}}</p>
+      <p>Product rating:{{ selectedProduct.rating }}</p>
+      <p>
+        Product availability:{{ selectedProduct.availability | boolenConverter }}
+      </p>
+    </div>
+  </div>
 </div>

@@ -2,6 +2,7 @@
     <span class="app-title">User List</span>
 </header>
 <main>
+    <!-- serach fields  -->
     <div class="d-flex aline-center justify-between mt-3">
         <button routerLink="add" class="btn btn-primary">+ Create</button>
         <div class="searchFields d-flex">
@@ -9,6 +10,7 @@
             <input class="search-control" type="text" placeholder="search by city" [formControl]="city">
         </div>
     </div>
+     <!-- list  -->
     <div class="list">
         <table class="table table-hover mt-3">
             <thead>
@@ -49,6 +51,7 @@
             </tbody>
         </table>
 
+        <!-- Address  -->
         <div class="address-container">
            <form [formGroup]="AddressForm" class="address-form">
             <h2>Add Address</h2>

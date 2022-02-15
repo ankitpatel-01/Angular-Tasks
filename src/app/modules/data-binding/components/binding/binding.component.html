@@ -1,23 +1,23 @@
 <section class="section1">
-    <fieldset class="fieldset-container">
+    <div class="container">
         <h2>{{ title }}</h2>
         <p>Title is coming through String Interpolation</p>
-    </fieldset>
-    <fieldset class="fieldset-container">
+    </div>
+    <div class="container">
         <h2>{{ title2 }}</h2>
         <figure class="img-container">
             <img class="img" [src]="imgUrl" alt="Landscape" />
             <figcaption>Landscape image</figcaption>
         </figure>
         <button class="btn btn-primary" [disabled]="IsDisable">This Button Is Disable</button>
-    </fieldset >
-    <fieldset class="fieldset-container">
+    </div >
+    <div class="container">
         <h2>{{ title3 }}</h2>
         <button class="btn btn-primary" (click)="btnClick()">alert!</button>
-    </fieldset>
-    <fieldset class="fieldset-container">
+    </div>
+    <div class="container">
         <h2>{{ title4 }}</h2>
-        <input class="form-control mb-3" type="text" [(ngModel)]="myInput">
+        <input class="form-control" type="text" [(ngModel)]="myInput">
         <p>This is {{ myInput }}</p>
-    </fieldset>
+    </div>
 </section>
