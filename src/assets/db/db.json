@@ -1,4 +1,18 @@
 {
+  "gender": [
+    {
+      "id": 1,
+      "name": "male"
+    },
+    {
+      "id": 2,
+      "name": "female"
+    },
+    {
+      "id": 3,
+      "name": "other"
+    }
+  ],
   "departments": [
     {
       "id": 1,
@@ -93,6 +107,63 @@
         }
       ],
       "id": 1
+    }
+  ],
+  "employees": [
+    {
+      "name": "Ankit Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "mobile": "8347892046",
+      "city": "Vapi",
+      "gender": 1,
+      "department": "3",
+      "hireDate": "2022-01-03",
+      "isPermanent": false,
+      "id": 1
+    },
+    {
+      "name": "Ankit Patel",
+      "email": "cp221740@gmail.com",
+      "mobile": "8347892046",
+      "city": "Vapi",
+      "gender": 2,
+      "department": "3",
+      "hireDate": "2022-02-01",
+      "isPermanent": true,
+      "id": 3
+    },
+    {
+      "name": "Aman",
+      "email": "aman@mail.com",
+      "mobile": "8347892046",
+      "city": "Vapi",
+      "gender": 1,
+      "department": 1,
+      "hireDate": "2022-02-03",
+      "isPermanent": true,
+      "id": 4
+    },
+    {
+      "name": "Ankit Patel",
+      "email": "aman@mail",
+      "mobile": "8347892046",
+      "city": "Vapi",
+      "gender": 1,
+      "department": 1,
+      "hireDate": "2022-02-03",
+      "isPermanent": false,
+      "id": 5
+    },
+    {
+      "name": "chirag",
+      "email": "cp221740@gmail.com",
+      "mobile": "8347892046",
+      "city": "Dam",
+      "gender": 1,
+      "department": 1,
+      "hireDate": null,
+      "isPermanent": false,
+      "id": 6
     }
   ]
 }

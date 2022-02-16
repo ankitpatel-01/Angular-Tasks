@@ -299,7 +299,7 @@ a{
   display: inline-block;
   color: $white;
   background-color: $dark;
-  padding: 0.625rem 1.25rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
   line-height: 1.5;
   font-size: 1rem;
@@ -473,13 +473,13 @@ a{
     }
   }
   th {
-    padding: 16px;
+    padding: .8rem 1rem;
     text-align: left;
     border-bottom: 2px solid;
     color: #a1a1a1;
   }
   td {
-    padding: 16px;
+    padding: .6rem .8rem;
     text-align: left;
     border-bottom: 1px solid #dee2e6;
   }
