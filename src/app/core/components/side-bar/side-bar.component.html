@@ -1,20 +1,24 @@
+<input class="menu-btn" type="checkbox" id="menu-btn" />
 <aside class="sidebar-wrapper d-flex-col flex-shrink">
-  <header class="header d-flex aline-item-center justify-content-center">
-    <figure>
-      <img class="img" src="../assets/img/Angularlogo.png" alt="" srcset="" />
-    </figure>
+  <header class="header d-flex aline-item-center">
+    <label class="menu-icon" for="menu-btn"><span class="far fa-bars"></span></label>
+    <div class="d-flex aline-item-center justify-content-center flex-grow">
+      <figure>
+        <img class="logo img" src="../assets/img/Angularlogo.png" alt="" srcset="" />
+      </figure>
+    </div>
   </header>
   <nav class="sidebar">
     <ul>
-      <li><a routerLink="data-binding" routerLinkActive="active"><span class="icon-database mr-2"></span>Data Binding</a></li>
-      <li><a routerLink="directive-pipes" routerLinkActive="active"><span class="icon-table mr-2"></span>Currency & Product Table</a></li>
-      <li><a routerLink="profile" routerLinkActive="active"><span class="icon-pencil mr-2"></span>Reactive Form</a></li>
-      <li><a routerLink="users" routerLinkActive="active"><span class="icon-user-plus mr-2"></span> Users</a></li>
-      <li><a routerLink="resumebuilder" routerLinkActive="active"><span class="icon-profile mr-2"></span>Resume Builder</a></li>
-      <li><a routerLink="employees" routerLinkActive="active"><span class="icon-user-plus mr-2"></span>Employees</a></li>
+      <li><a routerLink="data-binding" routerLinkActive="active"><span class="icon icon-database mr-2"></span> <span class="link-name">Data Binding</span> </a></li>
+      <li><a routerLink="directive-pipes" routerLinkActive="active"><span class="icon  icon-table mr-2"></span> <span class="link-name">Product Table</span> </a></li>
+      <li><a routerLink="profile" routerLinkActive="active"><span class="icon icon-pencil mr-2"></span><span class="link-name">Reactive Form </span> </a></li>
+      <li><a routerLink="users" routerLinkActive="active"><span class="icon icon-user-plus mr-2"></span><span class="link-name">Users</span> </a></li>
+      <li><a routerLink="resumebuilder" routerLinkActive="active"><span class="icon icon-profile mr-2"></span><span class="link-name">Resume Builder</span> </a></li>
+      <li><a routerLink="employees" routerLinkActive="active"><span class="icon icon-user-plus mr-2"></span> <span class="link-name">Employees</span> </a></li>
     </ul>
   </nav>
   <footer class="footer d-flex aline-item-center justify-content-center">
-    <span class="fas fa-sign-out"></span><span class="ml-2">Log out</span>
+    <span class="fas fa-sign-out"></span><span class="link-name ml-2">Log out</span>
   </footer>
 </aside>

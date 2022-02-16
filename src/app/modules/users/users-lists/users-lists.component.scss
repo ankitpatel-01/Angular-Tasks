@@ -8,11 +8,14 @@
   background-color: white;
   display: flex;
   align-items: center;
-  border-radius: 30px;
-  padding: 1rem;
+  border: 1px solid #bebfc4;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
 
   span {
     font-size: 1.5rem;
+    font-weight: 200;
+    margin-right: 4px;
     color: gray;
   }
   input {

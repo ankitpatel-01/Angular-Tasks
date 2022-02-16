@@ -1,15 +1,15 @@
 <!-- //Module title -->
 <div class="header-container d-flex aline-content-center mb-3">
-    <span class="app-title ml-3">User</span>
+    <span class="app-title ml-1">User</span>
 </div>
 
 <!-- search bar and add btn  -->
 <div class="d-flex justify-content-between">
     <div class="searchbox">
-        <input type="text" [(ngModel)]="searchText" placeholder="search by name">
         <span class="fas fa-search"></span>
+        <input type="text" [(ngModel)]="searchText" placeholder="Search by name">
     </div>
-    <button class="btn btn-primary ml-1" (click)="navigateToForm()">+ Add User</button>
+    <button class="btn btn-primary" (click)="navigateToForm()">+ Add User</button>
 </div>
 
 <!-- user list -->
