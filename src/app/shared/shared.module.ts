@@ -6,6 +6,7 @@ import { BoolenConverterPipe } from './pipes/boolen-converter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { GenderPipe } from './pipes/gender.pipe';
 import { DeptFilterPipe } from './pipes/dept-filter.pipe';
+import { PhoneNomaskDirective } from './directives/phone-nomask.directive';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DeptFilterPipe } from './pipes/dept-filter.pipe';
     BoolenConverterPipe,
     HighlightDirective,
     GenderPipe,
-    DeptFilterPipe
+    DeptFilterPipe,
+    PhoneNomaskDirective
   ],
   imports: [
     CommonModule
@@ -24,7 +26,8 @@ import { DeptFilterPipe } from './pipes/dept-filter.pipe';
     BoolenConverterPipe,
     HighlightDirective,
     GenderPipe,
-    DeptFilterPipe
+    DeptFilterPipe,
+    PhoneNomaskDirective
   ]
 })
 export class SharedModule { }

@@ -41,16 +41,6 @@
   ],
   "users": [
     {
-      "firstname": "Aman",
-      "lastname": "Patel",
-      "email": "aman@mail.com",
-      "phoneNo": "8945232345",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": 1,
-      "id": 2
-    },
-    {
       "firstname": "Abhishike",
       "lastname": "Patel",
       "email": "abhi.patel@gamil.com",
