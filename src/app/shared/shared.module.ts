@@ -6,7 +6,10 @@ import { BoolenConverterPipe } from './pipes/boolen-converter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { GenderPipe } from './pipes/gender.pipe';
 import { DeptFilterPipe } from './pipes/dept-filter.pipe';
-import { PhoneNomaskDirective } from './directives/phone-nomask.directive';
+import { PaginatePipe } from './pipes/paginate.pipe';
+import { PaginateComponent } from './components/paginate/paginate.component';
+import { MaskPhonePipe } from './pipes/mask-phone.pipe';
+import { MaskPhoneDirective } from './directives/mask-phone.directive';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { PhoneNomaskDirective } from './directives/phone-nomask.directive';
     HighlightDirective,
     GenderPipe,
     DeptFilterPipe,
-    PhoneNomaskDirective
+    PaginatePipe,
+    PaginateComponent,
+    MaskPhonePipe,
+    MaskPhoneDirective,
   ],
   imports: [
     CommonModule
@@ -27,7 +33,10 @@ import { PhoneNomaskDirective } from './directives/phone-nomask.directive';
     HighlightDirective,
     GenderPipe,
     DeptFilterPipe,
-    PhoneNomaskDirective
+    PaginatePipe,
+    PaginateComponent,
+    MaskPhonePipe,
+    MaskPhoneDirective,
   ]
 })
 export class SharedModule { }

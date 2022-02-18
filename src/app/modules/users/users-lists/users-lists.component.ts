@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Department } from '../models/dept.model';
 import { User } from '../models/user.model';
@@ -15,11 +15,16 @@ export class UsersListsComponent implements OnInit {
   public departments: Department[];
   public searchText: string;
 
+  public currentPage:number;
+  public dataPerPage:number;
+
 
   constructor(private router: Router, private usersServices: UsersService) {
     this.myUsers = [];
     this.departments = [];
     this.searchText = "";
+    this.currentPage = 1;
+    this.dataPerPage= 8;
   }
 
   //On Component Init Load User data
@@ -57,5 +62,10 @@ export class UsersListsComponent implements OnInit {
   //ROUTE to form
   public navigateToForm(): void {
     this.router.navigate(['/users/add'])
+  }
+
+  //setCurrentPage
+  public setCurrentPage(pageNo:number){
+    this.currentPage= pageNo;
   }
 }

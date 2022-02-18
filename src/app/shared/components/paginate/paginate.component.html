@@ -1,0 +1,7 @@
+<div class="d-flex aline-item-center justify-content-center">
+  <div class="pagination">
+    <a (click)="previous()">Previous</a>
+    <a *ngFor="let page of pageNumbers" (click)="paginate(page)">{{page}}</a>
+    <a (click)="forward()">Next</a>
+</div>
+</div>

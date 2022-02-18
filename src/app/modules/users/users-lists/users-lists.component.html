@@ -13,7 +13,7 @@
 </div>
 
 <!-- user list -->
-<div *ngIf="myUsers" class="mt-5">
+<div *ngIf="myUsers | userFilter:searchText as result" class="mt-5">
     <table class="table mt-3">
         <thead>
             <th>#</th>
@@ -25,12 +25,12 @@
             <th>Date of joining</th>
             <th>Actions</th>
         </thead>
-        <tbody *ngIf="myUsers | userFilter:searchText as result">
-            <tr *ngFor="let user of result ; let i = index">
+        <tbody>
+            <tr *ngFor="let user of result | paginate: dataPerPage: currentPage ; let i = index">
                 <td>{{i+1}}</td>
                 <td>{{user.firstname+" "+ user.lastname}}</td>
                 <td>{{user.email}}</td>
-                <td>{{user.phoneNo | mask: '(000) 000-0000'}}</td>
+                <td>{{user.phoneNo | maskPhone}}</td>
                 <td>{{user.gender}}</td>
                 <td>{{user.department | deptFilter:departments}}</td>
                 <td>{{user.doj}}</td>
@@ -46,6 +46,7 @@
             </tr>
         </tbody>
     </table>
+    <app-paginate *ngIf="myUsers" [dataPerPage]="dataPerPage" [totaldata]="result.length" (currentPage)="setCurrentPage($event)"></app-paginate>
 </div>
 <div *ngIf="!myUsers">
     No Record found
