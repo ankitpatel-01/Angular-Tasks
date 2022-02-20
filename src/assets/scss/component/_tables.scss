@@ -1,0 +1,30 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-radius: 16px;
+  border-color: $border-color;
+  background-color: $white;
+
+  th {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid;
+    color: #a1a1a1;
+  }
+  td {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+  tr:hover {
+    background-color: rgba(219, 219, 219, 0.3);
+  }
+  &.clickable {
+    tr {
+      cursor: pointer;
+    }
+  }
+}

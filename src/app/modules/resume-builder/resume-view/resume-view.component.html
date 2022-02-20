@@ -20,7 +20,7 @@
         <td style="width: 200px">
           <p><button>Download PDF</button></p>
           <p><a href="#">{{user.email}}</a></p>
-          <p>{{user.contactNo | mask: '(000) 000-0000'}}</p>
+          <p>{{user.contactNo | maskPhone }</p>
         </td>
       </tr>
     </table>
@@ -118,7 +118,7 @@
       </tr>
     </table>
     <p style="text-align: center">
-      {{user.username}} - <a href="#">{{user.email}}</a> - {{user.contactNo | mask: '(000) 000-0000'}}
+      {{user.username}} - <a href="#">{{user.email}}</a> - {{user.contactNo | maskPhone}}
     </p>
   </div>
 </main>

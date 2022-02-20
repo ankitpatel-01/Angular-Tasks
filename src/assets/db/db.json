@@ -77,7 +77,7 @@
       "phoneNo": "8347892046",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": 6,
+      "department": "1",
       "id": 4
     },
     {
@@ -107,7 +107,7 @@
       "phoneNo": "7855545455",
       "gender": "female",
       "doj": "2022-01-03",
-      "department": 6,
+      "department": "3",
       "id": 7
     },
     {
@@ -117,7 +117,7 @@
       "phoneNo": "7855545455",
       "gender": "female",
       "doj": "2022-01-03",
-      "department": 6,
+      "department": "3",
       "id": 8
     },
     {
@@ -127,7 +127,7 @@
       "phoneNo": "7855545455",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": 6,
+      "department": "4",
       "id": 9
     },
     {
@@ -139,6 +139,16 @@
       "doj": "2022-01-03",
       "department": 6,
       "id": 10
+    },
+    {
+      "firstname": "Chirag",
+      "lastname": "Patel",
+      "email": "cp221740@gmail.com",
+      "phoneNo": "5465456588",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": 1,
+      "id": 11
     }
   ],
   "resume": [

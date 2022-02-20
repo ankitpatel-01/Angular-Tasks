@@ -1,0 +1,12 @@
+// Typographical styles goes here
+.app-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+//colored texts
+@each $key, $value in $theme-colors {
+  .text-#{$key} {
+    color: $value;
+  }
+}

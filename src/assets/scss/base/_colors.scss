@@ -1,0 +1,32 @@
+$primary: #2f55e5;
+$secondary: #6c757d;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+$accent: #021a28;
+
+$gray: #989d9e;
+$dark: #343a40;
+$black: #000000;
+$white: #ffffff;
+
+$outline: #f0f0f0;
+$border-color: #dee2e6;
+
+$light: #f8fafc;
+$extra-light: #fcfcfc;
+
+$btn-text-primary: $primary;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
+  "gray": $gray,
+  "light": $light,
+  "accent": $accent,
+);

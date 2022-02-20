@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './services/users.service';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
-import { NgxMaskModule } from 'ngx-mask';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
@@ -24,7 +23,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskModule.forRoot(),
     SharedModule
   ],
   providers: [

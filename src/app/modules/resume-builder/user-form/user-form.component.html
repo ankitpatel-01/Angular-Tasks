@@ -21,7 +21,7 @@
     <div class="form-group mt-2">
       <label for="contactNo">Phone No :</label>
       <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
-        formControlName="contactNo" maxlength="10"/>
+        formControlName="contactNo" maxlength="10" />
       <small class="text-danger" *ngIf="!user['contactNo']?.valid && user['contactNo']?.touched">* This Field is
         Required</small>
       <small class="text-danger" *ngIf="user['contactNo']?.errors?.['minlength']">* minimum length should be 10
@@ -42,7 +42,7 @@
           <input class="form-control" type="text" formControlName="technicalSkills" />
           <small class="text-danger" *ngIf="skills.controls[i]?.touched && !skills.controls[i]?.valid">*</small>
           <button type="button" class="btn btn-danger ml-1" (click)="deleteSkills(i)"><span
-              class="fas fa-trash"></span></button>
+              class="icon-bin2"></span></button>
         </div>
       </div>
       <button type="button" class="btn btn-primary mt-2" (click)="addSkills()">+</button>
@@ -59,19 +59,17 @@
           ('companyName')?.valid">*</small>
           <label for="years">Years:</label>
           <input class="form-control" type="text" formControlName="years" />
-          <small class="text-danger"
-            *ngIf="experiences.controls[i]?.get
+          <small class="text-danger" *ngIf="experiences.controls[i]?.get
             ('years')?.touched && !experiences.controls[i]?.get
             ('years')?.valid">*</small>
           <label for="post">Post:</label>
           <div class="d-flex">
             <input class="form-control" type="text" formControlName="post" />
-            <small class="text-danger"
-              *ngIf="experiences.controls[i]?.get
+            <small class="text-danger" *ngIf="experiences.controls[i]?.get
               ('post')?.touched && !experiences.controls[i]?.get
               ('post')?.valid">*</small>
             <button type="button" class="btn btn-danger ml-1" (click)="deleteExperience(i)"><span
-                class="fas fa-trash"></span></button>
+                class="icon-bin2"></span></button>
           </div>
 
         </div>
@@ -100,7 +98,7 @@
             ('cgpa')?.touched && !educations.controls[i]?.get
             ('cgpa')?.valid">*</small>
             <button type="button" class="btn btn-danger ml-1" (click)="deleteEducation(i)"><span
-                class="fas fa-trash"></span></button>
+                class="icon-bin2"></span></button>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@
         <tbody>
             <tr *ngFor="let user of result | paginate: dataPerPage: currentPage ; let i = index">
                 <td>{{i+1}}</td>
-                <td>{{user.firstname+" "+ user.lastname}}</td>
+                <td>{{user.firstname +" "+user.lastname | titlecase}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.phoneNo | maskPhone}}</td>
                 <td>{{user.gender}}</td>
@@ -46,7 +46,8 @@
             </tr>
         </tbody>
     </table>
-    <app-paginate *ngIf="myUsers" [dataPerPage]="dataPerPage" [totaldata]="result.length" (currentPage)="setCurrentPage($event)"></app-paginate>
+    <app-paginate *ngIf="myUsers" [dataPerPage]="dataPerPage" [totaldata]="result.length"
+        (currentPage)="setCurrentPage($event)"></app-paginate>
 </div>
 <div *ngIf="!myUsers">
     No Record found
