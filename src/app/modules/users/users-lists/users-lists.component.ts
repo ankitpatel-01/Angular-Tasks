@@ -24,7 +24,7 @@ export class UsersListsComponent implements OnInit {
     this.departments = [];
     this.searchText = "";
     this.currentPage = 1;
-    this.dataPerPage = 6;
+    this.dataPerPage = 8;
   }
 
   //On Component Init Load User data

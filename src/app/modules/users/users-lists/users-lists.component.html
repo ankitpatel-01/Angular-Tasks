@@ -1,36 +1,40 @@
 <!-- //Module title -->
-<div class="header-container d-flex aline-content-center mb-3">
-    <span class="app-title ml-1">User</span>
+<div class="header-container d-flex aline-content-center mb-2">
+    <span class="title">Users</span>
 </div>
 
 <!-- search bar and add btn  -->
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between mb-2">
     <div class="searchbox">
         <span class="fas fa-search"></span>
         <input type="text" [(ngModel)]="searchText" placeholder="Search by name">
     </div>
-    <button class="btn btn-primary" (click)="navigateToForm()">+ Add User</button>
+    <button class="btn btn-primary" (click)="navigateToForm()">+ Add new user</button>
 </div>
 
 <!-- user list -->
-<div *ngIf="myUsers | userFilter:searchText as result" class="mt-5">
+<div class="mt-4" *ngIf="myUsers | userFilter:searchText as result">
     <table class="table mt-3">
         <thead>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone No.</th>
-            <th>Gender</th>
-            <th>Department</th>
-            <th>Date of joining</th>
-            <th>Actions</th>
+            <tr>
+                <th></th>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone No.</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Date of joining</th>
+                <th>Actions</th>
+            </tr>
         </thead>
         <tbody>
             <tr *ngFor="let user of result | paginate: dataPerPage: currentPage ; let i = index">
+                <td><input type="checkbox" name="user.id"></td>
                 <td>{{i+1}}</td>
                 <td>{{user.firstname +" "+user.lastname | titlecase}}</td>
                 <td>{{user.email}}</td>
-                <td>{{user.phoneNo | maskPhone}}</td>
+                <td>{{user.phoneNo}}</td>
                 <td>{{user.gender}}</td>
                 <td>{{user.department | deptFilter:departments}}</td>
                 <td>{{user.doj}}</td>

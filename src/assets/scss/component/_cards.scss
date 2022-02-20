@@ -1,1 +1,33 @@
 // Card styles goes here
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  word-wrap: break-word;
+
+  &-body {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  &-sub-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: -0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-text {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+}

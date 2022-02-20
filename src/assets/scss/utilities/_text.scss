@@ -1,9 +1,18 @@
 // Typographical styles goes here
-.app-title {
-  font-size: 32px;
+.title {
+  font-size: 2rem;
+  font-style: normal;
   font-weight: 500;
+  margin-bottom: 1rem;
 }
-
+.sub-title {
+  display: block;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: -0.25rem;
+  margin-bottom: 0.8rem;
+}
 //colored texts
 @each $key, $value in $theme-colors {
   .text-#{$key} {

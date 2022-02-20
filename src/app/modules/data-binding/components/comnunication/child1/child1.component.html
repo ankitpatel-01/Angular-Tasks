@@ -1,6 +1,6 @@
-<div class="container">
-    <h3>Child Component</h3>
+<div class="container border">
+    <span class="sub-title">Child Component</span>
     <p>{{username}} is comming from parent component</p>
     <p *ngIf="child2data">child 2 say {{child2data}}</p>
-    <button (click)="sendData()">Send data back to parent</button>
+    <button class="btn" (click)="sendData()">Send data back to parent</button>
 </div>

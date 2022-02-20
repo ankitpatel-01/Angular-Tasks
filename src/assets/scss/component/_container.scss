@@ -1,0 +1,13 @@
+.container {
+  padding: 0.8rem 1rem;
+  width: 100%;
+  margin-bottom: 0.8rem;
+  &-50 {
+    width: 50%;
+  }
+
+  & .border {
+    border: 1px solid $border-color;
+    border-radius: 0.5rem;
+  }
+}

@@ -1,22 +1,22 @@
 <section class="section1">
     <div class="container">
-        <h2>{{ title }}</h2>
+        <span class="sub-title">{{ title }}</span>
         <p>Title is coming through String Interpolation</p>
     </div>
     <div class="container">
-        <h2>{{ title2 }}</h2>
+        <span class="sub-title">{{ title2 }}</span>
         <figure class="img-container">
             <img class="img" [src]="imgUrl" alt="Landscape" />
             <figcaption>Landscape image</figcaption>
         </figure>
         <button class="btn btn-primary" [disabled]="IsDisable">This Button Is Disable</button>
-    </div >
+    </div>
     <div class="container">
-        <h2>{{ title3 }}</h2>
+        <p class="sub-title">{{ title3 }}</p>
         <button class="btn btn-primary" (click)="btnClick()">alert!</button>
     </div>
     <div class="container">
-        <h2>{{ title4 }}</h2>
+        <span class="sub-title">{{ title4 }}</span>
         <input class="form-control" type="text" [(ngModel)]="myInput">
         <p>This is {{ myInput }}</p>
     </div>

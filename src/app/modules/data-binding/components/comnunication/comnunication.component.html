@@ -1,6 +1,7 @@
 <div class="container">
-    <h2>Parent Component</h2>
+    <span class="sub-title">Parent Component</span>
     <p>{{child1Data}}</p>
+    <p>{{child2Data}}</p>
     <app-child1 [username]="username" [child2data]="child2Data" (notify)="notifyParent($event)"></app-child1>
     <app-child2 (notify2)="reciveData($event)"></app-child2>
 </div>
