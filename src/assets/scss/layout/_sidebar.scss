@@ -1,18 +1,59 @@
+.icon {
+  color: #bebfc4;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.header {
+  flex-shrink: 0;
+  padding: 0 1.6rem;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #eeeff1;
+  white-space: nowrap;
+
+  img {
+    height: 40px;
+  }
+}
+
+.profile {
+  padding: 2.5rem 0 1rem 1.5rem;
+  transition: 0.6s all ease;
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .details {
+    margin-left: 0.8rem;
+    .user-name {
+      font-weight: 500;
+    }
+    .user-email {
+      color: #bebfc4;
+      font-size: 0.8rem;
+      letter-spacing: 0;
+    }
+  }
+}
+
 .sidebar-wrapper {
   position: relative;
   height: 100%;
-  width: 280px;
+  width: 290px;
   border-right: 1px solid #eeeff1;
-  transition: 0.6s all ease;
+  transition: 0.5s all ease;
 
   .sidebar {
-    flex-grow: 1;
-    margin-top: 20px;
+    // flex-grow: 1;
+    margin-top: 0.8rem;
     overflow: auto;
 
     ul {
       list-style: none;
-      padding: 0 6px;
+      padding: 0 6px 22px;
       li {
         padding: 3px;
         a {
@@ -21,7 +62,8 @@
           width: 100%;
           height: 45px;
           padding: 0px 18px;
-          font-size: 18px;
+          font-size: 16px;
+          letter-spacing: 0;
           text-decoration: none;
           text-transform: capitalize;
           color: #3b3b3b;
@@ -45,33 +87,17 @@
   }
 }
 
-.icon {
-  color: #bebfc4;
-  font-size: 22px;
-}
-
-.header {
-  flex-shrink: 0;
-  padding: 0 1.6rem;
-  width: 100%;
-  height: 60px;
-  border-bottom: 1px solid #eeeff1;
-  white-space: nowrap;
-
-  img {
-    height: 40px;
-  }
-}
-
 .footer {
-  position: absolute;
-  width: 100%;
+  // position: absolute;
+  // width: 100%;
+  // bottom: 0;
+  padding: 1.5rem 2rem;
   height: 60px;
-  bottom: 0;
   color: #252525;
   border-top: 1px solid #eeeff1;
   white-space: nowrap;
 }
+
 .far {
   color: $primary;
   font-weight: 100;
@@ -83,15 +109,36 @@
   display: none;
 }
 
-#menu-btn:checked ~ .sidebar-wrapper {
+#menu-btn:checked {
+  & ~ .drawer-menu {
+    .sidebar-wrapper {
+      width: 80px;
+      .far {
+        color: $dark;
+      }
+
+      .profile {
+        padding-left: 1rem;
+        .details {
+          display: none;
+        }
+      }
+      .logo {
+        display: none;
+      }
+      .link-name {
+        display: none;
+      }
+    }
+  }
+}
+
+#menu-btn:checked ~ .drawer-menu {
   width: 80px;
-  .far {
-    color: $dark;
-  }
-  .logo {
-    display: none;
-  }
-  .link-name {
-    display: none;
+}
+
+#menu-btn:checked {
+  & ~ .content-wrapper {
+    width: calc(100% - 80px);
   }
 }

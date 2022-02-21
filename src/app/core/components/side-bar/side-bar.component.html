@@ -1,13 +1,20 @@
-<input class="menu-btn" type="checkbox" id="menu-btn" checked />
 <aside class="sidebar-wrapper d-flex-col flex-shrink">
   <header class="header d-flex aline-item-center">
     <label class="menu-icon" for="menu-btn"><span class="far fa-bars"></span></label>
     <div class="d-flex aline-item-center justify-content-center flex-grow">
       <figure>
-        <img class="logo img" src="../assets/img/Angularlogo.png" alt="" srcset="" />
+        <img class="logo img" src="../assets/img/Angularlogo.png" alt="logo" srcset="" />
       </figure>
     </div>
   </header>
+
+  <div class="profile d-flex">
+    <img class="avatar" src="../assets/img/Avatar.jpeg" alt="profile">
+    <div class="details">
+      <p class="user-name">Ankit Patel</p>
+      <p class="user-email">ankitpatelak2017@gmail.com</p>
+    </div>
+  </div>
   <nav class="sidebar">
     <ul>
       <li><a routerLink="data-binding" routerLinkActive="active"><span class="icon icon-feed mr-2"></span> <span
@@ -24,7 +31,7 @@
             class="link-name">Employees</span> </a></li>
     </ul>
   </nav>
-  <footer class="footer d-flex aline-item-center justify-content-center">
+  <footer class="footer d-flex aline-item-center justify-content-start">
     <span class="icon icon-exit"></span><span class="link-name ml-2">Log out</span>
   </footer>
 </aside>

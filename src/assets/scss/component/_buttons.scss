@@ -50,3 +50,12 @@
     }
   }
 }
+
+
+@media (max-width:768px) {
+  .header-btn{
+    .btn:not(:first-child){
+      margin-top: 5px;
+    }
+  }
+}
