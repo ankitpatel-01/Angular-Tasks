@@ -31,3 +31,13 @@
 input:focus ~ span {
   color: #2f55e5;
 }
+
+@media screen and (max-width: 576px) {
+  .user-header {
+    flex-direction: column;
+
+    .btn {
+      margin-top: 0.6rem;
+    }
+  }
+}

@@ -1,110 +1,114 @@
 <span class="title">Resume Builder</span>
-<div class="form-container">
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <!-- Name -->
-    <div class="form-group mt-1">
-      <label for="username">Name :</label>
-      <input class="form-control" type="text" id="username" placeholder="Enter your Name" formControlName="username" />
-      <small class="text-danger" *ngIf="!user['username']?.valid && user['username']?.touched">* This Field is
-        Required</small>
-      <small class="text-danger" *ngIf="user['username']?.errors?.['minlength']">* minimum length shouldbe 3
-        character</small>
-    </div>
-    <!-- Email -->
-    <div class="form-group mt-2">
-      <label for="email">Email :</label>
-      <input class="form-control" type="email" id="email" placeholder="Enter your email" formControlName="email" />
-      <small class="text-danger" *ngIf="!user['email']?.valid && user['email']?.touched">* Please Enter a valid
-        Email</small>
-    </div>
-    <!-- Phone No -->
-    <div class="form-group mt-2">
-      <label for="contactNo">Phone No :</label>
-      <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
-        formControlName="contactNo" maxlength="10" />
-      <small class="text-danger" *ngIf="!user['contactNo']?.valid && user['contactNo']?.touched">* This Field is
-        Required</small>
-      <small class="text-danger" *ngIf="user['contactNo']?.errors?.['minlength']">* minimum length should be 10
-        character</small>
-    </div>
-    <!-- Post -->
-    <div class="form-group mt-1">
-      <label for="postname">Post :</label>
-      <input class="form-control" type="text" id="username" placeholder="Enter your Name" formControlName="postname" />
-      <small class="text-danger" *ngIf="!user['postname']?.valid && user['postname']?.touched">* This Field is
-        Required</small>
-    </div>
-    <!-- Technical Skills -->
-    <fieldset class="container">
-      <legend> Technical Skills :</legend>
-      <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
-        <div class="skillfield d-flex mt-2" [formGroupName]="i">
-          <input class="form-control" type="text" formControlName="technicalSkills" />
-          <small class="text-danger" *ngIf="skills.controls[i]?.touched && !skills.controls[i]?.valid">*</small>
-          <button type="button" class="btn btn-danger ml-1" (click)="deleteSkills(i)"><span
-              class="icon-bin2"></span></button>
-        </div>
+<div class="container d-flex-col aline-item-center justify-content-center">
+  <div class="container-500">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <div class="form-group mt-1">
+        <label for="username">Name :</label>
+        <input class="form-control" type="text" id="username" placeholder="Enter your Name"
+          formControlName="username" />
+        <small class="text-danger" *ngIf="!user['username']?.valid && user['username']?.touched">* This Field is
+          Required</small>
+        <small class="text-danger" *ngIf="user['username']?.errors?.['minlength']">* minimum length shouldbe 3
+          character</small>
       </div>
-      <button type="button" class="btn btn-primary mt-2" (click)="addSkills()">+</button>
-    </fieldset>
-    <!-- Experiences -->
-    <fieldset class="container">
-      <legend>Experirnces :</legend>
-      <div formArrayName="experiences" *ngFor="let experience of experiences.controls, let i = index">
-        <div class="expfield d-flex col mt-2" [formGroupName]=i>
-          <label for="companyName">Company Name:</label>
-          <input class="form-control" type="text" formControlName="companyName" />
-          <small class="text-danger" *ngIf="experiences.controls[i]?.get
-          ('companyName')?.touched && !experiences.controls[i]?.get
-          ('companyName')?.valid">*</small>
-          <label for="years">Years:</label>
-          <input class="form-control" type="text" formControlName="years" />
-          <small class="text-danger" *ngIf="experiences.controls[i]?.get
-            ('years')?.touched && !experiences.controls[i]?.get
-            ('years')?.valid">*</small>
-          <label for="post">Post:</label>
-          <div class="d-flex">
-            <input class="form-control" type="text" formControlName="post" />
+      <!-- Email -->
+      <div class="form-group mt-2">
+        <label for="email">Email :</label>
+        <input class="form-control" type="email" id="email" placeholder="Enter your email" formControlName="email" />
+        <small class="text-danger" *ngIf="!user['email']?.valid && user['email']?.touched">* Please Enter a valid
+          Email</small>
+      </div>
+      <!-- Phone No -->
+      <div class="form-group mt-2">
+        <label for="contactNo">Phone No :</label>
+        <input class="form-control" type="text" id="contactNo" placeholder="Enter your phone number"
+          formControlName="contactNo" maxlength="10" />
+        <small class="text-danger" *ngIf="!user['contactNo']?.valid && user['contactNo']?.touched">* This Field is
+          Required</small>
+        <small class="text-danger" *ngIf="user['contactNo']?.errors?.['minlength']">* minimum length should be 10
+          character</small>
+      </div>
+      <!-- Post -->
+      <div class="form-group mt-1">
+        <label for="postname">Post :</label>
+        <input class="form-control" type="text" id="username" placeholder="Enter your Name"
+          formControlName="postname" />
+        <small class="text-danger" *ngIf="!user['postname']?.valid && user['postname']?.touched">* This Field is
+          Required</small>
+      </div>
+      <!-- Technical Skills -->
+      <fieldset class="container">
+        <legend> Technical Skills :</legend>
+        <div formArrayName="skills" *ngFor="let skill of skills.controls, let i = index">
+          <div class="skillfield d-flex mt-2" [formGroupName]="i">
+            <input class="form-control" type="text" formControlName="technicalSkills" />
+            <small class="text-danger" *ngIf="skills.controls[i]?.touched && !skills.controls[i]?.valid">*</small>
+            <button type="button" class="btn btn-danger ml-1" (click)="deleteSkills(i)"><span
+                class="icon-bin2"></span></button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-2" (click)="addSkills()">+</button>
+      </fieldset>
+      <!-- Experiences -->
+      <fieldset class="container">
+        <legend>Experirnces :</legend>
+        <div formArrayName="experiences" *ngFor="let experience of experiences.controls, let i = index">
+          <div class="expfield d-flex col mt-2" [formGroupName]=i>
+            <label for="companyName">Company Name:</label>
+            <input class="form-control" type="text" formControlName="companyName" />
             <small class="text-danger" *ngIf="experiences.controls[i]?.get
-              ('post')?.touched && !experiences.controls[i]?.get
-              ('post')?.valid">*</small>
-            <button type="button" class="btn btn-danger ml-1" (click)="deleteExperience(i)"><span
-                class="icon-bin2"></span></button>
-          </div>
+            ('companyName')?.touched && !experiences.controls[i]?.get
+            ('companyName')?.valid">*</small>
+            <label for="years">Years:</label>
+            <input class="form-control" type="text" formControlName="years" />
+            <small class="text-danger" *ngIf="experiences.controls[i]?.get
+              ('years')?.touched && !experiences.controls[i]?.get
+              ('years')?.valid">*</small>
+            <label for="post">Post:</label>
+            <div class="d-flex">
+              <input class="form-control" type="text" formControlName="post" />
+              <small class="text-danger" *ngIf="experiences.controls[i]?.get
+                ('post')?.touched && !experiences.controls[i]?.get
+                ('post')?.valid">*</small>
+              <button type="button" class="btn btn-danger ml-1" (click)="deleteExperience(i)"><span
+                  class="icon-bin2"></span></button>
+            </div>
 
-        </div>
-      </div>
-      <button type="button" class="btn btn-primary mt-2" (click)="addExperience()">+</button>
-    </fieldset>
-    <!-- Eductions -->
-    <fieldset class="container">
-      <legend>Eduction :</legend>
-      <div formArrayName="educations" *ngFor="let experience of educations.controls, let i = index">
-        <div class="edufield d-flex col mt-2" [formGroupName]=i>
-          <label for="schoolName">Institution Name:</label>
-          <input class="form-control" type="text" formControlName="schoolName" />
-          <small class="text-danger" *ngIf="educations.controls[i]?.get
-          ('schoolName')?.touched && !educations.controls[i]?.get
-          ('schoolName')?.valid">*</small>
-          <label for="major">Major :</label>
-          <input class="form-control" type="text" formControlName="major" />
-          <small class="text-danger" *ngIf="educations.controls[i]?.get
-          ('major')?.touched && !educations.controls[i]?.get
-          ('major')?.valid">*</small>
-          <label for="cgpa">CGPA :</label>
-          <div class="d-flex">
-            <input class="form-control" type="text" formControlName="cgpa" />
-            <small class="text-danger" *ngIf="educations.controls[i]?.get
-            ('cgpa')?.touched && !educations.controls[i]?.get
-            ('cgpa')?.valid">*</small>
-            <button type="button" class="btn btn-danger ml-1" (click)="deleteEducation(i)"><span
-                class="icon-bin2"></span></button>
           </div>
         </div>
-      </div>
-      <button type="button" class="btn btn-primary mt-2" (click)="addEducation()">+</button>
-    </fieldset>
-    <!-- submit -->
-    <button type="submit" class="btn btn-primary mt-3" [disabled]="userForm.invalid">Submit</button>
-  </form>
+        <button type="button" class="btn btn-primary mt-2" (click)="addExperience()">+</button>
+      </fieldset>
+      <!-- Eductions -->
+      <fieldset class="container">
+        <legend>Eduction :</legend>
+        <div formArrayName="educations" *ngFor="let experience of educations.controls, let i = index">
+          <div class="edufield d-flex col mt-2" [formGroupName]=i>
+            <label for="schoolName">Institution Name:</label>
+            <input class="form-control" type="text" formControlName="schoolName" />
+            <small class="text-danger" *ngIf="educations.controls[i]?.get
+            ('schoolName')?.touched && !educations.controls[i]?.get
+            ('schoolName')?.valid">*</small>
+            <label for="major">Major :</label>
+            <input class="form-control" type="text" formControlName="major" />
+            <small class="text-danger" *ngIf="educations.controls[i]?.get
+            ('major')?.touched && !educations.controls[i]?.get
+            ('major')?.valid">*</small>
+            <label for="cgpa">CGPA :</label>
+            <div class="d-flex">
+              <input class="form-control" type="text" formControlName="cgpa" />
+              <small class="text-danger" *ngIf="educations.controls[i]?.get
+              ('cgpa')?.touched && !educations.controls[i]?.get
+              ('cgpa')?.valid">*</small>
+              <button type="button" class="btn btn-danger ml-1" (click)="deleteEducation(i)"><span
+                  class="icon-bin2"></span></button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-2" (click)="addEducation()">+</button>
+      </fieldset>
+      <!-- submit -->
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="userForm.invalid">Submit</button>
+    </form>
+  </div>
 </div>

@@ -11,6 +11,7 @@ body {
 }
 
 body {
+  overflow: hidden;
   font-family: "Poppins", sans-serif;
   line-height: 1.2;
   letter-spacing: 1.1px;
@@ -37,4 +38,17 @@ a {
 
 p {
   margin: 4px 0;
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .section-header {
+    flex-direction: column;
+    .btn {
+      font-size: 0.8rem;
+    }
+  }
 }

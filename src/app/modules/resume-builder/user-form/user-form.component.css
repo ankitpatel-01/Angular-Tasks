@@ -3,13 +3,28 @@
     margin: 0 auto;
 } */
 
-.skillfield{
-    width: 30%;
+.skillfield {
+  width: 30%;
 }
 
-.expfield, .edufield{
+.expfield,
+.edufield {
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .skillfield,
+  .expfield,
+  .edufield {
     width: 80%;
-    flex-wrap: wrap;
+  }
 }
 
-
+@media screen and (max-width: 576px) {
+  .skillfield,
+  .expfield,
+  .edufield {
+    width: 100%;
+  }
+}

@@ -1,10 +1,8 @@
 <!-- //Module title -->
-<div class="header-container d-flex aline-content-center mb-2">
-    <span class="title">Users</span>
-</div>
+<span class="title">Users</span>
 
 <!-- search bar and add btn  -->
-<div class="d-flex justify-content-between mb-2">
+<div class="user-header d-flex justify-content-between mt-3 mb-2">
     <div class="searchbox">
         <span class="fas fa-search"></span>
         <input type="text" [(ngModel)]="searchText" placeholder="Search by name">
@@ -12,9 +10,11 @@
     <button class="btn btn-primary" (click)="navigateToForm()">+ Add new user</button>
 </div>
 
+
+
 <!-- user list -->
 <div *ngIf="myUsers | userFilter:searchText as result">
-    <div  class="table-container mt-4">
+    <div class="table-container mt-4">
         <table class="table mt-3">
             <thead>
                 <tr>
@@ -53,7 +53,7 @@
         </table>
     </div>
     <app-paginate *ngIf="myUsers" [dataPerPage]="dataPerPage" [totaldata]="result.length"
-    (currentPage)="setCurrentPage($event)"></app-paginate>
+        (currentPage)="setCurrentPage($event)"></app-paginate>
 </div>
 <div *ngIf="!myUsers">
     No Record found
