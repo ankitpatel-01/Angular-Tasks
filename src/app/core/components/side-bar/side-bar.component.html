@@ -1,37 +1,43 @@
-<aside class="sidebar-wrapper d-flex-col flex-shrink">
-  <header class="header d-flex aline-item-center">
-    <label class="menu-icon" for="menu-btn"><span class="far fa-bars"></span></label>
+<aside class="sidebar-wrapper d-flex-col flex-grow">
+  <!-- logo  -->
+  <div class="logo d-flex aline-item-center">
     <div class="d-flex aline-item-center justify-content-center flex-grow">
       <figure>
-        <img class="logo img" src="../assets/img/Angularlogo.png" alt="logo" srcset="" />
+        <img class="logo-img" src="../assets/img/Angularlogo.png" alt="logo" srcset="" />
       </figure>
     </div>
-  </header>
-
-  <div class="profile d-flex">
-    <img class="avatar" src="../assets/img/Avatar.jpeg" alt="profile">
-    <div class="details">
-      <p class="user-name">Ankit Patel</p>
-      <p class="user-email">ankitpatelak2017@gmail.com</p>
+  </div>
+  <!-- start: nav content  -->
+  <div class="nav-wrapper" >
+    <!-- profile  -->
+    <div class="profile d-flex">
+      <img class="avatar" src="../assets/img/Avatar.jpeg" alt="profile">
+      <div class="details">
+        <p class="user-name">Ankit Patel</p>
+        <p class="user-email">ankitpatelak2017@gmail.com</p>
+      </div>
+    </div>
+    <!-- nav links -->
+    <nav class="navbar">
+      <ul>
+        <li><a routerLink="data-binding" routerLinkActive="active"><span class="icon icon-feed mr-2"></span> <span
+              class="link-name">Data Binding</span> </a></li>
+        <li><a routerLink="directive-pipes" routerLinkActive="active"><span class="icon  icon-table mr-2"></span> <span
+              class="link-name">Product Table</span> </a></li>
+        <li><a routerLink="profile" routerLinkActive="active"><span class="icon icon-pencil2 mr-2"></span><span
+              class="link-name">Reactive Form </span> </a></li>
+        <li><a routerLink="resumebuilder" routerLinkActive="active"><span class="icon icon-profile mr-2"></span><span
+              class="link-name">Resume Builder</span> </a></li>
+        <li><a routerLink="users" routerLinkActive="active"><span class="icon icon-user mr-2"></span><span
+              class="link-name">Users</span> </a></li>
+        <li><a routerLink="employees" routerLinkActive="active"><span class="icon icon-user-tie mr-2"></span> <span
+              class="link-name">Employees</span> </a></li>
+      </ul>
+    </nav>
+    <!-- log out  -->
+    <div class="logOut d-flex aline-item-center justify-content-start">
+      <span class="icon icon-exit"></span><span class="link-name ml-2">Log out</span>
     </div>
   </div>
-  <nav class="sidebar">
-    <ul>
-      <li><a routerLink="data-binding" routerLinkActive="active"><span class="icon icon-feed mr-2"></span> <span
-            class="link-name">Data Binding</span> </a></li>
-      <li><a routerLink="directive-pipes" routerLinkActive="active"><span class="icon  icon-table mr-2"></span> <span
-            class="link-name">Product Table</span> </a></li>
-      <li><a routerLink="profile" routerLinkActive="active"><span class="icon icon-pencil2 mr-2"></span><span
-            class="link-name">Reactive Form </span> </a></li>
-      <li><a routerLink="resumebuilder" routerLinkActive="active"><span class="icon icon-profile mr-2"></span><span
-            class="link-name">Resume Builder</span> </a></li>
-      <li><a routerLink="users" routerLinkActive="active"><span class="icon icon-user mr-2"></span><span
-            class="link-name">Users</span> </a></li>
-      <li><a routerLink="employees" routerLinkActive="active"><span class="icon icon-user-tie mr-2"></span> <span
-            class="link-name">Employees</span> </a></li>
-    </ul>
-  </nav>
-  <footer class="footer d-flex aline-item-center justify-content-start">
-    <span class="icon icon-exit"></span><span class="link-name ml-2">Log out</span>
-  </footer>
+  <!-- end: nav content  -->
 </aside>

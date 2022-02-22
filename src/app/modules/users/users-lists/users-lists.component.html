@@ -13,45 +13,47 @@
 </div>
 
 <!-- user list -->
-<div class="table-container mt-4" *ngIf="myUsers | userFilter:searchText as result">
-    <table class="table mt-3">
-        <thead>
-            <tr>
-                <th></th>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone No.</th>
-                <th>Gender</th>
-                <th>Department</th>
-                <th>Date of joining</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of result | paginate: dataPerPage: currentPage ; let i = index">
-                <td><input type="checkbox" name="user.id"></td>
-                <td>{{i+1}}</td>
-                <td>{{user.firstname +" "+user.lastname | titlecase}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.phoneNo}}</td>
-                <td>{{user.gender}}</td>
-                <td>{{user.department | deptFilter:departments}}</td>
-                <td>{{user.doj}}</td>
-                <td>
-                    <a routerLink="/users/edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
-                    <a (click)="deleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
-                </td>
-            </tr>
-            <tr *ngIf="result.length == 0">
-                <td>
-                    No Record found
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div *ngIf="myUsers | userFilter:searchText as result">
+    <div  class="table-container mt-4">
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Date of joining</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of result | paginate: dataPerPage: currentPage ; let i = index">
+                    <td><input type="checkbox" name="user.id"></td>
+                    <td>{{i+1}}</td>
+                    <td>{{user.firstname +" "+user.lastname | titlecase}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phoneNo}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.department | deptFilter:departments}}</td>
+                    <td>{{user.doj}}</td>
+                    <td>
+                        <a routerLink="/users/edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
+                        <a (click)="deleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
+                    </td>
+                </tr>
+                <tr *ngIf="result.length == 0">
+                    <td>
+                        No Record found
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <app-paginate *ngIf="myUsers" [dataPerPage]="dataPerPage" [totaldata]="result.length"
-        (currentPage)="setCurrentPage($event)"></app-paginate>
+    (currentPage)="setCurrentPage($event)"></app-paginate>
 </div>
 <div *ngIf="!myUsers">
     No Record found

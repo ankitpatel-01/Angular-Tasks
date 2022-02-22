@@ -1,9 +1,10 @@
 <div class="main-wrapper d-flex">
-    <input class="menu-btn" type="checkbox" id="menu-btn" checked />
-    <div class="drawer-menu" app-side-bar></div>
+    <label id="menu-btn-icon" for="menu-btn"><span class="far fa-bars"></span></label>
+    <input type="checkbox" id="menu-btn" />
+    <div class="drawer-menu">
+        <app-side-bar></app-side-bar>
+    </div>
     <main class="content-wrapper d-flex-col flex-grow">
-        <div class="outlet flex-grow">
-            <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
     </main>
 </div>
