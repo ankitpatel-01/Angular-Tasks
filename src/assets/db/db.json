@@ -183,10 +183,10 @@
   ],
   "resume": [
     {
-      "username": "Ankit",
+      "username": "Hiral",
       "email": "ankitpatelak2017@gmail.com",
       "contactNo": "8347892046",
-      "postname": "Ankit",
+      "postname": "Frontend Developer",
       "skills": [
         {
           "technicalSkills": "html"
@@ -194,16 +194,16 @@
       ],
       "experiences": [
         {
-          "companyName": "fgfg",
-          "years": "fdfd",
-          "post": "dfdf"
+          "companyName": "1Rivet",
+          "years": "2021",
+          "post": "UI"
         }
       ],
       "educations": [
         {
-          "schoolName": "dfdf",
-          "major": "dfdf",
-          "cgpa": "dfdf"
+          "schoolName": "GRY",
+          "major": "fdf",
+          "cgpa": "10"
         }
       ],
       "id": 1
