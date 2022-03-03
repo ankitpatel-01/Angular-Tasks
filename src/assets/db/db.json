@@ -119,66 +119,6 @@
       "doj": "2022-01-03",
       "department": "3",
       "id": 8
-    },
-    {
-      "firstname": "shivam",
-      "lastname": "pandey",
-      "email": "shivam.pandey@email.com",
-      "phoneNo": "(785) 554-5455",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": "4",
-      "id": 9
-    },
-    {
-      "firstname": "jay",
-      "lastname": "patel",
-      "email": "jay.patel@email.com",
-      "phoneNo": "(785) 554-5455",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": 6,
-      "id": 10
-    },
-    {
-      "firstname": "Chirag",
-      "lastname": "Patel",
-      "email": "cp221740@gmail.com",
-      "phoneNo": "(546) 545-6588",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": 1,
-      "id": 11
-    },
-    {
-      "firstname": "Pravin",
-      "lastname": "Patel",
-      "email": "pravin.patel@gmail.com",
-      "phoneNo": "(999) 810-4932",
-      "gender": "male",
-      "doj": "2022-02-09",
-      "department": "3",
-      "id": 12
-    },
-    {
-      "firstname": "Kevam",
-      "lastname": "shah",
-      "email": "kevam.shah@gmail.com",
-      "phoneNo": "(798) 512-3455",
-      "gender": "male",
-      "doj": "2022-02-10",
-      "department": "4",
-      "id": 13
-    },
-    {
-      "firstname": "viral",
-      "lastname": "patel",
-      "email": "viral.patel@gmail.com",
-      "phoneNo": "(784) 224-5555",
-      "gender": "male",
-      "doj": "2022-02-01",
-      "department": 1,
-      "id": 14
     }
   ],
   "resume": [

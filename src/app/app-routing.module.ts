@@ -36,7 +36,9 @@ const routes: Routes = [
         (m) => m.ResumeBuilderModule
       ),
   },
-  { path: 'employees', loadChildren: () => import('./Assesments/employees/employees.module').then(m => m.EmployeesModule) }
+  { path: 'employees', loadChildren: () => import('./Assesments/employees/employees.module').then(m => m.EmployeesModule) },
+  { path: 'practice', loadChildren: () => import('./modules/practice/practice.module').then(m => m.PracticeModule) },
+  { path: 'todo-app', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) }
 ];
 
 @NgModule({

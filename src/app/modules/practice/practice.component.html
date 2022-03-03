@@ -1,0 +1,15 @@
+<h3>All interns data</h3>
+<table class="mt-3">
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>company</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let intern of interns">
+            <td>{{intern.id}}</td>
+            <td>{{intern.name}}</td>
+            <td>{{intern.company}}</td>
+        </tr>
+    </tbody>
+</table>
