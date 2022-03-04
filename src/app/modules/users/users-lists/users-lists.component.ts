@@ -1,5 +1,8 @@
-import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
+import { Overlay } from '@angular/cdk/overlay';
+import { ComponentPortal } from '@angular/cdk/portal';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormModalComponent } from '../form-modal/form-modal.component';
 import { Department } from '../models/dept.model';
 import { User } from '../models/user.model';
 import { UsersService } from '../services/users.service';
@@ -17,9 +20,10 @@ export class UsersListsComponent implements OnInit {
 
   public currentPage: number;
   public dataPerPage: number;
+  
 
 
-  constructor(private router: Router, private usersServices: UsersService) {
+  constructor(private router: Router, private usersServices: UsersService , private overlay: Overlay) {
     this.myUsers = [];
     this.departments = [];
     this.searchText = "";
@@ -67,5 +71,15 @@ export class UsersListsComponent implements OnInit {
   //setCurrentPage
   public setCurrentPage(pageNo: number) {
     this.currentPage = pageNo;
+  }
+
+  //
+  public openFormModal(){
+     const overlayRef = this.overlay.create({
+      positionStrategy: this.overlay.position().global().centerHorizontally().right()
+    });
+    const component = new ComponentPortal(FormModalComponent);
+    const componentRef = overlayRef.attach(component);
+    componentRef.instance.cancel.subscribe(() => overlayRef.detach());
   }
 }

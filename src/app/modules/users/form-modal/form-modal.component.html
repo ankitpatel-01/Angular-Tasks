@@ -1,0 +1,93 @@
+<div class="modal-card">
+    <div class="modal-header">
+        Add User
+    </div>
+    <section class="modal-body">
+        <form [formGroup]="userForm">
+            <!-- Name  -->
+            <div class="d-flex justify-content-between">
+                <!-- firstname -->
+                <div class="flex-basis-50">
+                    <label for="firstname">FirstName :</label>
+                    <input class="form-control" type="text" id="firstname" placeholder="Enter your firstname..."
+                        formControlName="firstname" />
+                    <small class="text-danger"
+                        *ngIf="!userForm.get('firstname')?.valid && userForm.get('firstname')?.touched">*
+                        This Field is Required</small>
+                </div>
+                <!-- lastname -->
+                <div class="ml-2 flex-basis-50">
+                    <label for="lastname">LastName :</label>
+                    <input class="form-control" type="text" id="lastname" placeholder="Enter your lastname..."
+                        formControlName="lastname" />
+                    <small class="text-danger"
+                        *ngIf="!userForm.get('lastname')?.valid && userForm.get('lastname')?.touched">*
+                        This Field is Required</small>
+                </div>
+    
+            </div>
+            <!-- Email -->
+            <div class="mt-3">
+                <label for="email">Email :</label>
+                <input class="form-control" type="email" id="email" placeholder="Enter your email id"
+                    formControlName="email" />
+                <small class="text-danger" *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.touched">*
+                    Please
+                    Enter a valid Email</small>
+            </div>
+            <!-- phoneNo -->
+            <div class="mt-3">
+                <label for="contactNo">Phone No :</label>
+                <input appMaskPhone class="form-control" type="text" id="phoneNo"
+                    placeholder="Enter your Phone number..." formControlName="phoneNo" maxlength="14" />
+                <small class="text-danger" *ngIf="userForm.get('phoneNo')?.touched && !userForm.get('phoneNo')?.dirty">
+                    * This Field is Required</small>
+                <small class="text-danger" *ngIf="userForm.get('phoneNo')?.errors?.['minlength']">* minimum length
+                    should
+                    be 10 character</small>
+            </div>
+            <!-- Gender -->
+            <div class="mt-3">
+                <label for="gender">Gender :</label>
+                <div class="mt-1">
+                    <input class="form-control-checked" type="radio" id="male" value="male" name="gender"
+                        formControlName="gender" />
+                    <label class="mr-2" for="male">Male</label>
+                    <input class="form-check-input" type="radio" id="female" value="female" name="gender"
+                        formControlName="gender" />
+                    <label class="mr-2" for="female">Female</label>
+                </div>
+                <small class="text-danger" *ngIf="!userForm.get('gender')?.valid && userForm.get('gender')?.touched">*
+                    This Field is Required</small>
+            </div>
+            <!-- departments -->
+            <div class="mt-3">
+                <label for="dept">Department :</label>
+                <select class="form-control" id="dept" formControlName="department">
+                    <option selected>Choose...</option>
+                    <option *ngFor="let dept of departments;" [value]="dept.id">
+                        {{ dept.name }}
+                    </option>
+                </select>
+                <small class="text-danger"
+                    *ngIf="!userForm.get('department')?.valid && userForm.get('department')?.touched">*
+                    This Field is Required</small>
+            </div>
+            <!-- Date of joining -->
+            <div class="mt-3">
+                <label for="doj">Date Of joining :</label>
+                <input class="form-control" type="date" name="doj" id="doj" formControlName="doj">
+                <small class="text-danger" *ngIf="!userForm.get('doj')?.valid && userForm.get('doj')?.touched">*
+                    This Field is Required</small>
+            </div>
+        </form>
+        <!-- Submit and Reset btn  -->
+        <div class="modal-footer">
+            <div class="d-flex aline-item-center justify-content-center">
+                <button class="btn btn-success" type="button" [disabled]="userForm.invalid" (click)="onSubmit(userForm.value)">Submit</button>
+                <button class="btn btn-danger" type="button" (click)="onRest()">Reset</button>
+                <button class="btn btn-danger" type="button" (click)="onCancel($event)">Cancel</button>
+            </div>
+        </div>
+    </section>
+</div>
