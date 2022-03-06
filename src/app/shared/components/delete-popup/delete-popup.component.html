@@ -1,0 +1,14 @@
+<div class="modal-card">
+    <section class="modal-card-body">
+        <div>
+            <p class="modal-card-title">Are you sure?</p>
+            <p class="modal-card-text">Do you really want to delete these records? This process cannot be undone.</p>
+        </div>
+    </section>
+    <footer class="modal-card-foot">
+        <div class="d-flex align--item-center justify-content-around">
+            <button (click)="close(true)" type="button" class="btn btn-success">Yes</button>
+            <button (click)="close(false)" type="button" class="btn btn-danger">No</button>
+        </div>
+    </footer>
+</div>

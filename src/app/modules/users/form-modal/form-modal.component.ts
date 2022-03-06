@@ -11,29 +11,37 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./form-modal.component.scss']
 })
 export class FormModalComponent implements OnInit {
-  
-  @Input() id: number = 0;
+
+  public modalTitle: string;
   public userForm: FormGroup;
-  public departments: Department[];
   private isAddMode: boolean;
 
-  @Output() cancel; 
-  @Output() saveUser; 
+  @Input() public id: number = 0;
+  @Input() public editData: User;
+  @Input() public departments: Department[];
 
-  constructor(private fb: FormBuilder, private usersService: UsersService) {
+  @Output() public userData;
+  @Output() public cancel;
+
+  constructor(private fb: FormBuilder) {
+    this.modalTitle = "Add User"
     this.userForm = this.buildUsersForm();
+    this.editData = {} as User;
     this.departments = [];
-    this.isAddMode = !this.id;
+    this.isAddMode = true;
     this.cancel = new EventEmitter<String>();
-    this.saveUser = new EventEmitter<User>();
+    this.userData = new EventEmitter<User>();
   }
 
 
   //On init get department list and ckeck if its addMode
   ngOnInit(): void {
-    this.getDepartmentList();
+    if (this.id != 0) {
+      this.isAddMode = false
+    }
     if (!this.isAddMode) {
-      this.usersService.getById(this.id).subscribe(x => this.userForm.patchValue(x));
+      this.modalTitle = "Edit User";
+      this.userForm.patchValue(this.editData);
     }
   }
 
@@ -50,48 +58,9 @@ export class FormModalComponent implements OnInit {
     });
   }
 
-
-  //get department list from db
-  private getDepartmentList(): void {
-    this.usersService.getDepartments().subscribe({
-      next:(data: Department[]) => {
-        this.departments = data;
-      },
-      error:(e) => console.log(e)
-    });
-  }
-
-
   //on Form submit
-  public onSubmit(user : User): void {
-    this.saveUser.emit()
-    // if (this.isAddMode) {
-    //   this.createUser();
-    // }
-    // else {
-    //   this.updateUser();
-    // }
-  }
-
-
-  //Post data to db
-  public createUser(): void {
-    this.usersService.createUser(this.userForm.value).subscribe({
-      next:() => {
-        alert("New User Creadted");
-      },
-      error:(e) => console.log(e)
-    });
-  }
-
-  //Put data to db
-  public updateUser(): void {
-    this.usersService.updateUser(this.id, this.userForm.value).subscribe({
-      next: () => {
-        alert("User Updated");
-      },
-      error: (e) => console.log(e)
-    })
+  public onSubmit(): void {
+    this.userData.emit(this.userForm.value)
   }
 
   //Rest to form controls
@@ -99,7 +68,8 @@ export class FormModalComponent implements OnInit {
     this.userForm.reset();
   }
 
-  onCancel(event: Event){
+  //Close the form
+  onCancel(event: Event) {
     console.log("cancel click");
     return this.cancel.emit();
   }

@@ -40,8 +40,8 @@
                     <td>{{user.department | deptFilter:departments}}</td>
                     <td>{{user.doj}}</td>
                     <td>
-                        <a routerLink="/users/edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
-                        <a (click)="deleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
+                        <a (click)="editUser(user.id)"><span class="icon-pencil text-success mr-3"></span></a>
+                        <a (click)="deletePopUp(user.id)"><span class="icon-bin2 text-danger"></span></a>
                     </td>
                 </tr>
                 <tr *ngIf="result.length == 0">

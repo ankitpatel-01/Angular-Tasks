@@ -41,16 +41,6 @@
   ],
   "users": [
     {
-      "firstname": "Abhishike",
-      "lastname": "Patel",
-      "email": "abhi.patel@gamil.com",
-      "phoneNo": "(785) 554-5455",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": 1,
-      "id": 1
-    },
-    {
       "firstname": "manish",
       "lastname": "rajpurohit",
       "email": "manish.raj@email.com",
@@ -69,16 +59,6 @@
       "doj": "2022-01-03",
       "department": 1,
       "id": 3
-    },
-    {
-      "firstname": "ankit",
-      "lastname": "patel",
-      "email": "ankit.patel@email.com",
-      "phoneNo": "(834) 789-2046",
-      "gender": "male",
-      "doj": "2022-01-03",
-      "department": "1",
-      "id": 4
     },
     {
       "firstname": "aayushi",
@@ -119,6 +99,36 @@
       "doj": "2022-01-03",
       "department": "3",
       "id": 8
+    },
+    {
+      "firstname": "Abhishike",
+      "lastname": "Patel",
+      "email": "abhi.patel@gamil.com",
+      "phoneNo": "7855545455",
+      "gender": "male",
+      "doj": "2022-03-03",
+      "department": 1,
+      "id": 9
+    },
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "phoneNo": "8945232345",
+      "gender": "male",
+      "doj": "2022-03-26",
+      "department": 1,
+      "id": 11
+    },
+    {
+      "firstname": "diya",
+      "lastname": "Patel",
+      "email": "diya.patel@gamil.com",
+      "phoneNo": "(564) 643-2323",
+      "gender": "female",
+      "doj": "2022-03-03",
+      "department": "5",
+      "id": 12
     }
   ],
   "resume": [

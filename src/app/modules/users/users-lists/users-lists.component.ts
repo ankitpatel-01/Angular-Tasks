@@ -1,8 +1,10 @@
-import { Overlay } from '@angular/cdk/overlay';
+import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+// ===============================================================
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { DeletePopupComponent } from 'src/app/shared/components/delete-popup/delete-popup.component';
 import { FormModalComponent } from '../form-modal/form-modal.component';
+// ===============================================================
 import { Department } from '../models/dept.model';
 import { User } from '../models/user.model';
 import { UsersService } from '../services/users.service';
@@ -20,15 +22,18 @@ export class UsersListsComponent implements OnInit {
 
   public currentPage: number;
   public dataPerPage: number;
-  
+
+  private edituserdata: User;
 
 
-  constructor(private router: Router, private usersServices: UsersService , private overlay: Overlay) {
+
+  constructor(private usersServices: UsersService, private overlay: Overlay) {
     this.myUsers = [];
     this.departments = [];
     this.searchText = "";
     this.currentPage = 1;
     this.dataPerPage = 8;
+    this.edituserdata = {} as User;
   }
 
   //On Component Init Load User data
@@ -55,6 +60,28 @@ export class UsersListsComponent implements OnInit {
     })
   }
 
+  //Post data to db
+  public createUser(data: User): void {
+    this.usersServices.createUser(data).subscribe({
+      next: () => {
+        alert("New User Creadted");
+        this.getUserList();
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
+  //Put data to db
+  public updateUser(id: number, user: User): void {
+    this.usersServices.updateUser(id, user).subscribe({
+      next: () => {
+        alert("User Updated");
+        this.getUserList();
+      },
+      error: (e) => console.log(e)
+    })
+  }
+
   //Delete user from db and Update user list
   public deleteUser(id: number): void {
     this.usersServices.deleteUser(id).subscribe({
@@ -63,9 +90,15 @@ export class UsersListsComponent implements OnInit {
     })
   }
 
-  //ROUTE to form
-  public navigateToForm(): void {
-    this.router.navigate(['/users/add'])
+  //edit user by id
+  public editUser(id: number): void {
+    this.usersServices.getById(id).subscribe({
+      next: (data) => {
+        this.edituserdata = data;
+        this.openFormModal(id);
+      },
+      error: (e) => console.error(e),
+    })
   }
 
   //setCurrentPage
@@ -73,13 +106,60 @@ export class UsersListsComponent implements OnInit {
     this.currentPage = pageNo;
   }
 
-  //
-  public openFormModal(){
-     const overlayRef = this.overlay.create({
-      positionStrategy: this.overlay.position().global().centerHorizontally().right()
-    });
+  //open the form
+  public openFormModal(id?: number) {
+
+    //config of overlay
+    let config = new OverlayConfig();
+    config.positionStrategy = this.overlay.position().global().centerHorizontally().right();
+
+    const overlayRef = this.overlay.create(config);
+
     const component = new ComponentPortal(FormModalComponent);
     const componentRef = overlayRef.attach(component);
+    componentRef.instance.departments = this.departments;
+
+    if (id) {
+      console.log(this.edituserdata);
+      componentRef.instance.id = id;
+      componentRef.instance.editData = this.edituserdata;
+      componentRef.instance.userData.subscribe((data) => {
+        overlayRef.detach();
+        this.updateUser(id, data);
+      })
+    } else {
+      componentRef.instance.userData.subscribe((data) => {
+        overlayRef.detach();
+        this.createUser(data);
+      })
+    }
     componentRef.instance.cancel.subscribe(() => overlayRef.detach());
+  }
+
+  //open delete Pop up box 
+  public deletePopUp(id: number) {
+    let config = new OverlayConfig();
+
+    config.hasBackdrop = true;
+    config.maxWidth = "400px";
+    config.positionStrategy = this.overlay.position().global().centerHorizontally().centerVertically();
+
+    const overlayRef = this.overlay.create(config);
+    const component = new ComponentPortal(DeletePopupComponent);
+    const componentRef = overlayRef.attach(component);
+
+    componentRef.instance.value.subscribe((value) => {
+      if (value) {
+        this.deleteUser(id);
+        overlayRef.detach()
+      }
+      else {
+        overlayRef.detach()
+      }
+    })
+
+    overlayRef.backdropClick().subscribe(() => {
+      overlayRef.detach();
+    });
   }
 }
