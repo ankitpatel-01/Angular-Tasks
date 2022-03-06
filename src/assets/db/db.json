@@ -129,6 +129,16 @@
       "doj": "2022-03-03",
       "department": "5",
       "id": 12
+    },
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "phoneNo": "(234) 345-4564",
+      "gender": "male",
+      "doj": "2022-03-11",
+      "department": 1,
+      "id": 13
     }
   ],
   "resume": [

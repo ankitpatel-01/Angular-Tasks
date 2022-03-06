@@ -40,6 +40,10 @@ p {
   margin: 4px 0;
 }
 
+.border-1 {
+  border: 1px solid black;
+}
+
 @media (max-width: 576px) {
   .title {
     font-size: 1.2rem;
