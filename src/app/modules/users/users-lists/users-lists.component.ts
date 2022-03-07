@@ -120,7 +120,6 @@ export class UsersListsComponent implements OnInit {
     componentRef.instance.departments = this.departments;
 
     if (id) {
-      console.log(this.edituserdata);
       componentRef.instance.id = id;
       componentRef.instance.editData = this.edituserdata;
       componentRef.instance.userData.subscribe((data) => {

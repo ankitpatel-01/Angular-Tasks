@@ -1,37 +1,30 @@
+<h3>The portal outlet</h3>
+<div class="example-portal-outlet">
+  <ng-template [cdkPortalOutlet]="selectedPortal"></ng-template>
+</div>
+<h3>Drag and Drop using Drop list Group</h3>
 <div cdkDropListGroup>
-    <div class="example-container">
-      <h2>To do</h2>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="todo"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-    
-    <div class="example-container">
-        <h2>Working</h2>
-    
-        <div
-          cdkDropList
-          [cdkDropListData]="working"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of working" cdkDrag>{{item}}</div>
-        </div>
-      </div>
+  <div class="example-container">
+    <h2>To do</h2>
 
-    <div class="example-container">
-      <h2>Done</h2>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="done"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-      </div>
+    <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
     </div>
   </div>
+
+  <div class="example-container">
+    <h2>Working</h2>
+
+    <div cdkDropList [cdkDropListData]="working" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of working" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+
+    <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+</div>

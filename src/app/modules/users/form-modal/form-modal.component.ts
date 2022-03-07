@@ -69,9 +69,8 @@ export class FormModalComponent implements OnInit {
   }
 
   //Close the form
-  onCancel(event: Event) {
-    console.log("cancel click");
-    return this.cancel.emit();
+  onCancel() {
+    this.cancel.emit();
   }
 
 }
