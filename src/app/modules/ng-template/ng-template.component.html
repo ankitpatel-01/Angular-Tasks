@@ -1,0 +1,49 @@
+<h2 class="mb-3">ngTemplateOutlet Example</h2>
+
+<label for="mode">Display Mode:</label>
+<select class="form-control mb-3" [(ngModel)]="mode">
+    <option *ngFor="let item of modeOptions" [ngValue]="item.mode">{{item.mode}}</option>
+</select>
+
+<ng-template let-items #cardTemplate>
+    <div class="card mb-2" *ngFor="let item of items">
+        <div class="card-body">
+            <p class="card-title">{{item.header}}</p>
+            <p class="card-text">{{item.content}}</p>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template let-items #listTemplate>
+    <ul>
+        <li *ngFor="let item of items">
+            <p><strong>{{item.header}} </strong></p>
+            <p>( {{item.content}} )</p>
+        </li>
+    </ul>
+</ng-template>
+
+<ng-template let-items let-message="caption" #tableTemplate>
+    <table class="table">
+        <caption>{{message}}</caption>
+        <thead>
+            <tr>
+                <th>Tilte</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td><strong>{{item.header}} </strong></td>
+                <td>( {{item.content}} )</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+
+<div *akIF="selected">
+    <p>Using the my custome if directive via *ttIf</p> 
+</div>
+
+<ng-container [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit:items,caption:'This is Table'}">
+</ng-container>

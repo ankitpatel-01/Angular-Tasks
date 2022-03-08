@@ -111,6 +111,7 @@ export class UsersListsComponent implements OnInit {
 
     //config of overlay
     let config = new OverlayConfig();
+    config.hasBackdrop = true;
     config.positionStrategy = this.overlay.position().global().centerHorizontally().right();
 
     const overlayRef = this.overlay.create(config);

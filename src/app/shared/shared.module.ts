@@ -12,6 +12,7 @@ import { MaskPhonePipe } from './pipes/mask-phone.pipe';
 import { MaskPhoneDirective } from './directives/mask-phone.directive';
 import { PopupBoxComponent } from './components/popup-box/popup-box.component';
 import { DeletePopupComponent } from './components/delete-popup/delete-popup.component';
+import { AkIFDirective } from './directives/ak-if.directive';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { DeletePopupComponent } from './components/delete-popup/delete-popup.com
     MaskPhoneDirective,
     PopupBoxComponent,
     DeletePopupComponent,
+    AkIFDirective,
   ],
   imports: [
     CommonModule
@@ -41,6 +43,7 @@ import { DeletePopupComponent } from './components/delete-popup/delete-popup.com
     PaginateComponent,
     MaskPhonePipe,
     MaskPhoneDirective,
+    AkIFDirective,
   ]
 })
 export class SharedModule { }
