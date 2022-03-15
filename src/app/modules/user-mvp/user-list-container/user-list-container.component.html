@@ -1,0 +1,2 @@
+<app-user-list-presentation [userList]="userList$ | async" [departmentList]="departmentList$ | async" (addUser)="addUser()" (editUserId)="editUser($event)"
+    (deleteUserId)="deleteUserPopUp($event)"></app-user-list-presentation>

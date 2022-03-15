@@ -2,32 +2,6 @@
   width: 100%;
 }
 
-.searchbox {
-  width: 350px;
-  height: 45px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  border: 1px solid #bebfc4;
-  border-radius: 0.625rem;
-  padding: 1rem 1.2rem;
-
-  span {
-    font-size: 1.5rem;
-    font-weight: 200;
-    margin-right: 4px;
-    color: gray;
-  }
-  input {
-    flex: 1;
-    height: 40px;
-    font-size: 1.1rem;
-    outline: none;
-    border: none;
-    padding: 0.5rem;
-  }
-}
-
 input:focus ~ span {
   color: #2f55e5;
 }
