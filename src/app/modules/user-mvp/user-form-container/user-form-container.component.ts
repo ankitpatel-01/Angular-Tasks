@@ -12,36 +12,33 @@ import { UserService } from '../user.service';
 })
 export class UserFormContainerComponent implements OnInit {
 
-  private id: number;
-  private isAddMode: boolean;
+  private _id: string;
 
   public departmentList$: Observable<Department[]>;
   public editData$: Observable<User>
 
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) {
-    this.id = this.route.snapshot.params['id'];
-    this.isAddMode = true;
+    this._id = this.route.snapshot.params['id'];
   }
 
   ngOnInit(): void {
     this.departmentList$ = this.userService.getDepartments();
-    if (this.id) {
-      this.isAddMode = false;
-      this.editData$ = this.userService.getById(this.id);
+    if (this._id) {
+      this.editData$ = this.userService.getById(this._id);
     }
   }
 
-  addUser(user:User){
+  addUser(user: User) {
     this.userService.createUser(user).subscribe({
-      next:()=>{
+      next: () => {
         this.router.navigate(["/userMvp"]);
       }
     })
   }
 
-  editUser(user:User){
-    this.userService.createUser(user).subscribe({
-      next:()=>{
+  editUser(user: User) {
+    this.userService.updateUser(this._id, user).subscribe({
+      next: () => {
         this.router.navigate(["/userMvp"]);
       }
     })

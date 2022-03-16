@@ -13,27 +13,57 @@ export class UserService {
     this.apiLink = environment.baseURL;
   }
 
-  getById(id: number) {
+  /**
+   * fetch user details by Id
+   * @param id : string
+   * @returns User details
+   */
+
+  getById(id: string) {
     return this.http.get<User>(`${this.apiLink}/users/${id}`);
   }
 
+  /**
+   * get all the department list from database
+   * @returns departments array
+   */
   getDepartments(): Observable<Department[]> {
     return this.http.get<Department[]>(`${this.apiLink}/departments`);
   }
 
+  /**
+   * Post a new user to server
+   * @param user 
+   * @returns 
+   */
   createUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.apiLink}/users`, user);
   }
 
+  /**
+   * fetch user list
+   * @returns Users[]
+   */
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiLink}/users`);
   }
 
-  updateUser(id:number, data: User): Observable<User> {
+  /**
+   * put new user details to server
+   * @param id : string
+   * @param data : User
+   * @returns 
+   */
+  updateUser(id: string, data: User): Observable<User> {
     return this.http.put<User>(`${this.apiLink}/users/${id}`, data);
   }
 
-  deleteUser(id: number): Observable<number> {
+  /**
+   * 
+   * @param id 
+   * @returns 
+   */
+  deleteUser(id: string): Observable<number> {
     return this.http.delete<number>(`${this.apiLink}/users/${id}`);
   }
 }

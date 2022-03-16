@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Department } from '../../models/dept.model';
 import { User } from '../../models/user.model';
@@ -9,6 +9,7 @@ import { UserListPresenterService } from '../user-list-presenter/user-list-prese
   templateUrl: './user-list-presentation.component.html',
   styleUrls: ['./user-list-presentation.component.scss'],
   viewProviders: [UserListPresenterService],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListPresentationComponent implements OnInit {
 
@@ -16,7 +17,7 @@ export class UserListPresentationComponent implements OnInit {
   @Input() public set userList(value: User[] | null) {
     if (value) {
       this._userList = value;
-      this.tempUserList = value;
+      this.data = this._userList;
     }
   }
   // getter for user list 
@@ -34,62 +35,36 @@ export class UserListPresentationComponent implements OnInit {
     return this._departmentList;
   }
 
-  // emitter to emit add user data
-  @Output() public addUser: EventEmitter<Event>;
-  // emitter to emit edit user details 
-  @Output() public editUserId: EventEmitter<number>;
   // emits user id to be deleted
-  @Output() public deleteUserId: EventEmitter<number>;
+  @Output() public deleteUserId: EventEmitter<string>;
 
   //user list we get from db
-  private _userList: User[];
+  private _userList!: User[];
+
+  public data: User[];
   //user list we get from db
   public _departmentList: Department[];
-  // temp user list to display data in table
-  public tempUserList: User[];
   // search field control
   public search: FormControl;
 
 
-  constructor(private persenterService:UserListPresenterService) {
+  constructor(private persenterService: UserListPresenterService) {
     this._userList = [];
     this._departmentList = [];
     this.deleteUserId = new EventEmitter();
-    this.addUser = new EventEmitter();
-    this.editUserId = new EventEmitter();
     this.search = new FormControl();
   }
 
   ngOnInit(): void {
     this.persenterService.delete$.subscribe({
-      next:(id: number) => {
+      next: (id: string) => {
         this.deleteUserId.emit(id);
       },
-      error:(e)=>{console.log(e)}
-    });
-    this.persenterService.edit$.subscribe({
-      next:(id: number) => {
-        this.editUserId.emit(id);
-      },
-      error:(e)=>{console.log(e)}
-    })
-    this.persenterService.add$.subscribe({
-      next:(id: number) => {
-        this.addUser.emit();
-      },
-      error:(e)=>{console.log(e)}
+      error: (e) => { console.log(e) }
     });
   }
 
-  onAddUser() {
-    this.persenterService.addUser();
-  }
-
-  onEditUser(id: number) {
-    this.persenterService.editUser(id);
-  }
-
-  onDeleteUser(id: number) {
+  onDeleteUser(id: string) {
     this.persenterService.deleteUser(id);
   }
 

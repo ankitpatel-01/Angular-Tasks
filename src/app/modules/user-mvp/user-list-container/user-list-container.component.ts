@@ -29,7 +29,7 @@ export class UserListContainerComponent implements OnInit {
     this.departmentList$ = this.userService.getDepartments();
   }
 
-  public deleteUserPopUp(id: number) {
+  public deleteUserPopUp(id: string) {
     let config = new OverlayConfig();
 
     config.hasBackdrop = true;
@@ -42,6 +42,7 @@ export class UserListContainerComponent implements OnInit {
 
     componentRef.instance.value.subscribe((value: boolean) => {
       if (value) {
+        debugger
         this.deleteUser(id);
         overlayRef.detach()
       }
@@ -55,19 +56,11 @@ export class UserListContainerComponent implements OnInit {
     });
   }
 
-
-  public addUser() {
-    console.log("add user Clicked");
-    this.router.navigate([`../add`], { relativeTo: this.route });
-  }
-
-  public editUser(id: number) {
-    console.log(`edit user id ${id}`)
-    this.router.navigate([`../edit/${id}`], { relativeTo: this.route });
-  }
-
-  public deleteUser(id: number) {
+  public deleteUser(id: string) {
     this.userService.deleteUser(id).subscribe({
+      next: () => {
+        this.userList$ = this.userService.getUsers();
+      },
       error: (e) => { console.log(e) }
     })
   }
