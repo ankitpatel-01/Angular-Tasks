@@ -1,0 +1,15 @@
+<form [formGroup]="internForm">
+    <div class="mt-3">
+        <label for="inter-name">Inter Name :</label>
+        <input class="form-control" type="text" id="inter-name" placeholder="Enter Intern Name"
+            formControlName="name" />
+    </div>
+    <div class="mt-3">
+        <label for="inter-company">Company Name :</label>
+        <input class="form-control" type="text" id="inter-company" placeholder="company name"
+            formControlName="company" />
+    </div>
+    <div class="mt-3 d-flex align-item-center justify-content-end">
+        <button class="btn btn-primary" (click)="onSubmit()">Save</button>
+    </div>
+</form>

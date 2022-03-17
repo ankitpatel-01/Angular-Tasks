@@ -41,7 +41,8 @@ const routes: Routes = [
   { path: 'todo-app', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) },
   { path: 'static-crud', loadChildren: () => import('./modules/static-crud/static-crud.module').then(m => m.StaticCrudModule) },
   { path: 'ng-templete', loadChildren: () => import('./modules/ng-template/ng-template.module').then(m => m.NgTemplateModule) },
-  { path: 'userMvp', loadChildren: () => import('./modules/user-mvp/user-mvp.module').then(m => m.UserMvpModule) }
+  { path: 'userMvp', loadChildren: () => import('./modules/user-mvp/user-mvp.module').then(m => m.UserMvpModule) },
+  { path: 'subject-crud', loadChildren: () => import('./modules/subject-crud/subject-crud.module').then(m => m.SubjectCrudModule) }
 ];
 
 @NgModule({
