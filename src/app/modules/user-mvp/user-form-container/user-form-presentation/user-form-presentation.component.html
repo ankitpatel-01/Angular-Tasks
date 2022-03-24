@@ -36,7 +36,7 @@
             <!-- phoneNo -->
             <div class="mt-3">
                 <label for="contactNo">Phone No :</label>
-                <input appMaskPhone class="form-control" type="text" id="phoneNo"
+                <input class="form-control" type="text" id="phoneNo"
                     placeholder="Enter your Phone number..." formControlName="phoneNo" maxlength="14" />
                 <small class="text-danger" *ngIf="userForm.get('phoneNo')?.touched && !userForm.get('phoneNo')?.dirty">
                     * This Field is Required</small>
@@ -78,9 +78,22 @@
                 <small class="text-danger" *ngIf="!userForm.get('doj')?.valid && userForm.get('doj')?.touched">*
                     This Field is Required</small>
             </div>
+            <div class="form-group">
+                <input class="mr-3" type="checkbox" formControlName="isPermanent" id="isPermanent">
+                <label for="isPermanent">Is Permanent</label>
+            </div>
+            <div class="form-group">
+                <input class="mr-3" type="checkbox" formControlName="isMarried" id="isMarried">
+                <label for="isMarried">Is Married</label>
+            </div>
+            <div class="form-group">
+                <input class="mr-3" type="checkbox" formControlName="isAvailable" id="isAvailable">
+                <label for="isAvailable">Is Available</label>
+            </div>
             <div class="d-flex aline-item-center justify-content-center">
                 <button class="btn btn-success mt-2 mr-2" type="button" [disabled]="userForm.invalid" (click)="onSubmit()">{{formMode}}</button>
-                <input class="btn btn-danger mt-2" type="reset" value="Reset" (click)="onReset()" />
+                <input class="btn btn-danger mt-2 mr-2" type="reset" value="Reset" (click)="onReset()" />
+                <button class="btn btn-warning mt-2" type="button" (click)="onCancel()">Cancel</button>
             </div>
         </form>
         <!-- Submit and Reset btn  -->

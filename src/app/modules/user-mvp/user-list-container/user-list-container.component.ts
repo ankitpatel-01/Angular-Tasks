@@ -56,16 +56,6 @@ export class UserListContainerComponent implements OnInit {
   }
 
 
-  public addUser() {
-    console.log("add user Clicked");
-    this.router.navigate([`../add`], { relativeTo: this.route });
-  }
-
-  public editUser(id: number) {
-    console.log(`edit user id ${id}`)
-    this.router.navigate([`../edit/${id}`], { relativeTo: this.route });
-  }
-
   public deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe({
       error: (e) => { console.log(e) }

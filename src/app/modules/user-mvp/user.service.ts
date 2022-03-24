@@ -14,7 +14,7 @@ export class UserService {
   }
 
   getById(id: number) {
-    return this.http.get<User>(`${this.apiLink}/users/${id}`);
+    return this.http.get<User>(`${this.apiLink}/users2/${id}`);
   }
 
   getDepartments(): Observable<Department[]> {
@@ -22,18 +22,18 @@ export class UserService {
   }
 
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiLink}/users`, user);
+    return this.http.post<User>(`${this.apiLink}/users2`, user);
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiLink}/users`);
+    return this.http.get<User[]>(`${this.apiLink}/users2`);
   }
 
   updateUser(id:number, data: User): Observable<User> {
-    return this.http.put<User>(`${this.apiLink}/users/${id}`, data);
+    return this.http.put<User>(`${this.apiLink}/users2/${id}`, data);
   }
 
   deleteUser(id: number): Observable<number> {
-    return this.http.delete<number>(`${this.apiLink}/users/${id}`);
+    return this.http.delete<number>(`${this.apiLink}/users2/${id}`);
   }
 }

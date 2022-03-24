@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Location } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Department } from '../../models/dept.model';
 import { User } from '../../models/user.model';
@@ -9,6 +10,7 @@ import { UserFormPresenterService } from '../user-form-presenter/user-form-prese
   templateUrl: './user-form-presentation.component.html',
   styleUrls: ['./user-form-presentation.component.scss'],
   viewProviders: [UserFormPresenterService],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserFormPresentationComponent implements OnInit {
 
@@ -55,7 +57,7 @@ export class UserFormPresentationComponent implements OnInit {
   private _editData: User;
   //to check form mode
 
-  constructor(private userFormPresenterService: UserFormPresenterService) {
+  constructor(private userFormPresenterService: UserFormPresenterService, private location:Location) {
     this.formTitle = 'Add User';
     this.formMode = 'Add';
     this.userForm = this.userFormPresenterService.buildForm();
@@ -91,10 +93,10 @@ export class UserFormPresentationComponent implements OnInit {
     this.userFormPresenterService.onFormSubmit(this.formData)
   }
 
-  // /** on cancel button click */
-  // public onCancel() {
-  //   this.cancel.emit(new Date());
-  // }
+  /** on cancel button click */
+  public onCancel() {
+    this.location.back()
+  }
 
   onReset() {
     this.userForm.reset();

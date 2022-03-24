@@ -5,7 +5,10 @@
             <span class="fas fa-search"></span>
             <input type="text" placeholder="Search User" [formControl]="search">
         </div>
-        <button class="btn btn-dark" (click)="onAddUser()">+ Add</button>
+        <div>
+            <button class="btn btn-dark mr-3" routerLink="../add">+ Add</button>
+            <button class="btn btn-dark" (click)="openFilter()">Filter</button>
+        </div>
     </div>
 </div>
 
@@ -21,11 +24,14 @@
                 <th>Gender</th>
                 <th>Department</th>
                 <th>Date of joining</th>
+                <th>isPermanent</th>
+                <th>isMarried</th>
+                <th>isAvailable</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of tempUserList; let i = index">
+            <tr *ngFor="let user of userList; let i = index">
                 <td><input type="checkbox" name="user.id"></td>
                 <td>{{i+1}}</td>
                 <td>{{user.firstname +" "+user.lastname}}</td>
@@ -34,8 +40,11 @@
                 <td>{{user.gender}}</td>
                 <td>{{user.department | deptFilter:_departmentList}}</td>
                 <td>{{user.doj}}</td>
+                <td>{{user.isPermanent | boolenConverter}}</td>
+                <td>{{user.isMarried | boolenConverter}}</td>
+                <td>{{user.isAvailable | boolenConverter}}</td>
                 <td>
-                    <a (click)="onEditUser(user.id)"><span class="icon-pencil text-success mr-3"></span></a>
+                    <a routerLink="../edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
                     <a (click)="onDeleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
                 </td>
             </tr>

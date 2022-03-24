@@ -25,6 +25,9 @@ export class UserFormPresenterService {
       gender: [null, Validators.required],
       doj: [null, Validators.required],
       department: [1, Validators.required],
+      isPermanent: [false],
+      isMarried: [false],
+      isAvailable: [false],
     })
   }
 

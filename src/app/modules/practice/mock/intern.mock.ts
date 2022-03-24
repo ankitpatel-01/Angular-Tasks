@@ -1,15 +1,14 @@
-class Intern {
+export class Intern {
     public id: number;
-   public name: string;
-   public company:string;
+    public name: string;
+    public company: string;
 
-   constructor(id:number,name:string,company:string){
-       this.id = id;
-       this.name = name;
-       this.company = company;
-   }
+    constructor(id: number, name: string, company: string) {
+        this.id = id;
+        this.name = name;
+        this.company = company;
+    }
 }
-
 export const INTERNS: Intern[] = [
     {
         id:1,
