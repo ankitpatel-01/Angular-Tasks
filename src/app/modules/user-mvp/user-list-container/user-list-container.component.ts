@@ -18,10 +18,12 @@ export class UserListContainerComponent implements OnInit {
   // user list data
   public userList$: Observable<User[]>
 
+  // department list data
   public departmentList$: Observable<Department[]>;
 
-  constructor(private userService: UserService, private router: Router, private route: ActivatedRoute, private overlay: Overlay) {
+  constructor(private userService: UserService, private overlay: Overlay) {
     this.userList$ = new Observable();
+    this.departmentList$ = new Observable();
   }
 
   ngOnInit(): void {
@@ -29,19 +31,25 @@ export class UserListContainerComponent implements OnInit {
     this.departmentList$ = this.userService.getDepartments();
   }
 
-  public deleteUserPopUp(id: number) {
-    let config = new OverlayConfig();
 
+  //delete user confirmation pop up
+  public deleteUserPopUp(id: number):void {
+    //overlay configs
+    let config = new OverlayConfig();
     config.hasBackdrop = true;
     config.maxWidth = "400px";
     config.positionStrategy = this.overlay.position().global().centerHorizontally().centerVertically();
 
+    //create overlay with above config
     const overlayRef = this.overlay.create(config);
+    //component to open in overlay
     const component = new ComponentPortal(DeletePopupComponent);
     const componentRef = overlayRef.attach(component);
 
+    //close overlay base on value yes and no
     componentRef.instance.value.subscribe((value: boolean) => {
       if (value) {
+        //yes delete user with id
         this.deleteUser(id);
         overlayRef.detach()
       }
@@ -50,12 +58,13 @@ export class UserListContainerComponent implements OnInit {
       }
     })
 
+    //backdrop click close overlay
     overlayRef.backdropClick().subscribe(() => {
       overlayRef.detach();
     });
   }
 
-
+  // delete user method for service call
   public deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe({
       error: (e) => { console.log(e) }

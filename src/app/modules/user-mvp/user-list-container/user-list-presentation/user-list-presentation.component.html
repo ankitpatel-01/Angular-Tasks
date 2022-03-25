@@ -7,7 +7,7 @@
         </div>
         <div>
             <button class="btn btn-dark mr-3" routerLink="../add">+ Add</button>
-            <button class="btn btn-dark" (click)="openFilter()">Filter</button>
+            <a class="btn btn-dark notification" (click)="openFilter()">Filter  <span *ngIf="isFilterOn" class="badge"></span></a>
         </div>
     </div>
 </div>
@@ -31,7 +31,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of userList; let i = index">
+            <tr *ngFor="let user of tempList; let i = index">
                 <td><input type="checkbox" name="user.id"></td>
                 <td>{{i+1}}</td>
                 <td>{{user.firstname +" "+user.lastname}}</td>

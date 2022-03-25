@@ -1,0 +1,13 @@
+.notification {
+  position: relative;
+  .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+  }
+}

@@ -33,6 +33,7 @@ export class User {
 
 export class Filters{
     gender: string;
+    department: number;
     isPermanent:boolean;
     isMarried:boolean;
     isAvailable:boolean;
