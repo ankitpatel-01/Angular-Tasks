@@ -9,7 +9,7 @@ import { FilterFormPresentationComponent } from '../user-list-presentation/filte
 
 @Injectable()
 export class UserListPresenterService {
-
+  
   //store the current filter object
   private _currentFilters: Filters;
 
@@ -36,7 +36,7 @@ export class UserListPresenterService {
     this.isfiltered$ = this._isfiltered.asObservable();
   }
 
-  public deleteUser(id: number) {
+  public deleteUser(id: string) {
     this.delete.next(id);
   }
 

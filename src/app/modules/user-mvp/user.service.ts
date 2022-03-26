@@ -17,14 +17,27 @@ export class UserService {
     return this.http.get<User>(`${this.apiLink}/users2/${id}`);
   }
 
+  /**
+   * get all the department list from database
+   * @returns departments array
+   */
   getDepartments(): Observable<Department[]> {
     return this.http.get<Department[]>(`${this.apiLink}/departments`);
   }
 
+  /**
+   * Post a new user to server
+   * @param user 
+   * @returns 
+   */
   createUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.apiLink}/users2`, user);
   }
 
+  /**
+   * fetch user list
+   * @returns Users[]
+   */
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiLink}/users2`);
   }

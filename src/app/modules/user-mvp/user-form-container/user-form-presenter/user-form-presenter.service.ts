@@ -10,7 +10,7 @@ export class UserFormPresenterService {
   public userFormData: Subject<User>;
   public userFormData$: Observable<User>;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder) {
     this.userFormData = new Subject();
     this.userFormData$ = new Observable();
     this.userFormData$ = this.userFormData.asObservable();
@@ -31,7 +31,7 @@ export class UserFormPresenterService {
     })
   }
 
-  public onFormSubmit(user:User) {
-    this.userFormData.next(user);
+  public onFormSubmit(formData: User) {
+    this.userFormData.next(formData);
   }
 }

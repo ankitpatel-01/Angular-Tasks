@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Department } from '../../models/dept.model';
 import { User } from '../../models/user.model';
@@ -10,6 +10,7 @@ import { UserListPresenterService } from '../user-list-presenter/user-list-prese
   templateUrl: './user-list-presentation.component.html',
   styleUrls: ['./user-list-presentation.component.scss'],
   viewProviders: [UserListPresenterService],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListPresentationComponent implements OnInit {
 
@@ -53,7 +54,6 @@ export class UserListPresentationComponent implements OnInit {
 
   //condition for the filter notification badge
   public isFilterOn: boolean;
-
 
   constructor(private persenterService: UserListPresenterService) {
     this._userList = [];

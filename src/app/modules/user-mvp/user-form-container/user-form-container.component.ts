@@ -28,14 +28,14 @@ export class UserFormContainerComponent implements OnInit {
     }
   }
 
-  addUser(user:User){
+  addUser(user: User) {
     this.userService.createUser(user).subscribe({
-      next:()=>{
+      next: () => {
         this.router.navigate(["/userMvp"]);
       }
     })
   }
-
+  
   editUser(user:User){
     this.userService.updateUser(this.id,user).subscribe({
       next:()=>{

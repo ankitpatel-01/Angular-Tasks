@@ -67,6 +67,9 @@ export class UserListContainerComponent implements OnInit {
   // delete user method for service call
   public deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe({
+      next: () => {
+        this.userList$ = this.userService.getUsers();
+      },
       error: (e) => { console.log(e) }
     })
   }

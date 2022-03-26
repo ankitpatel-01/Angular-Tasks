@@ -24,12 +24,7 @@ export class User {
         this.isMarried = isMarried;
         this.isAvailable = isAvailable;
     }
-
-    // public getFullName(): string {
-    //     return this.firstname.concat(" ", this.lastname);
-    // }
 }
-
 
 export class Filters{
     gender: string;
