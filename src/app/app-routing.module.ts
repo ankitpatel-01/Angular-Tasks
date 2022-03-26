@@ -40,7 +40,8 @@ const routes: Routes = [
   { path: 'practice', loadChildren: () => import('./modules/practice/practice.module').then(m => m.PracticeModule) },
   { path: 'todo-app', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) },
   { path: 'static-crud', loadChildren: () => import('./modules/static-crud/static-crud.module').then(m => m.StaticCrudModule) },
-  { path: 'ng-templete', loadChildren: () => import('./modules/ng-template/ng-template.module').then(m => m.NgTemplateModule) }
+  { path: 'ng-templete', loadChildren: () => import('./modules/ng-template/ng-template.module').then(m => m.NgTemplateModule) },
+  { path: 'userMvp', loadChildren: () => import('./modules/user-mvp/user-mvp.module').then(m => m.UserMvpModule) }
 ];
 
 @NgModule({

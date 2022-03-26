@@ -47,7 +47,7 @@
       "phoneNo": "(785) 554-5455",
       "gender": "male",
       "doj": "2022-01-03",
-      "department": 6,
+      "department": "6",
       "id": 2
     },
     {
@@ -111,16 +111,6 @@
       "id": 9
     },
     {
-      "firstname": "Ankit",
-      "lastname": "Patel",
-      "email": "ankitpatelak2017@gmail.com",
-      "phoneNo": "8945232345",
-      "gender": "male",
-      "doj": "2022-03-26",
-      "department": 1,
-      "id": 11
-    },
-    {
       "firstname": "diya",
       "lastname": "Patel",
       "email": "diya.patel@gamil.com",
@@ -129,16 +119,6 @@
       "doj": "2022-03-03",
       "department": "5",
       "id": 12
-    },
-    {
-      "firstname": "Ankit",
-      "lastname": "Patel",
-      "email": "ankitpatelak2017@gmail.com",
-      "phoneNo": "(234) 345-4564",
-      "gender": "male",
-      "doj": "2022-03-11",
-      "department": 1,
-      "id": 13
     }
   ],
   "resume": [

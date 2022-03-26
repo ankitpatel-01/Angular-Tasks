@@ -1,0 +1,49 @@
+<div>
+    <h2>List of Users</h2>
+    <div class="d-flex justify-content-between">
+        <div class="searchbox">
+            <span class="fas fa-search"></span>
+            <input type="text" placeholder="Search User" [formControl]="search">
+        </div>
+        <a routerLink="../add" class="btn btn-dark">+ Add</a>
+    </div>
+</div>
+
+<div class="table-container mt-4">
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th></th>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone No.</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Date of joining</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="data | searchFilter:[search.value]:['firstname'] as result">
+            <tr *ngFor="let user of result; let i = index">
+                <td><input type="checkbox" name="user.id"></td>
+                <td>{{i+1}}</td>
+                <td>{{user.firstname +" "+user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phoneNo}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.department | deptFilter:_departmentList}}</td>
+                <td>{{user.doj}}</td>
+                <td>
+                    <a routerLink="../edit/{{user.id}}"><span class="icon-pencil text-success mr-3"></span></a>
+                    <a (click)="onDeleteUser(user.id)"><span class="icon-bin2 text-danger"></span></a>
+                </td>
+            </tr>
+            <tr *ngIf="result.length == 0">
+                <td>
+                    No Record found
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
