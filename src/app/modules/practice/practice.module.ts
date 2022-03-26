@@ -7,7 +7,7 @@ import { PracticeComponent } from './practice.component';
 
 @NgModule({
   declarations: [
-    PracticeComponent
+    PracticeComponent,
   ],
   imports: [
     CommonModule,

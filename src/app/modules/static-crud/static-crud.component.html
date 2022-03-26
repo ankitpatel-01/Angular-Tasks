@@ -1,0 +1,12 @@
+<div class="d-flex align-item-center justify-content-center">
+    <div class="container-500 border-1">
+        <div class="d-flex align-item-center justify-content-between">
+            <h1>Intern data</h1>
+            <button class="btn btn-success" (click)="toggleForm()">Add</button>
+        </div>
+        <app-add-intern *ngIf="isAdd" (intern)="addIntern($event)" (editIntern)="updateInter($event)"
+            [dataToedit]="dataToEdit"></app-add-intern>
+        <app-intern-list [interns]="interns" (editId)="editIntern($event)" (deleteId)="deleteIntern($event)">
+        </app-intern-list>
+    </div>
+</div>

@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 //fonts
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-//utilites
-@import "assets/scss/utilities/index";
 //base
 @import "assets/scss/base/index";
 //components
 @import "assets/scss/component/index";
 //layout
 @import "assets/scss/layout/index";
+//utilites
+@import "assets/scss/utilities/index";
+
+@import "@angular/cdk/overlay-prebuilt.css";

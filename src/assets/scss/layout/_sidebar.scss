@@ -64,6 +64,7 @@
       border-radius: 50%;
     }
     &-details {
+      transition: 0.6s all ease;
       margin-left: 0.8rem;
     }
     &-name {
@@ -80,6 +81,10 @@
     flex-grow: 1;
     overflow: auto;
     margin-top: 0.8rem;
+
+    .link-name {
+      transition: 0.6s all ease;
+    }
     ul {
       list-style: none;
       padding: 0 6px 22px;
@@ -133,10 +138,10 @@
       display: none;
     }
     .user-details {
-      display: none;
+      transform: translateX(300px);
     }
     .link-name {
-      display: none;
+      transform: translateX(300px);
     }
   }
 }
