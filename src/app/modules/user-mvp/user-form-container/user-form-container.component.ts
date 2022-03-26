@@ -12,19 +12,19 @@ import { UserService } from '../user.service';
 })
 export class UserFormContainerComponent implements OnInit {
 
-  private _id: string;
+  private id: number;
 
   public departmentList$: Observable<Department[]>;
   public editData$: Observable<User>
 
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) {
-    this._id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
   }
 
   ngOnInit(): void {
     this.departmentList$ = this.userService.getDepartments();
-    if (this._id) {
-      this.editData$ = this.userService.getById(this._id);
+    if (this.id) {
+      this.editData$ = this.userService.getById(this.id);
     }
   }
 
@@ -35,10 +35,10 @@ export class UserFormContainerComponent implements OnInit {
       }
     })
   }
-
-  editUser(user: User) {
-    this.userService.updateUser(this._id, user).subscribe({
-      next: () => {
+  
+  editUser(user:User){
+    this.userService.updateUser(this.id,user).subscribe({
+      next:()=>{
         this.router.navigate(["/userMvp"]);
       }
     })

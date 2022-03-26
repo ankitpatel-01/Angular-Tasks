@@ -194,5 +194,59 @@
       "isPermanent": false,
       "id": 6
     }
+  ],
+  "users2": [
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "phoneNo": "8347892046",
+      "gender": "male",
+      "doj": "2022-01-03",
+      "department": 1,
+      "isPermanent": true,
+      "isMarried": false,
+      "isAvailable": true,
+      "id": 1
+    },
+    {
+      "firstname": "Chirag",
+      "lastname": "Patel",
+      "email": "cp221740@gmail.com",
+      "phoneNo": "5465456588",
+      "gender": "male",
+      "doj": "2022-03-04",
+      "department": 1,
+      "isPermanent": false,
+      "isMarried": true,
+      "isAvailable": true,
+      "id": 2
+    },
+    {
+      "firstname": "manish",
+      "lastname": "rajpurohit",
+      "email": "manish.raj@email.com",
+      "phoneNo": "5465456588",
+      "gender": "male",
+      "doj": "2022-03-05",
+      "department": "6",
+      "isPermanent": true,
+      "isMarried": false,
+      "isAvailable": false,
+      "id": 3
+    },
+    {
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "email": "ankitpatelak2017@gmail.com",
+      "phoneNo": "5465456588",
+      "gender": "female",
+      "doj": "2022-03-04",
+      "department": 1,
+      "isPermanent": false,
+      "isMarried": true,
+      "isAvailable": false,
+      "id": 4
+    }
   ]
 }

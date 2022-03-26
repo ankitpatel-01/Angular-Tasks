@@ -11,6 +11,7 @@ import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { UserFormPresentationComponent } from './user-form-container/user-form-presentation/user-form-presentation.component';
+import { FilterFormPresentationComponent } from './user-list-container/user-list-presentation/filter-form-presentation/filter-form-presentation.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UserFormPresentationComponent } from './user-form-container/user-form-p
     UserFormContainerComponent,
     UserListPresentationComponent,
     UserFormPresentationComponent,
+    FilterFormPresentationComponent,
   ],
   imports: [
     CommonModule,

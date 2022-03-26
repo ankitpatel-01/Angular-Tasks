@@ -13,14 +13,8 @@ export class UserService {
     this.apiLink = environment.baseURL;
   }
 
-  /**
-   * fetch user details by Id
-   * @param id : string
-   * @returns User details
-   */
-
-  getById(id: string) {
-    return this.http.get<User>(`${this.apiLink}/users/${id}`);
+  getById(id: number) {
+    return this.http.get<User>(`${this.apiLink}/users2/${id}`);
   }
 
   /**
@@ -37,7 +31,7 @@ export class UserService {
    * @returns 
    */
   createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiLink}/users`, user);
+    return this.http.post<User>(`${this.apiLink}/users2`, user);
   }
 
   /**
@@ -45,25 +39,14 @@ export class UserService {
    * @returns Users[]
    */
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiLink}/users`);
+    return this.http.get<User[]>(`${this.apiLink}/users2`);
   }
 
-  /**
-   * put new user details to server
-   * @param id : string
-   * @param data : User
-   * @returns 
-   */
-  updateUser(id: string, data: User): Observable<User> {
-    return this.http.put<User>(`${this.apiLink}/users/${id}`, data);
+  updateUser(id:number, data: User): Observable<User> {
+    return this.http.put<User>(`${this.apiLink}/users2/${id}`, data);
   }
 
-  /**
-   * 
-   * @param id 
-   * @returns 
-   */
-  deleteUser(id: string): Observable<number> {
-    return this.http.delete<number>(`${this.apiLink}/users/${id}`);
+  deleteUser(id: number): Observable<number> {
+    return this.http.delete<number>(`${this.apiLink}/users2/${id}`);
   }
 }
