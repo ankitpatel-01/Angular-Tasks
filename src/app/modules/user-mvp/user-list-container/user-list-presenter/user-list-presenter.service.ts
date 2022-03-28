@@ -36,7 +36,7 @@ export class UserListPresenterService {
     this.isfiltered$ = this._isfiltered.asObservable();
   }
 
-  public deleteUser(id: string) {
+  public deleteUser(id: number) {
     this.delete.next(id);
   }
 
